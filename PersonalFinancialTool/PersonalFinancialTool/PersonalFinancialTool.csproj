@@ -164,6 +164,11 @@
     <Compile Include="FormUpdateUserInformation.Designer.cs">
       <DependentUpon>FormUpdateUserInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>PersonalFinancialToolDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserDetails.cs" />
+    <Compile Include="UserModel.cs" />
     <EmbeddedResource Include="FormCreateCategory.resx">
       <DependentUpon>FormCreateCategory.cs</DependentUpon>
     </EmbeddedResource>

@@ -6,6 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="11e133a4da8541bb8416447822a8dcd8" Name="Diagram1" >
         <EntityTypeShape EntityType="PersonalFinancialToolDB.Category" Width="2" PointX="1.875" PointY="0.875" />
+        <EntityTypeShape EntityType="PersonalFinancialToolDB.User" Width="1.5" PointX="5.375" PointY="2.375" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

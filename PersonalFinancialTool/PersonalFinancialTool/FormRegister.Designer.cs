@@ -148,6 +148,7 @@ namespace PersonalFinancialTool
             this.buttonSave.TabIndex = 17;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.CreateRegister);
             // 
             // lblRegister
             // 

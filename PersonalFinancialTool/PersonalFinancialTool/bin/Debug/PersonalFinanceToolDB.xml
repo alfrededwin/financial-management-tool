@@ -42,4 +42,18 @@
     <CategoryDescription>GG</CategoryDescription>
     <CategoryType>Income</CategoryType>
   </Category>
+  <User>
+    <UserId>1</UserId>
+    <FullName>Edwin</FullName>
+    <Username>alfrededwin</Username>
+    <Email>alfred.edwin@hotmail.com</Email>
+    <Password>123</Password>
+  </User>
+  <User>
+    <UserId>2</UserId>
+    <FullName>RT</FullName>
+    <Username>RT</Username>
+    <Email>T@HJ.LK</Email>
+    <Password>123</Password>
+  </User>
 </FinancialToolDataSet>
