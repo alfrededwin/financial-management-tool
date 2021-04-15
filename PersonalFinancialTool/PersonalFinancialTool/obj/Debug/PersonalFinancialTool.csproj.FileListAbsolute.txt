@@ -15,3 +15,8 @@ C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinanci
 C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormCreateEvent.resources
 C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormCreateTransaction.resources
 C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormViewCategory.resources
+C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormPrediction.resources
+C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormReport.resources
+C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormSettings.resources
+C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormViewEvent.resources
+C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormViewTransaction.resources

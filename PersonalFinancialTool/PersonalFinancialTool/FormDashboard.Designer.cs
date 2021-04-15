@@ -37,15 +37,9 @@ namespace PersonalFinancialTool
             this.tabPagePrediction = new System.Windows.Forms.TabPage();
             this.tabPageReport = new System.Windows.Forms.TabPage();
             this.tabPageSettings = new System.Windows.Forms.TabPage();
-            this.btnUpdateTransaction = new System.Windows.Forms.Button();
-            this.btnCreateTransaction = new System.Windows.Forms.Button();
-            this.btnUpdateEvent = new System.Windows.Forms.Button();
-            this.btnCreateEvent = new System.Windows.Forms.Button();
             this.financialToolDataSet = new PersonalFinancialTool.FinancialToolDataSet();
             this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlDashboard.SuspendLayout();
-            this.tabPageTransaction.SuspendLayout();
-            this.tabPageEvent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.financialToolDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -66,8 +60,6 @@ namespace PersonalFinancialTool
             // 
             // tabPageTransaction
             // 
-            this.tabPageTransaction.Controls.Add(this.btnUpdateTransaction);
-            this.tabPageTransaction.Controls.Add(this.btnCreateTransaction);
             this.tabPageTransaction.Location = new System.Drawing.Point(4, 22);
             this.tabPageTransaction.Name = "tabPageTransaction";
             this.tabPageTransaction.Padding = new System.Windows.Forms.Padding(3);
@@ -88,8 +80,6 @@ namespace PersonalFinancialTool
             // 
             // tabPageEvent
             // 
-            this.tabPageEvent.Controls.Add(this.btnUpdateEvent);
-            this.tabPageEvent.Controls.Add(this.btnCreateEvent);
             this.tabPageEvent.Location = new System.Drawing.Point(4, 22);
             this.tabPageEvent.Name = "tabPageEvent";
             this.tabPageEvent.Padding = new System.Windows.Forms.Padding(3);
@@ -128,46 +118,6 @@ namespace PersonalFinancialTool
             this.tabPageSettings.Text = "Settings";
             this.tabPageSettings.UseVisualStyleBackColor = true;
             // 
-            // btnUpdateTransaction
-            // 
-            this.btnUpdateTransaction.Font = new System.Drawing.Font("Cambria", 11.25F);
-            this.btnUpdateTransaction.Location = new System.Drawing.Point(405, 367);
-            this.btnUpdateTransaction.Name = "btnUpdateTransaction";
-            this.btnUpdateTransaction.Size = new System.Drawing.Size(144, 31);
-            this.btnUpdateTransaction.TabIndex = 21;
-            this.btnUpdateTransaction.Text = "Update Transaction";
-            this.btnUpdateTransaction.UseVisualStyleBackColor = true;
-            // 
-            // btnCreateTransaction
-            // 
-            this.btnCreateTransaction.Font = new System.Drawing.Font("Cambria", 11.25F);
-            this.btnCreateTransaction.Location = new System.Drawing.Point(253, 367);
-            this.btnCreateTransaction.Name = "btnCreateTransaction";
-            this.btnCreateTransaction.Size = new System.Drawing.Size(146, 31);
-            this.btnCreateTransaction.TabIndex = 20;
-            this.btnCreateTransaction.Text = "Create Transaction";
-            this.btnCreateTransaction.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdateEvent
-            // 
-            this.btnUpdateEvent.Font = new System.Drawing.Font("Cambria", 11.25F);
-            this.btnUpdateEvent.Location = new System.Drawing.Point(396, 374);
-            this.btnUpdateEvent.Name = "btnUpdateEvent";
-            this.btnUpdateEvent.Size = new System.Drawing.Size(131, 31);
-            this.btnUpdateEvent.TabIndex = 23;
-            this.btnUpdateEvent.Text = "Update Event";
-            this.btnUpdateEvent.UseVisualStyleBackColor = true;
-            // 
-            // btnCreateEvent
-            // 
-            this.btnCreateEvent.Font = new System.Drawing.Font("Cambria", 11.25F);
-            this.btnCreateEvent.Location = new System.Drawing.Point(259, 374);
-            this.btnCreateEvent.Name = "btnCreateEvent";
-            this.btnCreateEvent.Size = new System.Drawing.Size(131, 31);
-            this.btnCreateEvent.TabIndex = 22;
-            this.btnCreateEvent.Text = "Create Event";
-            this.btnCreateEvent.UseVisualStyleBackColor = true;
-            // 
             // financialToolDataSet
             // 
             this.financialToolDataSet.DataSetName = "FinancialToolDataSet";
@@ -188,8 +138,6 @@ namespace PersonalFinancialTool
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.FormDashboard_Load);
             this.tabControlDashboard.ResumeLayout(false);
-            this.tabPageTransaction.ResumeLayout(false);
-            this.tabPageEvent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.financialToolDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -205,10 +153,6 @@ namespace PersonalFinancialTool
         private System.Windows.Forms.TabPage tabPagePrediction;
         private System.Windows.Forms.TabPage tabPageReport;
         private System.Windows.Forms.TabPage tabPageSettings;
-        private System.Windows.Forms.Button btnUpdateTransaction;
-        private System.Windows.Forms.Button btnCreateTransaction;
-        private System.Windows.Forms.Button btnUpdateEvent;
-        private System.Windows.Forms.Button btnCreateEvent;
         private System.Windows.Forms.BindingSource categoryBindingSource;
         private FinancialToolDataSet financialToolDataSet;
     }

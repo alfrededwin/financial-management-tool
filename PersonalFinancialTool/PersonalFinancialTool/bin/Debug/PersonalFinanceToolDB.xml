@@ -18,4 +18,10 @@
     <CategoryDescription>ww</CategoryDescription>
     <CategoryType>Income</CategoryType>
   </Category>
+  <Category>
+    <CategoryId>4</CategoryId>
+    <CategoryName />
+    <CategoryDescription />
+    <CategoryType />
+  </Category>
 </FinancialToolDataSet>
