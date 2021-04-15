@@ -12,15 +12,20 @@ namespace PersonalFinancialTool
 {
     public partial class FormDashboard : Form
     {
+
         public FormDashboard()
         {
             InitializeComponent();
         }
 
-        private void navCreateCategory(object sender, EventArgs e)
+        private void FormDashboard_Load(object sender, EventArgs e)
         {
-            FormCreateCategory formCreateCategory = new FormCreateCategory();
-            formCreateCategory.Show();
+            FormViewCategory viewCategoryForm = new FormViewCategory();
+            viewCategoryForm.TopLevel = false;
+            viewCategoryForm.FormBorderStyle = FormBorderStyle.None;
+            viewCategoryForm.Dock = DockStyle.Fill;
+            tabPageCategory.Controls.Add(viewCategoryForm);
+            viewCategoryForm.Show();
         }
     }
 }

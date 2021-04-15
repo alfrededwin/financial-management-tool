@@ -29,6 +29,7 @@ namespace PersonalFinancialTool
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControlDashboard = new System.Windows.Forms.TabControl();
             this.tabPageTransaction = new System.Windows.Forms.TabPage();
             this.tabPageCategory = new System.Windows.Forms.TabPage();
@@ -38,14 +39,15 @@ namespace PersonalFinancialTool
             this.tabPageSettings = new System.Windows.Forms.TabPage();
             this.btnUpdateTransaction = new System.Windows.Forms.Button();
             this.btnCreateTransaction = new System.Windows.Forms.Button();
-            this.btnUpdateCategory = new System.Windows.Forms.Button();
-            this.btnCreateCategory = new System.Windows.Forms.Button();
             this.btnUpdateEvent = new System.Windows.Forms.Button();
             this.btnCreateEvent = new System.Windows.Forms.Button();
+            this.financialToolDataSet = new PersonalFinancialTool.FinancialToolDataSet();
+            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlDashboard.SuspendLayout();
             this.tabPageTransaction.SuspendLayout();
-            this.tabPageCategory.SuspendLayout();
             this.tabPageEvent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.financialToolDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlDashboard
@@ -76,8 +78,6 @@ namespace PersonalFinancialTool
             // 
             // tabPageCategory
             // 
-            this.tabPageCategory.Controls.Add(this.btnUpdateCategory);
-            this.tabPageCategory.Controls.Add(this.btnCreateCategory);
             this.tabPageCategory.Location = new System.Drawing.Point(4, 22);
             this.tabPageCategory.Name = "tabPageCategory";
             this.tabPageCategory.Padding = new System.Windows.Forms.Padding(3);
@@ -148,27 +148,6 @@ namespace PersonalFinancialTool
             this.btnCreateTransaction.Text = "Create Transaction";
             this.btnCreateTransaction.UseVisualStyleBackColor = true;
             // 
-            // btnUpdateCategory
-            // 
-            this.btnUpdateCategory.Font = new System.Drawing.Font("Cambria", 11.25F);
-            this.btnUpdateCategory.Location = new System.Drawing.Point(411, 368);
-            this.btnUpdateCategory.Name = "btnUpdateCategory";
-            this.btnUpdateCategory.Size = new System.Drawing.Size(131, 31);
-            this.btnUpdateCategory.TabIndex = 23;
-            this.btnUpdateCategory.Text = "Update Category";
-            this.btnUpdateCategory.UseVisualStyleBackColor = true;
-            // 
-            // btnCreateCategory
-            // 
-            this.btnCreateCategory.Font = new System.Drawing.Font("Cambria", 11.25F);
-            this.btnCreateCategory.Location = new System.Drawing.Point(274, 368);
-            this.btnCreateCategory.Name = "btnCreateCategory";
-            this.btnCreateCategory.Size = new System.Drawing.Size(131, 31);
-            this.btnCreateCategory.TabIndex = 22;
-            this.btnCreateCategory.Text = "Create Category";
-            this.btnCreateCategory.UseVisualStyleBackColor = true;
-            this.btnCreateCategory.Click += new System.EventHandler(this.navCreateCategory);
-            // 
             // btnUpdateEvent
             // 
             this.btnUpdateEvent.Font = new System.Drawing.Font("Cambria", 11.25F);
@@ -189,6 +168,16 @@ namespace PersonalFinancialTool
             this.btnCreateEvent.Text = "Create Event";
             this.btnCreateEvent.UseVisualStyleBackColor = true;
             // 
+            // financialToolDataSet
+            // 
+            this.financialToolDataSet.DataSetName = "FinancialToolDataSet";
+            this.financialToolDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // categoryBindingSource
+            // 
+            this.categoryBindingSource.DataMember = "Category";
+            this.categoryBindingSource.DataSource = this.financialToolDataSet;
+            // 
             // FormDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,10 +186,12 @@ namespace PersonalFinancialTool
             this.Controls.Add(this.tabControlDashboard);
             this.Name = "FormDashboard";
             this.Text = "Dashboard";
+            this.Load += new System.EventHandler(this.FormDashboard_Load);
             this.tabControlDashboard.ResumeLayout(false);
             this.tabPageTransaction.ResumeLayout(false);
-            this.tabPageCategory.ResumeLayout(false);
             this.tabPageEvent.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.financialToolDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -216,9 +207,9 @@ namespace PersonalFinancialTool
         private System.Windows.Forms.TabPage tabPageSettings;
         private System.Windows.Forms.Button btnUpdateTransaction;
         private System.Windows.Forms.Button btnCreateTransaction;
-        private System.Windows.Forms.Button btnUpdateCategory;
-        private System.Windows.Forms.Button btnCreateCategory;
         private System.Windows.Forms.Button btnUpdateEvent;
         private System.Windows.Forms.Button btnCreateEvent;
+        private System.Windows.Forms.BindingSource categoryBindingSource;
+        private FinancialToolDataSet financialToolDataSet;
     }
 }

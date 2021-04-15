@@ -117,6 +117,7 @@ namespace PersonalFinancialTool
             this.btnCreateCategory.TabIndex = 9;
             this.btnCreateCategory.Text = "Create";
             this.btnCreateCategory.UseVisualStyleBackColor = true;
+            this.btnCreateCategory.Click += new System.EventHandler(this.CreateCategory);
             // 
             // btnUpdateCategory
             // 

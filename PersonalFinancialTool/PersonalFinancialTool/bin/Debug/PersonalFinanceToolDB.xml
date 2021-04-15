@@ -1,0 +1,21 @@
+<?xml version="1.0" standalone="yes"?>
+<FinancialToolDataSet xmlns="http://tempuri.org/FinancialToolDataSet.xsd">
+  <Category>
+    <CategoryId>1</CategoryId>
+    <CategoryName>Salary</CategoryName>
+    <CategoryDescription>Month of April</CategoryDescription>
+    <CategoryType>Income</CategoryType>
+  </Category>
+  <Category>
+    <CategoryId>2</CategoryId>
+    <CategoryName>Loan</CategoryName>
+    <CategoryDescription>MacBook</CategoryDescription>
+    <CategoryType>Expense</CategoryType>
+  </Category>
+  <Category>
+    <CategoryId>3</CategoryId>
+    <CategoryName>er</CategoryName>
+    <CategoryDescription>ww</CategoryDescription>
+    <CategoryType>Income</CategoryType>
+  </Category>
+</FinancialToolDataSet>
