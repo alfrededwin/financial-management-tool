@@ -20,3 +20,6 @@ C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinanci
 C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormSettings.resources
 C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormViewEvent.resources
 C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormViewTransaction.resources
+C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\EntityFramework.dll
+C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\EntityFramework.xml
+C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.csproj.CopyComplete

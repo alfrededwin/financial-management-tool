@@ -33,8 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -48,6 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category.cs">
+      <DependentUpon>PersonalFinancialToolDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryDetails.cs" />
+    <Compile Include="CategoryModel.cs" />
     <Compile Include="FinancialToolDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -131,6 +141,16 @@
     <Compile Include="FormViewTransaction.Designer.cs">
       <DependentUpon>FormViewTransaction.cs</DependentUpon>
     </Compile>
+    <Compile Include="PersonalFinancialToolDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PersonalFinancialToolDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalFinancialToolDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PersonalFinancialToolDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="PersonalFinancialToolDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -203,6 +223,7 @@
     <None Include="FinancialToolDataSet.xss">
       <DependentUpon>FinancialToolDataSet.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <EntityDeploy Include="PersonalFinancialToolDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PersonalFinancialToolDB.Designer.cs</LastGenOutput>
@@ -222,6 +243,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PersonalFinancialToolDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PersonalFinancialToolDB.Context.cs</LastGenOutput>
+      <DependentUpon>PersonalFinancialToolDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="PersonalFinancialToolDB.edmx.sql" />
+    <Content Include="PersonalFinancialToolDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PersonalFinancialToolDB.cs</LastGenOutput>
+      <DependentUpon>PersonalFinancialToolDB.edmx</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

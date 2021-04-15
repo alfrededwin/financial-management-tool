@@ -24,4 +24,22 @@
     <CategoryDescription />
     <CategoryType />
   </Category>
+  <Category>
+    <CategoryId>5</CategoryId>
+    <CategoryName>Med</CategoryName>
+    <CategoryDescription>Dent</CategoryDescription>
+    <CategoryType>Income</CategoryType>
+  </Category>
+  <Category>
+    <CategoryId>6</CategoryId>
+    <CategoryName>rt</CategoryName>
+    <CategoryDescription>rt</CategoryDescription>
+    <CategoryType>Expense</CategoryType>
+  </Category>
+  <Category>
+    <CategoryId>7</CategoryId>
+    <CategoryName>GG</CategoryName>
+    <CategoryDescription>GG</CategoryDescription>
+    <CategoryType>Income</CategoryType>
+  </Category>
 </FinancialToolDataSet>

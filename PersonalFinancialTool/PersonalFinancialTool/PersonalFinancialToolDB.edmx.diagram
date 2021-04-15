@@ -4,7 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5be9607f99904adeb852fc1ed4c3ed79" Name="Diagram1" />
+      <Diagram DiagramId="11e133a4da8541bb8416447822a8dcd8" Name="Diagram1" >
+        <EntityTypeShape EntityType="PersonalFinancialToolDB.Category" Width="2" PointX="1.875" PointY="0.875" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
