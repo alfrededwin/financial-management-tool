@@ -30,12 +30,15 @@ namespace PersonalFinancialTool
         private void InitializeComponent()
         {
             this.btnEditProfile = new System.Windows.Forms.Button();
+            this.profilePicture = new System.Windows.Forms.PictureBox();
+            this.lblProfileName = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEditProfile
             // 
             this.btnEditProfile.Font = new System.Drawing.Font("Cambria", 11.25F);
-            this.btnEditProfile.Location = new System.Drawing.Point(329, 141);
+            this.btnEditProfile.Location = new System.Drawing.Point(329, 180);
             this.btnEditProfile.Name = "btnEditProfile";
             this.btnEditProfile.Size = new System.Drawing.Size(131, 31);
             this.btnEditProfile.TabIndex = 25;
@@ -43,20 +46,44 @@ namespace PersonalFinancialTool
             this.btnEditProfile.UseVisualStyleBackColor = true;
             this.btnEditProfile.Click += new System.EventHandler(this.navUpdateUserInfo);
             // 
+            // profilePicture
+            // 
+            this.profilePicture.Location = new System.Drawing.Point(329, 54);
+            this.profilePicture.Name = "profilePicture";
+            this.profilePicture.Size = new System.Drawing.Size(131, 81);
+            this.profilePicture.TabIndex = 26;
+            this.profilePicture.TabStop = false;
+            // 
+            // lblProfileName
+            // 
+            this.lblProfileName.AutoSize = true;
+            this.lblProfileName.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfileName.Location = new System.Drawing.Point(370, 155);
+            this.lblProfileName.Name = "lblProfileName";
+            this.lblProfileName.Size = new System.Drawing.Size(47, 22);
+            this.lblProfileName.TabIndex = 27;
+            this.lblProfileName.Text = "User";
+            // 
             // FormSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblProfileName);
+            this.Controls.Add(this.profilePicture);
             this.Controls.Add(this.btnEditProfile);
             this.Name = "FormSettings";
             this.Text = "Settings";
+            ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button btnEditProfile;
+        private System.Windows.Forms.PictureBox profilePicture;
+        private System.Windows.Forms.Label lblProfileName;
     }
 }

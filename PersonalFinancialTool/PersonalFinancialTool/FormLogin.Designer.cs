@@ -29,6 +29,7 @@ namespace PersonalFinancialTool
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.lblLogin = new System.Windows.Forms.Label();
             this.lblLoginSubTitle = new System.Windows.Forms.Label();
             this.lblNotAUser = new System.Windows.Forms.Label();
@@ -36,6 +37,8 @@ namespace PersonalFinancialTool
             this.btnLogin = new System.Windows.Forms.Button();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblLogin
@@ -51,20 +54,20 @@ namespace PersonalFinancialTool
             // lblLoginSubTitle
             // 
             this.lblLoginSubTitle.AutoSize = true;
-            this.lblLoginSubTitle.Font = new System.Drawing.Font("Cambria", 11.25F);
+            this.lblLoginSubTitle.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoginSubTitle.Location = new System.Drawing.Point(260, 87);
             this.lblLoginSubTitle.Name = "lblLoginSubTitle";
-            this.lblLoginSubTitle.Size = new System.Drawing.Size(193, 17);
+            this.lblLoginSubTitle.Size = new System.Drawing.Size(169, 15);
             this.lblLoginSubTitle.TabIndex = 1;
             this.lblLoginSubTitle.Text = "Enter Credentials to continue.";
             // 
             // lblNotAUser
             // 
             this.lblNotAUser.AutoSize = true;
-            this.lblNotAUser.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotAUser.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNotAUser.Location = new System.Drawing.Point(260, 259);
             this.lblNotAUser.Name = "lblNotAUser";
-            this.lblNotAUser.Size = new System.Drawing.Size(90, 17);
+            this.lblNotAUser.Size = new System.Drawing.Size(74, 15);
             this.lblNotAUser.TabIndex = 2;
             this.lblNotAUser.Text = "Not A User ?";
             // 
@@ -73,7 +76,7 @@ namespace PersonalFinancialTool
             this.lblRegister.AutoSize = true;
             this.lblRegister.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegister.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblRegister.Location = new System.Drawing.Point(429, 259);
+            this.lblRegister.Location = new System.Drawing.Point(422, 257);
             this.lblRegister.Name = "lblRegister";
             this.lblRegister.Size = new System.Drawing.Size(61, 17);
             this.lblRegister.TabIndex = 3;
@@ -105,11 +108,24 @@ namespace PersonalFinancialTool
             this.textBoxPassword.Size = new System.Drawing.Size(223, 20);
             this.textBoxPassword.TabIndex = 6;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            this.pictureBox1.Image = global::PersonalFinancialTool.Properties.Resources.login;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 26);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(227, 216);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(533, 309);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxUsername);
             this.Controls.Add(this.btnLogin);
@@ -119,6 +135,7 @@ namespace PersonalFinancialTool
             this.Controls.Add(this.lblLogin);
             this.Name = "FormLogin";
             this.Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,5 +150,6 @@ namespace PersonalFinancialTool
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.TextBox textBoxUsername;
         private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

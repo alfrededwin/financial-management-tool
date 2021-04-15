@@ -16,5 +16,11 @@ namespace PersonalFinancialTool
         {
             InitializeComponent();
         }
+
+        private void navCreateTransaction(object sender, EventArgs e)
+        {
+            FormCreateTransaction formCreateTransaction = new FormCreateTransaction();
+            formCreateTransaction.Show();
+        }
     }
 }

@@ -216,6 +216,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="FinancialToolDataSet.xsc">
       <DependentUpon>FinancialToolDataSet.xsd</DependentUpon>
@@ -264,6 +265,7 @@
       <LastGenOutput>PersonalFinancialToolDB.cs</LastGenOutput>
       <DependentUpon>PersonalFinancialToolDB.edmx</DependentUpon>
     </Content>
+    <None Include="Resources\login.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

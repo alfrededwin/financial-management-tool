@@ -42,6 +42,30 @@
     <CategoryDescription>GG</CategoryDescription>
     <CategoryType>Income</CategoryType>
   </Category>
+  <Category>
+    <CategoryId>8</CategoryId>
+    <CategoryName />
+    <CategoryDescription />
+    <CategoryType />
+  </Category>
+  <Category>
+    <CategoryId>9</CategoryId>
+    <CategoryName />
+    <CategoryDescription />
+    <CategoryType />
+  </Category>
+  <Category>
+    <CategoryId>10</CategoryId>
+    <CategoryName>we</CategoryName>
+    <CategoryDescription>ee</CategoryDescription>
+    <CategoryType>Income</CategoryType>
+  </Category>
+  <Category>
+    <CategoryId>11</CategoryId>
+    <CategoryName>rr</CategoryName>
+    <CategoryDescription>uu</CategoryDescription>
+    <CategoryType>Expense</CategoryType>
+  </Category>
   <User>
     <UserId>1</UserId>
     <FullName>Edwin</FullName>

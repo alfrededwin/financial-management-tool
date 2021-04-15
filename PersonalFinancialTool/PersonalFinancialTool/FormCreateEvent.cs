@@ -12,6 +12,9 @@ namespace PersonalFinancialTool
 {
     public partial class FormCreateEvent : Form
     {
+
+        public String sEventLabel = "Event";
+
         public FormCreateEvent()
         {
             InitializeComponent();

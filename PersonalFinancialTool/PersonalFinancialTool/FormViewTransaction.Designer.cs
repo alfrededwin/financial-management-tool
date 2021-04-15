@@ -42,6 +42,7 @@ namespace PersonalFinancialTool
             this.buttonCreateTransaction.TabIndex = 30;
             this.buttonCreateTransaction.Text = "Create Transaction";
             this.buttonCreateTransaction.UseVisualStyleBackColor = true;
+            this.buttonCreateTransaction.Click += new System.EventHandler(this.navCreateTransaction);
             // 
             // buttonUpdateTransaction
             // 

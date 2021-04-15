@@ -12,6 +12,7 @@ namespace PersonalFinancialTool
 {
     public partial class FormCreateTransaction : Form
     {
+        public String sTransactionLabel = "Transaction";
         public FormCreateTransaction()
         {
             InitializeComponent();
