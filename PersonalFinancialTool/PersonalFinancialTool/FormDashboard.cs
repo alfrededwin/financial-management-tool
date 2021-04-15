@@ -16,5 +16,11 @@ namespace PersonalFinancialTool
         {
             InitializeComponent();
         }
+
+        private void navCreateCategory(object sender, EventArgs e)
+        {
+            FormCreateCategory formCreateCategory = new FormCreateCategory();
+            formCreateCategory.Show();
+        }
     }
 }
