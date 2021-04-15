@@ -26,7 +26,9 @@ namespace PersonalFinancialTool
 
         private void Login(object sender, EventArgs e)
         {
-
+            FormDashboard formDashboard = new FormDashboard();
+            formDashboard.Show();
+            this.Hide();
         }
     }
 }
