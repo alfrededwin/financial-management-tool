@@ -52,6 +52,7 @@ namespace PersonalFinancialTool
             this.btnCreateEvent.TabIndex = 26;
             this.btnCreateEvent.Text = "Create Event";
             this.btnCreateEvent.UseVisualStyleBackColor = true;
+            this.btnCreateEvent.Click += new System.EventHandler(this.navCreateEvent);
             // 
             // FormViewEvent
             // 

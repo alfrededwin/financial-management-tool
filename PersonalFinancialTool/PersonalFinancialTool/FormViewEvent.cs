@@ -16,5 +16,11 @@ namespace PersonalFinancialTool
         {
             InitializeComponent();
         }
+
+        private void navCreateEvent(object sender, EventArgs e)
+        {
+            FormCreateEvent formCreateEvent = new FormCreateEvent();
+            formCreateEvent.Show();
+        }
     }
 }

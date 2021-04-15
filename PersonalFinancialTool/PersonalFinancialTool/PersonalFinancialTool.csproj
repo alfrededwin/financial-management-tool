@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -129,6 +131,11 @@
     <Compile Include="FormViewTransaction.Designer.cs">
       <DependentUpon>FormViewTransaction.cs</DependentUpon>
     </Compile>
+    <Compile Include="PersonalFinancialToolDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PersonalFinancialToolDB.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FormUpdateUserInformation.cs">
@@ -195,6 +202,13 @@
     </None>
     <None Include="FinancialToolDataSet.xss">
       <DependentUpon>FinancialToolDataSet.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="PersonalFinancialToolDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PersonalFinancialToolDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="PersonalFinancialToolDB.edmx.diagram">
+      <DependentUpon>PersonalFinancialToolDB.edmx</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
