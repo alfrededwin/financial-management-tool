@@ -1,0 +1,12 @@
+C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\PersonalFinancialTool.exe.config
+C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\PersonalFinancialTool.exe
+C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\PersonalFinancialTool.pdb
+C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.csprojAssemblyReference.cache
+C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormLogin.resources
+C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.Properties.Resources.resources
+C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.csproj.GenerateResource.cache
+C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.csproj.CoreCompileInputs.cache
+C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.exe
+C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.pdb
+C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormRegister.resources
+C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormUpdateUserInformation.resources
