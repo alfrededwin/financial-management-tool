@@ -60,8 +60,8 @@ namespace PersonalFinancialTool
             // Might a Web Service or Might call a DB over the internet.
             // Forwarding
 
-            //UserModel userModel = new UserModel();
-            //userModel.SaveUserInformation(this.userDetails);
+            UserModel userModel = new UserModel();
+            userModel.SaveUserInformation(this.userDetails);
 
             this.Close();
 

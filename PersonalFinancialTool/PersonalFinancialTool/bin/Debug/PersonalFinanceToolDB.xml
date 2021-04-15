@@ -56,4 +56,11 @@
     <Email>T@HJ.LK</Email>
     <Password>123</Password>
   </User>
+  <User>
+    <UserId>3</UserId>
+    <FullName>ll</FullName>
+    <Username>ll</Username>
+    <Email>ll@t.b</Email>
+    <Password>123</Password>
+  </User>
 </FinancialToolDataSet>
