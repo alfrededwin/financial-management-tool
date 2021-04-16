@@ -23,3 +23,30 @@ C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinanci
 C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\EntityFramework.dll
 C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\EntityFramework.xml
 C:\Users\Alfred Edwin\Desktop\EAD_CW02\financial-management-tool\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.csproj.CopyComplete
+C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\PersonalFinancialTool.exe.config
+C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\PersonalFinancialTool.exe
+C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\PersonalFinancialTool.pdb
+C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\EntityFramework.dll
+C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\EntityFramework.xml
+C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormCreateCategory.resources
+C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormCreateEvent.resources
+C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormCreateTransaction.resources
+C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormDashboard.resources
+C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormLogin.resources
+C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormPrediction.resources
+C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormRegister.resources
+C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormReport.resources
+C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormSettings.resources
+C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormUpdateUserInformation.resources
+C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormViewCategory.resources
+C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormViewEvent.resources
+C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormViewTransaction.resources
+C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.Properties.Resources.resources
+C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.csproj.GenerateResource.cache
+C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.csproj.CoreCompileInputs.cache
+C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.csproj.CopyComplete
+C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.exe
+C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.pdb
+C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.csprojAssemblyReference.cache
+C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\FinanceDB.mdf
+C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\FinanceDB_log.ldf

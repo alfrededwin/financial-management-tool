@@ -45,13 +45,13 @@ namespace PersonalFinancialTool
             sPassword = this.userDetails.password;
 
 
-            FinancialToolDataSet.UserRow userRow = this.AppDataSet.User.NewUserRow();
+            FinancialToolDataSet.UsersRow userRow = this.AppDataSet.Users.NewUsersRow();
             userRow.FullName = sFullName;
             userRow.Username = sUsername;
             userRow.Email = sEmail;
             userRow.Password = this.sPassword;
 
-            this.AppDataSet.User.AddUserRow(userRow);
+            this.AppDataSet.Users.AddUsersRow(userRow);
             this.AppDataSet.AcceptChanges();
 
             this.AppDataSet.WriteXml("PersonalFinanceToolDB.xml");

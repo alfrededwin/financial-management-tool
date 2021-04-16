@@ -128,6 +128,7 @@ namespace PersonalFinancialTool
             this.btnUpdateCategory.TabIndex = 10;
             this.btnUpdateCategory.Text = "Update";
             this.btnUpdateCategory.UseVisualStyleBackColor = true;
+            this.btnUpdateCategory.Click += new System.EventHandler(this.UpdateCategory);
             // 
             // FormCreateCategory
             // 
@@ -146,6 +147,7 @@ namespace PersonalFinancialTool
             this.MaximizeBox = false;
             this.Name = "FormCreateCategory";
             this.Text = "Create Category";
+            this.Load += new System.EventHandler(this.FormCreateCategory_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,10 +159,10 @@ namespace PersonalFinancialTool
         private System.Windows.Forms.Label lblCategoryName;
         private System.Windows.Forms.Label lblCategoryDescription;
         private System.Windows.Forms.Label labelCatType;
-        private System.Windows.Forms.TextBox textBoxCategoryName;
-        private System.Windows.Forms.TextBox textBoxCategoryDesc;
-        private System.Windows.Forms.ComboBox comboBoxCategoryType;
         private System.Windows.Forms.Button btnCreateCategory;
         private System.Windows.Forms.Button btnUpdateCategory;
+        public System.Windows.Forms.TextBox textBoxCategoryName;
+        public System.Windows.Forms.TextBox textBoxCategoryDesc;
+        public System.Windows.Forms.ComboBox comboBoxCategoryType;
     }
 }

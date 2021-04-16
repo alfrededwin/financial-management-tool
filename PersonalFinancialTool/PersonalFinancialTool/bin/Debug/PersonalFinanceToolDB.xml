@@ -1,90 +1,83 @@
 <?xml version="1.0" standalone="yes"?>
 <FinancialToolDataSet xmlns="http://tempuri.org/FinancialToolDataSet.xsd">
-  <Category>
+  <Categories>
     <CategoryId>1</CategoryId>
-    <CategoryName>Salary</CategoryName>
-    <CategoryDescription>Month of April</CategoryDescription>
+    <CategoryName>QQ</CategoryName>
+    <CategoryDescription>ER</CategoryDescription>
     <CategoryType>Income</CategoryType>
-  </Category>
-  <Category>
+  </Categories>
+  <Categories>
     <CategoryId>2</CategoryId>
     <CategoryName>Loan</CategoryName>
-    <CategoryDescription>MacBook</CategoryDescription>
+    <CategoryDescription>May Month</CategoryDescription>
     <CategoryType>Expense</CategoryType>
-  </Category>
-  <Category>
+  </Categories>
+  <Categories>
     <CategoryId>3</CategoryId>
-    <CategoryName>er</CategoryName>
-    <CategoryDescription>ww</CategoryDescription>
-    <CategoryType>Income</CategoryType>
-  </Category>
-  <Category>
+    <CategoryName>ww</CategoryName>
+    <CategoryDescription>fghe</CategoryDescription>
+    <CategoryType>Expense</CategoryType>
+  </Categories>
+  <Categories>
     <CategoryId>4</CategoryId>
-    <CategoryName />
-    <CategoryDescription />
-    <CategoryType />
-  </Category>
-  <Category>
-    <CategoryId>5</CategoryId>
-    <CategoryName>Med</CategoryName>
-    <CategoryDescription>Dent</CategoryDescription>
-    <CategoryType>Income</CategoryType>
-  </Category>
-  <Category>
-    <CategoryId>6</CategoryId>
     <CategoryName>rt</CategoryName>
-    <CategoryDescription>rt</CategoryDescription>
-    <CategoryType>Expense</CategoryType>
-  </Category>
-  <Category>
+    <CategoryDescription>jjj</CategoryDescription>
+    <CategoryType>Income</CategoryType>
+  </Categories>
+  <Categories>
+    <CategoryId>5</CategoryId>
+    <CategoryName>sg</CategoryName>
+    <CategoryDescription>gd</CategoryDescription>
+    <CategoryType>Income</CategoryType>
+  </Categories>
+  <Categories>
+    <CategoryId>6</CategoryId>
+    <CategoryName>rts</CategoryName>
+    <CategoryDescription>dh</CategoryDescription>
+    <CategoryType>Income</CategoryType>
+  </Categories>
+  <Categories>
     <CategoryId>7</CategoryId>
-    <CategoryName>GG</CategoryName>
-    <CategoryDescription>GG</CategoryDescription>
+    <CategoryName>test</CategoryName>
+    <CategoryDescription>er</CategoryDescription>
     <CategoryType>Income</CategoryType>
-  </Category>
-  <Category>
+  </Categories>
+  <Categories>
     <CategoryId>8</CategoryId>
-    <CategoryName />
-    <CategoryDescription />
-    <CategoryType />
-  </Category>
-  <Category>
-    <CategoryId>9</CategoryId>
-    <CategoryName />
-    <CategoryDescription />
-    <CategoryType />
-  </Category>
-  <Category>
-    <CategoryId>10</CategoryId>
-    <CategoryName>we</CategoryName>
-    <CategoryDescription>ee</CategoryDescription>
+    <CategoryName>yu</CategoryName>
+    <CategoryDescription>io</CategoryDescription>
     <CategoryType>Income</CategoryType>
-  </Category>
-  <Category>
-    <CategoryId>11</CategoryId>
-    <CategoryName>rr</CategoryName>
-    <CategoryDescription>uu</CategoryDescription>
-    <CategoryType>Expense</CategoryType>
-  </Category>
-  <User>
-    <UserId>1</UserId>
-    <FullName>Edwin</FullName>
+  </Categories>
+  <Categories>
+    <CategoryId>9</CategoryId>
+    <CategoryName>UU</CategoryName>
+    <CategoryDescription>JKJ</CategoryDescription>
+    <CategoryType>Income</CategoryType>
+  </Categories>
+  <Events>
+    <EventId>1</EventId>
+    <EventName>EWEW</EventName>
+    <EventDate>Friday, April 16, 2021</EventDate>
+    <EventStatus>Recurring</EventStatus>
+  </Events>
+  <Events>
+    <EventId>2</EventId>
+    <EventName>qw</EventName>
+    <EventDate>Friday, April 16, 2021</EventDate>
+    <EventStatus>Recurring</EventStatus>
+  </Events>
+  <Users>
+    <FullName>Alfred Edwin</FullName>
     <Username>alfrededwin</Username>
-    <Email>alfred.edwin@hotmail.com</Email>
+    <Email>alfred.edwin@gmail.com</Email>
     <Password>123</Password>
-  </User>
-  <User>
+    <UserId>1</UserId>
+  </Users>
+  <Users>
+    <FullName>Edwin</FullName>
+    <Username>we</Username>
+    <Email>ed@12</Email>
+    <Password>123</Password>
     <UserId>2</UserId>
-    <FullName>RT</FullName>
-    <Username>RT</Username>
-    <Email>T@HJ.LK</Email>
-    <Password>123</Password>
-  </User>
-  <User>
-    <UserId>3</UserId>
-    <FullName>ll</FullName>
-    <Username>ll</Username>
-    <Email>ll@t.b</Email>
-    <Password>123</Password>
-  </User>
+  </Users>
 </FinancialToolDataSet>

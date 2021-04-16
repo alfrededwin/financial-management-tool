@@ -96,17 +96,20 @@ namespace PersonalFinancialTool
             // 
             // textBoxUsername
             // 
+            this.textBoxUsername.Font = new System.Drawing.Font("Cambria", 11.25F);
             this.textBoxUsername.Location = new System.Drawing.Point(260, 124);
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(223, 20);
+            this.textBoxUsername.Size = new System.Drawing.Size(223, 25);
             this.textBoxUsername.TabIndex = 5;
             // 
             // textBoxPassword
             // 
+            this.textBoxPassword.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPassword.Location = new System.Drawing.Point(260, 168);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(223, 20);
+            this.textBoxPassword.Size = new System.Drawing.Size(223, 23);
             this.textBoxPassword.TabIndex = 6;
+            this.textBoxPassword.UseSystemPasswordChar = true;
             // 
             // pictureBox1
             // 

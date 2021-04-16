@@ -26,9 +26,9 @@ namespace PersonalFinancialTool
 
 
             // add to database
-            PersonalFinancialToolDBContainer1 db = new PersonalFinancialToolDBContainer1();
+            FinanceDBContainer db = new FinanceDBContainer();
             db.Categories.Add(category);
-            //db.SaveChanges();
+            db.SaveChanges();
         }
 
         // Apply Biz Rules

@@ -31,9 +31,7 @@ namespace PersonalFinancialTool
         {
             this.btnUpdateEvent = new System.Windows.Forms.Button();
             this.btnCreateEvent = new System.Windows.Forms.Button();
-            this.comboBoxEventType = new System.Windows.Forms.ComboBox();
             this.textBoxEventName = new System.Windows.Forms.TextBox();
-            this.labelEventType = new System.Windows.Forms.Label();
             this.lblEventDate = new System.Windows.Forms.Label();
             this.lblEventName = new System.Windows.Forms.Label();
             this.lblLoginSubTitle = new System.Windows.Forms.Label();
@@ -46,7 +44,7 @@ namespace PersonalFinancialTool
             // btnUpdateEvent
             // 
             this.btnUpdateEvent.Font = new System.Drawing.Font("Cambria", 11.25F);
-            this.btnUpdateEvent.Location = new System.Drawing.Point(184, 230);
+            this.btnUpdateEvent.Location = new System.Drawing.Point(184, 188);
             this.btnUpdateEvent.Name = "btnUpdateEvent";
             this.btnUpdateEvent.Size = new System.Drawing.Size(131, 31);
             this.btnUpdateEvent.TabIndex = 19;
@@ -56,24 +54,13 @@ namespace PersonalFinancialTool
             // btnCreateEvent
             // 
             this.btnCreateEvent.Font = new System.Drawing.Font("Cambria", 11.25F);
-            this.btnCreateEvent.Location = new System.Drawing.Point(47, 230);
+            this.btnCreateEvent.Location = new System.Drawing.Point(47, 188);
             this.btnCreateEvent.Name = "btnCreateEvent";
             this.btnCreateEvent.Size = new System.Drawing.Size(131, 31);
             this.btnCreateEvent.TabIndex = 18;
             this.btnCreateEvent.Text = "Create";
             this.btnCreateEvent.UseVisualStyleBackColor = true;
-            // 
-            // comboBoxEventType
-            // 
-            this.comboBoxEventType.Font = new System.Drawing.Font("Cambria", 11.25F);
-            this.comboBoxEventType.FormattingEnabled = true;
-            this.comboBoxEventType.Items.AddRange(new object[] {
-            "Income",
-            "Expense"});
-            this.comboBoxEventType.Location = new System.Drawing.Point(157, 182);
-            this.comboBoxEventType.Name = "comboBoxEventType";
-            this.comboBoxEventType.Size = new System.Drawing.Size(208, 25);
-            this.comboBoxEventType.TabIndex = 17;
+            this.btnCreateEvent.Click += new System.EventHandler(this.CreateEvent);
             // 
             // textBoxEventName
             // 
@@ -82,16 +69,6 @@ namespace PersonalFinancialTool
             this.textBoxEventName.Name = "textBoxEventName";
             this.textBoxEventName.Size = new System.Drawing.Size(208, 25);
             this.textBoxEventName.TabIndex = 15;
-            // 
-            // labelEventType
-            // 
-            this.labelEventType.AutoSize = true;
-            this.labelEventType.Font = new System.Drawing.Font("Cambria", 11.25F);
-            this.labelEventType.Location = new System.Drawing.Point(44, 185);
-            this.labelEventType.Name = "labelEventType";
-            this.labelEventType.Size = new System.Drawing.Size(80, 17);
-            this.labelEventType.TabIndex = 14;
-            this.labelEventType.Text = "Event Type";
             // 
             // lblEventDate
             // 
@@ -176,9 +153,7 @@ namespace PersonalFinancialTool
             this.Controls.Add(this.dateTimeEventDate);
             this.Controls.Add(this.btnUpdateEvent);
             this.Controls.Add(this.btnCreateEvent);
-            this.Controls.Add(this.comboBoxEventType);
             this.Controls.Add(this.textBoxEventName);
-            this.Controls.Add(this.labelEventType);
             this.Controls.Add(this.lblEventDate);
             this.Controls.Add(this.lblEventName);
             this.Controls.Add(this.lblLoginSubTitle);
@@ -194,9 +169,7 @@ namespace PersonalFinancialTool
 
         private System.Windows.Forms.Button btnUpdateEvent;
         private System.Windows.Forms.Button btnCreateEvent;
-        private System.Windows.Forms.ComboBox comboBoxEventType;
         private System.Windows.Forms.TextBox textBoxEventName;
-        private System.Windows.Forms.Label labelEventType;
         private System.Windows.Forms.Label lblEventDate;
         private System.Windows.Forms.Label lblEventName;
         private System.Windows.Forms.Label lblLoginSubTitle;

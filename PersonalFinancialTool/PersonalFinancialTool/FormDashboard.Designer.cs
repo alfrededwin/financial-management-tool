@@ -138,8 +138,6 @@ namespace PersonalFinancialTool
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.FormDashboard_Load);
             this.tabControlDashboard.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.financialToolDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

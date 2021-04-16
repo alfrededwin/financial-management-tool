@@ -22,15 +22,8 @@ namespace PersonalFinancialTool
             user.Email = info.email;
             user.Password = info.password;
 
-            //Category category = new Category();
-
-            //category.CategoryName = info.categoryName;
-            //category.CategoryDescription = info.categoryDescription;
-            //category.CategoryType = info.categoryType;
-
-
             //// add to database
-            PersonalFinancialToolDBContainer1 db = new PersonalFinancialToolDBContainer1();
+            FinanceDBContainer db = new FinanceDBContainer();
             db.Users.Add(user);
             db.SaveChanges();
         }

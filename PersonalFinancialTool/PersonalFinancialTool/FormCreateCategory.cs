@@ -15,11 +15,17 @@ namespace PersonalFinancialTool
     {
 
         FinancialToolDataSet AppDataSet = new FinancialToolDataSet();
+        public CategoryDetails categoryDetails { get; set; }
+        public FinancialToolDataSet CategoryDataSet { get; set; }
 
         public String sCategoryLabel = "Category";
         public String sCategoryName = null;
         public String sCategoryDesc = null;
         public String sCategoryType = null;
+
+        public String sCategoryName1 = null;
+        public String sCategoryDesc2 = null;
+        public String sCategoryType3 = null;
 
         public FormCreateCategory()
         {
@@ -29,9 +35,9 @@ namespace PersonalFinancialTool
             {
                 this.AppDataSet.ReadXml("PersonalFinanceToolDB.xml");
             }
-        }
 
-        public CategoryDetails categoryDetails;
+           
+        }
 
         private void CreateCategory(object sender, EventArgs e)
         {
@@ -49,13 +55,14 @@ namespace PersonalFinancialTool
                 MessageBox.Show(Properties.Resources.COMMON_MISSING_DATA);
             }
             else {
-                FinancialToolDataSet.CategoryRow categoryRow = this.AppDataSet.Category.NewCategoryRow();
+                FinancialToolDataSet.CategoriesRow categoryRow = this.AppDataSet.Categories.NewCategoriesRow();
                 categoryRow.CategoryName = sCategoryName;
                 categoryRow.CategoryDescription = sCategoryDesc;
                 categoryRow.CategoryType = sCategoryType;
 
-                this.AppDataSet.Category.AddCategoryRow(categoryRow);
+                this.AppDataSet.Categories.AddCategoriesRow(categoryRow);
                 this.AppDataSet.AcceptChanges();
+               
 
                 this.AppDataSet.WriteXml("PersonalFinanceToolDB.xml");
 
@@ -68,9 +75,28 @@ namespace PersonalFinancialTool
                 MessageBox.Show(String.Format(Properties.Resources.SUCCESS_MESSAGE, this.sCategoryLabel));
 
                 this.Close();
+
+       
             }
 
             
+        }
+
+        private void UpdateCategory(object sender, EventArgs e)
+        {
+            textBoxCategoryName.Text = categoryDetails.categoryName;
+            textBoxCategoryDesc.Text = categoryDetails.categoryDescription;
+            comboBoxCategoryType.Text = categoryDetails.categoryType;
+        }
+
+        private void FormCreateCategory_Load(object sender, EventArgs e)
+        {
+            if (categoryDetails != null)
+            {
+                textBoxCategoryName.Text = categoryDetails.categoryName;
+                textBoxCategoryDesc.Text = categoryDetails.categoryDescription;
+                comboBoxCategoryType.Text = categoryDetails.categoryType;
+            }
         }
     }
 }

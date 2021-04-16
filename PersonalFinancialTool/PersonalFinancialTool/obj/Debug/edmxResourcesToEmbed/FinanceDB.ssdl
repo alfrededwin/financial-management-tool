@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FinanceDB.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="FinanceDBStoreContainer">
+    <EntitySet Name="Categories" EntityType="FinanceDB.Store.Categories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Events" EntityType="FinanceDB.Store.Events" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Transactions" EntityType="FinanceDB.Store.Transactions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="FinanceDB.Store.Users" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="TransactionEvent" Association="FinanceDB.Store.TransactionEvent">
+      <End Role="Transaction" EntitySet="Transactions" />
+      <End Role="Event" EntitySet="Events" />
+    </AssociationSet>
+    <AssociationSet Name="CategoryTransaction" Association="FinanceDB.Store.CategoryTransaction">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Transaction" EntitySet="Transactions" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CategoryDescription" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CategoryType" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Events">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Property1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EventDate" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EventStatus" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Transaction_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Transactions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Income" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Expense" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Date" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Amount" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EventType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Category_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="TransactionEvent">
+    <End Role="Transaction" Type="FinanceDB.Store.Transactions" Multiplicity="0..1" />
+    <End Role="Event" Type="FinanceDB.Store.Events" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Transaction">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="Transaction_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CategoryTransaction">
+    <End Role="Category" Type="FinanceDB.Store.Categories" Multiplicity="0..1" />
+    <End Role="Transaction" Type="FinanceDB.Store.Transactions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Transaction">
+        <PropertyRef Name="Category_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
