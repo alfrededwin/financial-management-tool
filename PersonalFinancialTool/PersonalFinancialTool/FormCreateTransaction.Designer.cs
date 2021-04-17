@@ -61,6 +61,7 @@ namespace PersonalFinancialTool
             // dateTimeTransDate
             // 
             this.dateTimeTransDate.Font = new System.Drawing.Font("Cambria", 11.25F);
+            this.dateTimeTransDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimeTransDate.Location = new System.Drawing.Point(170, 215);
             this.dateTimeTransDate.Name = "dateTimeTransDate";
             this.dateTimeTransDate.Size = new System.Drawing.Size(208, 25);
@@ -151,9 +152,6 @@ namespace PersonalFinancialTool
             // 
             this.comboBoxTransCategoryType.Font = new System.Drawing.Font("Cambria", 11.25F);
             this.comboBoxTransCategoryType.FormattingEnabled = true;
-            this.comboBoxTransCategoryType.Items.AddRange(new object[] {
-            "Income",
-            "Expenses"});
             this.comboBoxTransCategoryType.Location = new System.Drawing.Point(170, 70);
             this.comboBoxTransCategoryType.Name = "comboBoxTransCategoryType";
             this.comboBoxTransCategoryType.Size = new System.Drawing.Size(208, 25);

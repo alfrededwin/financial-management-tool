@@ -29,31 +29,38 @@ namespace PersonalFinancialTool
 
         private void CreateEvent(object sender, EventArgs e)
         {
-            this.eventDetails = new EventDetails();
-            this.eventDetails.eventName = this.textBoxEventName.Text;
-            this.eventDetails.eventDate = this.dateTimeEventDate.Text;
-            this.eventDetails.eventStatus = this.rdoRecurring.Text;
+            try
+            {
+                this.eventDetails = new EventDetails();
+                this.eventDetails.eventName = this.textBoxEventName.Text;
+                this.eventDetails.eventDate = this.dateTimeEventDate.Text;
+                this.eventDetails.eventStatus = this.rdoRecurring.Text;
 
-            FinancialToolDataSet.EventsRow eventsRow = this.AppDataSet.Events.NewEventsRow();
-            eventsRow.EventName = this.eventDetails.eventName;
-            eventsRow.EventDate = this.eventDetails.eventDate;
-            eventsRow.EventStatus = this.eventDetails.eventStatus;
-          
+                FinancialToolDataSet.EventsRow eventsRow = this.AppDataSet.Events.NewEventsRow();
+                eventsRow.EventName = this.eventDetails.eventName;
+                eventsRow.EventDate = this.eventDetails.eventDate;
+                eventsRow.EventStatus = this.eventDetails.eventStatus;
 
-            this.AppDataSet.Events.AddEventsRow(eventsRow);
-            this.AppDataSet.AcceptChanges();
 
-            this.AppDataSet.WriteXml("PersonalFinanceToolDB.xml");
+                this.AppDataSet.Events.AddEventsRow(eventsRow);
+                this.AppDataSet.AcceptChanges();
 
-            // Wee have now stored into memory // Not dont the Forwarding, that should be done by the Entity Framework.
-            // Might a Web Service or Might call a DB over the internet.
-            // Forwarding
+                this.AppDataSet.WriteXml("PersonalFinanceToolDB.xml");
 
-            //CategoryModel categoryModel = new CategoryModel();
-            //categoryModel.SaveCategoryInformation(this.categoryDetails);
-            //MessageBox.Show(String.Format(Properties.Resources.SUCCESS_MESSAGE, this.sCategoryLabel));
+                // Wee have now stored into memory // Not dont the Forwarding, that should be done by the Entity Framework.
+                // Might a Web Service or Might call a DB over the internet.
+                // Forwarding
 
-            this.Close();
+                //CategoryModel categoryModel = new CategoryModel();
+                //categoryModel.SaveCategoryInformation(this.categoryDetails);
+                //MessageBox.Show(String.Format(Properties.Resources.SUCCESS_MESSAGE, this.sCategoryLabel));
+
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 

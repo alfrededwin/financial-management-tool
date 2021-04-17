@@ -29,27 +29,38 @@ namespace PersonalFinancialTool
 
         private void Login(object sender, EventArgs e)
         {
-            if (isValid()) {
-            using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\FinanceDB.mdf;Integrated Security=True")) {
-                string query = "SELECT * FROM Users WHERE Username = '" + textBoxUsername.Text.Trim() + "' AND Password = '" + textBoxPassword.Text.Trim() + "'  ";
-                    con.Open();
-                    SqlDataAdapter sda = new SqlDataAdapter(query, con);
-                DataTable dta = new DataTable();
-                sda.Fill(dta);
-                    con.Close();
-                    if (dta.Rows.Count == 1) {
-                    FormDashboard formDashboard = new FormDashboard();
-                    formDashboard.Show();
-                    this.Hide();
-                }
-                else {
-                        MessageBox.Show("Please Enter Correct Username and Password");
-             
-                    }
-                }
+            try
+            {
+                if (isValid())
+                {
+                    using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\FinanceDB.mdf;Integrated Security=True"))
+                    {
+                        string query = "SELECT * FROM Users WHERE Username = '" + textBoxUsername.Text.Trim() + "' AND Password = '" + textBoxPassword.Text.Trim() + "'  ";
+                        con.Open();
+                        SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                        DataTable dta = new DataTable();
+                        sda.Fill(dta);
+                        con.Close();
+                        if (dta.Rows.Count == 1)
+                        {
+                            FormDashboard formDashboard = new FormDashboard();
+                            formDashboard.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please Enter Correct Username and Password");
 
+                        }
+                    }
+
+                }
             }
-               
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
 

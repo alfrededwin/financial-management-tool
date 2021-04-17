@@ -103,6 +103,7 @@ namespace PersonalFinancialTool
             // dateTimeEventDate
             // 
             this.dateTimeEventDate.Font = new System.Drawing.Font("Cambria", 11.25F);
+            this.dateTimeEventDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimeEventDate.Location = new System.Drawing.Point(157, 106);
             this.dateTimeEventDate.Name = "dateTimeEventDate";
             this.dateTimeEventDate.Size = new System.Drawing.Size(208, 25);

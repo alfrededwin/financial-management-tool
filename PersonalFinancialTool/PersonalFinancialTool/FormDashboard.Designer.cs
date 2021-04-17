@@ -30,12 +30,12 @@ namespace PersonalFinancialTool
         private void InitializeComponent()
         {
             this.tabControlDashboard = new System.Windows.Forms.TabControl();
+            this.tabPageTransaction = new System.Windows.Forms.TabPage();
             this.tabPageCategory = new System.Windows.Forms.TabPage();
             this.tabPageEvent = new System.Windows.Forms.TabPage();
             this.tabPagePrediction = new System.Windows.Forms.TabPage();
             this.tabPageReport = new System.Windows.Forms.TabPage();
             this.tabPageSettings = new System.Windows.Forms.TabPage();
-            this.tabPageTransaction = new System.Windows.Forms.TabPage();
             this.tabControlDashboard.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +52,16 @@ namespace PersonalFinancialTool
             this.tabControlDashboard.SelectedIndex = 0;
             this.tabControlDashboard.Size = new System.Drawing.Size(800, 449);
             this.tabControlDashboard.TabIndex = 0;
+            // 
+            // tabPageTransaction
+            // 
+            this.tabPageTransaction.Location = new System.Drawing.Point(4, 22);
+            this.tabPageTransaction.Name = "tabPageTransaction";
+            this.tabPageTransaction.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageTransaction.Size = new System.Drawing.Size(792, 423);
+            this.tabPageTransaction.TabIndex = 0;
+            this.tabPageTransaction.Text = "Transaction";
+            this.tabPageTransaction.UseVisualStyleBackColor = true;
             // 
             // tabPageCategory
             // 
@@ -103,16 +113,6 @@ namespace PersonalFinancialTool
             this.tabPageSettings.Text = "Settings";
             this.tabPageSettings.UseVisualStyleBackColor = true;
             // 
-            // tabPageTransaction
-            // 
-            this.tabPageTransaction.Location = new System.Drawing.Point(4, 22);
-            this.tabPageTransaction.Name = "tabPageTransaction";
-            this.tabPageTransaction.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTransaction.Size = new System.Drawing.Size(792, 423);
-            this.tabPageTransaction.TabIndex = 0;
-            this.tabPageTransaction.Text = "Transaction";
-            this.tabPageTransaction.UseVisualStyleBackColor = true;
-            // 
             // FormDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -120,6 +120,7 @@ namespace PersonalFinancialTool
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControlDashboard);
             this.Name = "FormDashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.FormDashboard_Load);
             this.tabControlDashboard.ResumeLayout(false);

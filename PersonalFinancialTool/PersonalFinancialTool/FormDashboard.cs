@@ -34,12 +34,26 @@ namespace PersonalFinancialTool
             tabPageCategory.Controls.Add(viewCategoryForm);
             viewCategoryForm.Show();
 
+            FormPrediction formPrediction = new FormPrediction();
+            formPrediction.TopLevel = false;
+            formPrediction.FormBorderStyle = FormBorderStyle.None;
+            formPrediction.Dock = DockStyle.Fill;
+            tabPagePrediction.Controls.Add(formPrediction);
+            formPrediction.Show();
+
             FormViewEvent formViewEvent = new FormViewEvent();
             formViewEvent.TopLevel = false;
             formViewEvent.FormBorderStyle = FormBorderStyle.None;
             formViewEvent.Dock = DockStyle.Fill;
             tabPageEvent.Controls.Add(formViewEvent);
             formViewEvent.Show();
+
+            FormReport formReport = new FormReport();
+            formReport.TopLevel = false;
+            formReport.FormBorderStyle = FormBorderStyle.None;
+            formReport.Dock = DockStyle.Fill;
+            tabPageReport.Controls.Add(formReport);
+            formReport.Show();
 
             FormSettings formSettings = new FormSettings();
             formSettings.TopLevel = false;

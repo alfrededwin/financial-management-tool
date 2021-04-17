@@ -39,55 +39,64 @@ namespace PersonalFinancialTool
 
         private void CreateCategory(object sender, EventArgs e)
         {
-            this.categoryDetails = new CategoryDetails();
-            this.categoryDetails.categoryName = this.textBoxCategoryName.Text;
-            this.categoryDetails.categoryDescription = this.textBoxCategoryDesc.Text;
-            this.categoryDetails.categoryType = this.comboBoxCategoryType.Text.ToString();
-
-            sCategoryName = this.categoryDetails.categoryName;
-            sCategoryDesc = this.categoryDetails.categoryDescription;
-            sCategoryType = this.categoryDetails.categoryType;
-
-            if (string.IsNullOrWhiteSpace(sCategoryName) || string.IsNullOrWhiteSpace(sCategoryDesc) || string.IsNullOrEmpty(sCategoryType))
+            try
             {
-                MessageBox.Show(Properties.Resources.COMMON_MISSING_DATA);
+                this.categoryDetails = new CategoryDetails();
+                this.categoryDetails.categoryName = this.textBoxCategoryName.Text;
+                this.categoryDetails.categoryDescription = this.textBoxCategoryDesc.Text;
+                this.categoryDetails.categoryType = this.comboBoxCategoryType.Text.ToString();
+
+                sCategoryName = this.categoryDetails.categoryName;
+                sCategoryDesc = this.categoryDetails.categoryDescription;
+                sCategoryType = this.categoryDetails.categoryType;
+
+                if (string.IsNullOrWhiteSpace(sCategoryName) || string.IsNullOrWhiteSpace(sCategoryDesc) || string.IsNullOrEmpty(sCategoryType))
+                {
+                    MessageBox.Show(Properties.Resources.COMMON_MISSING_DATA);
+                }
+                else
+                {
+                    FinancialToolDataSet.CategoriesRow categoryRow = this.AppDataSet.Categories.NewCategoriesRow();
+                    categoryRow.CategoryName = sCategoryName;
+                    categoryRow.CategoryDescription = sCategoryDesc;
+                    categoryRow.CategoryType = sCategoryType;
+
+                    this.AppDataSet.Categories.AddCategoriesRow(categoryRow);
+                    this.AppDataSet.AcceptChanges();
+
+
+                    this.AppDataSet.WriteXml("PersonalFinanceToolDB.xml");
+
+                    // Wee have now stored into memory // Not dont the Forwarding, that should be done by the Entity Framework.
+                    // Might a Web Service or Might call a DB over the internet.
+                    // Forwarding
+
+
+                    CategoryModel categoryModel = new CategoryModel();
+                    categoryModel.SaveCategoryInformation(this.categoryDetails);
+
+
+
+
+
+
+                    MessageBox.Show(String.Format(Properties.Resources.SUCCESS_MESSAGE, this.sCategoryLabel));
+
+
+                    //FormViewCategory formViewCategory = new FormViewCategory();
+                    //formViewCategory.loadData();
+
+
+                    this.Close();
+                }
+
             }
-            else {
-                FinancialToolDataSet.CategoriesRow categoryRow = this.AppDataSet.Categories.NewCategoriesRow();
-                categoryRow.CategoryName = sCategoryName;
-                categoryRow.CategoryDescription = sCategoryDesc;
-                categoryRow.CategoryType = sCategoryType;
-
-                this.AppDataSet.Categories.AddCategoriesRow(categoryRow);
-                this.AppDataSet.AcceptChanges();
-               
-
-                this.AppDataSet.WriteXml("PersonalFinanceToolDB.xml");
-
-                // Wee have now stored into memory // Not dont the Forwarding, that should be done by the Entity Framework.
-                // Might a Web Service or Might call a DB over the internet.
-                // Forwarding
-
-
-                CategoryModel categoryModel = new CategoryModel();
-                categoryModel.SaveCategoryInformation(this.categoryDetails);
-
-            
-
-
-
-
-                MessageBox.Show(String.Format(Properties.Resources.SUCCESS_MESSAGE, this.sCategoryLabel));
-
-
-                //FormViewCategory formViewCategory = new FormViewCategory();
-                //formViewCategory.loadData();
-
-
-                this.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            
+
         }
 
         //void loadData()
@@ -115,41 +124,49 @@ namespace PersonalFinancialTool
             //textBoxCategoryDesc.Text = categoryDetails.categoryDescription;
             //comboBoxCategoryType.Text = categoryDetails.categoryType;
 
-            this.categoryDetails = new CategoryDetails();
-            this.categoryDetails.categoryName = this.textBoxCategoryName.Text;
-            this.categoryDetails.categoryDescription = this.textBoxCategoryDesc.Text;
-            this.categoryDetails.categoryType = this.comboBoxCategoryType.Text.ToString();
+            try
+            {
 
-            sCategoryName = this.categoryDetails.categoryName;
-            sCategoryDesc = this.categoryDetails.categoryDescription;
-            sCategoryType = this.categoryDetails.categoryType;
+                this.categoryDetails = new CategoryDetails();
+                this.categoryDetails.categoryName = this.textBoxCategoryName.Text;
+                this.categoryDetails.categoryDescription = this.textBoxCategoryDesc.Text;
+                this.categoryDetails.categoryType = this.comboBoxCategoryType.Text.ToString();
 
-            FinancialToolDataSet.CategoriesRow categoryRow = this.AppDataSet.Categories.NewCategoriesRow();
-            categoryRow.CategoryName = sCategoryName;
-            categoryRow.CategoryDescription = sCategoryDesc;
-            categoryRow.CategoryType = sCategoryType;
+                sCategoryName = this.categoryDetails.categoryName;
+                sCategoryDesc = this.categoryDetails.categoryDescription;
+                sCategoryType = this.categoryDetails.categoryType;
 
-            this.AppDataSet.Categories.AddCategoriesRow(categoryRow);
-            this.AppDataSet.AcceptChanges();
+                FinancialToolDataSet.CategoriesRow categoryRow = this.AppDataSet.Categories.NewCategoriesRow();
+                categoryRow.CategoryName = sCategoryName;
+                categoryRow.CategoryDescription = sCategoryDesc;
+                categoryRow.CategoryType = sCategoryType;
 
-
-            this.AppDataSet.WriteXml("PersonalFinanceToolDB.xml");
-
-            // Wee have now stored into memory // Not dont the Forwarding, that should be done by the Entity Framework.
-            // Might a Web Service or Might call a DB over the internet.
-            // Forwarding
+                this.AppDataSet.Categories.AddCategoriesRow(categoryRow);
+                this.AppDataSet.AcceptChanges();
 
 
-            CategoryModel categoryModel = new CategoryModel();
-            categoryModel.SaveCategoryInformation(this.categoryDetails);
+                this.AppDataSet.WriteXml("PersonalFinanceToolDB.xml");
+
+                // Wee have now stored into memory // Not dont the Forwarding, that should be done by the Entity Framework.
+                // Might a Web Service or Might call a DB over the internet.
+                // Forwarding
+
+
+                CategoryModel categoryModel = new CategoryModel();
+                categoryModel.SaveCategoryInformation(this.categoryDetails);
 
 
 
 
 
 
-            MessageBox.Show(String.Format(Properties.Resources.SUCCESS_MESSAGE, this.sCategoryLabel));
-            this.Close();
+                MessageBox.Show(String.Format(Properties.Resources.SUCCESS_MESSAGE, this.sCategoryLabel));
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void FormCreateCategory_Load(object sender, EventArgs e)
