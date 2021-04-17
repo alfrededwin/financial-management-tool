@@ -166,9 +166,6 @@ namespace PersonalFinancialTool
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnUpdateEvent;
-        private System.Windows.Forms.Button btnCreateEvent;
         private System.Windows.Forms.TextBox textBoxEventName;
         private System.Windows.Forms.Label lblEventDate;
         private System.Windows.Forms.Label lblEventName;
@@ -177,5 +174,7 @@ namespace PersonalFinancialTool
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton rdoOneTime;
         private System.Windows.Forms.RadioButton rdoRecurring;
+        public System.Windows.Forms.Button btnUpdateEvent;
+        public System.Windows.Forms.Button btnCreateEvent;
     }
 }

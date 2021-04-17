@@ -15,10 +15,10 @@ namespace PersonalFinancialTool
     {
         FinancialToolDataSet AppDataSet = new FinancialToolDataSet();
 
-        public String sFullName = null;
-        public String sUsername = null;
-        public String sEmail = null;
-        public String sPassword = null;
+        public String sFullName = "";
+        public String sUsername = "";
+        public String sEmail = "";
+        public String sPassword = "";
 
         public FormRegister()
         {
@@ -66,6 +66,18 @@ namespace PersonalFinancialTool
             this.Close();
 
 
+        }
+
+        private void Cancel(object sender, EventArgs e)
+        {
+            //this.userDetails.fullName = "";
+            //this.userDetails.username = "";
+            //this.userDetails.email = "";
+            //this.userDetails.password = "";
+
+            FormLogin formLogin = new FormLogin();
+            formLogin.Show();
+            this.Hide();
         }
     }
 }

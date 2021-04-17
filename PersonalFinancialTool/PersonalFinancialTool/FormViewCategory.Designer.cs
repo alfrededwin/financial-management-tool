@@ -33,13 +33,13 @@ namespace PersonalFinancialTool
             this.btnUpdateCategory = new System.Windows.Forms.Button();
             this.btnCreateCategory = new System.Windows.Forms.Button();
             this.dataGridViewCategory = new System.Windows.Forms.DataGridView();
-            this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.financialToolDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.financialToolDataSet = new PersonalFinancialTool.FinancialToolDataSet();
             this.categoryIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.financialToolDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.financialToolDataSet = new PersonalFinancialTool.FinancialToolDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.financialToolDataSetBindingSource)).BeginInit();
@@ -84,22 +84,6 @@ namespace PersonalFinancialTool
             this.dataGridViewCategory.Size = new System.Drawing.Size(752, 323);
             this.dataGridViewCategory.TabIndex = 26;
             this.dataGridViewCategory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SelectCategoryRow);
-            this.dataGridViewCategory.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCategory_CellContentDoubleClick);
-            // 
-            // categoriesBindingSource
-            // 
-            this.categoriesBindingSource.DataMember = "Categories";
-            this.categoriesBindingSource.DataSource = this.financialToolDataSetBindingSource;
-            // 
-            // financialToolDataSetBindingSource
-            // 
-            this.financialToolDataSetBindingSource.DataSource = this.financialToolDataSet;
-            this.financialToolDataSetBindingSource.Position = 0;
-            // 
-            // financialToolDataSet
-            // 
-            this.financialToolDataSet.DataSetName = "FinancialToolDataSet";
-            this.financialToolDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // categoryIdDataGridViewTextBoxColumn
             // 
@@ -126,6 +110,21 @@ namespace PersonalFinancialTool
             this.categoryTypeDataGridViewTextBoxColumn.HeaderText = "CategoryType";
             this.categoryTypeDataGridViewTextBoxColumn.Name = "categoryTypeDataGridViewTextBoxColumn";
             // 
+            // categoriesBindingSource
+            // 
+            this.categoriesBindingSource.DataMember = "Categories";
+            this.categoriesBindingSource.DataSource = this.financialToolDataSetBindingSource;
+            // 
+            // financialToolDataSetBindingSource
+            // 
+            this.financialToolDataSetBindingSource.DataSource = this.financialToolDataSet;
+            this.financialToolDataSetBindingSource.Position = 0;
+            // 
+            // financialToolDataSet
+            // 
+            this.financialToolDataSet.DataSetName = "FinancialToolDataSet";
+            this.financialToolDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // FormViewCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,7 +148,6 @@ namespace PersonalFinancialTool
 
         private System.Windows.Forms.Button btnUpdateCategory;
         private System.Windows.Forms.Button btnCreateCategory;
-        private System.Windows.Forms.DataGridView dataGridViewCategory;
         private System.Windows.Forms.BindingSource categoriesBindingSource;
         private System.Windows.Forms.BindingSource financialToolDataSetBindingSource;
         private FinancialToolDataSet financialToolDataSet;
@@ -157,5 +155,6 @@ namespace PersonalFinancialTool
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryDescriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryTypeDataGridViewTextBoxColumn;
+        public System.Windows.Forms.DataGridView dataGridViewCategory;
     }
 }

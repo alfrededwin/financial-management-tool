@@ -29,19 +29,14 @@ namespace PersonalFinancialTool
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.tabControlDashboard = new System.Windows.Forms.TabControl();
-            this.tabPageTransaction = new System.Windows.Forms.TabPage();
             this.tabPageCategory = new System.Windows.Forms.TabPage();
             this.tabPageEvent = new System.Windows.Forms.TabPage();
             this.tabPagePrediction = new System.Windows.Forms.TabPage();
             this.tabPageReport = new System.Windows.Forms.TabPage();
             this.tabPageSettings = new System.Windows.Forms.TabPage();
-            this.financialToolDataSet = new PersonalFinancialTool.FinancialToolDataSet();
-            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPageTransaction = new System.Windows.Forms.TabPage();
             this.tabControlDashboard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.financialToolDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlDashboard
@@ -57,16 +52,6 @@ namespace PersonalFinancialTool
             this.tabControlDashboard.SelectedIndex = 0;
             this.tabControlDashboard.Size = new System.Drawing.Size(800, 449);
             this.tabControlDashboard.TabIndex = 0;
-            // 
-            // tabPageTransaction
-            // 
-            this.tabPageTransaction.Location = new System.Drawing.Point(4, 22);
-            this.tabPageTransaction.Name = "tabPageTransaction";
-            this.tabPageTransaction.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTransaction.Size = new System.Drawing.Size(792, 423);
-            this.tabPageTransaction.TabIndex = 0;
-            this.tabPageTransaction.Text = "Transaction";
-            this.tabPageTransaction.UseVisualStyleBackColor = true;
             // 
             // tabPageCategory
             // 
@@ -118,15 +103,15 @@ namespace PersonalFinancialTool
             this.tabPageSettings.Text = "Settings";
             this.tabPageSettings.UseVisualStyleBackColor = true;
             // 
-            // financialToolDataSet
+            // tabPageTransaction
             // 
-            this.financialToolDataSet.DataSetName = "FinancialToolDataSet";
-            this.financialToolDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // categoryBindingSource
-            // 
-            this.categoryBindingSource.DataMember = "Category";
-            this.categoryBindingSource.DataSource = this.financialToolDataSet;
+            this.tabPageTransaction.Location = new System.Drawing.Point(4, 22);
+            this.tabPageTransaction.Name = "tabPageTransaction";
+            this.tabPageTransaction.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageTransaction.Size = new System.Drawing.Size(792, 423);
+            this.tabPageTransaction.TabIndex = 0;
+            this.tabPageTransaction.Text = "Transaction";
+            this.tabPageTransaction.UseVisualStyleBackColor = true;
             // 
             // FormDashboard
             // 
@@ -145,13 +130,11 @@ namespace PersonalFinancialTool
         #endregion
 
         private System.Windows.Forms.TabControl tabControlDashboard;
-        private System.Windows.Forms.TabPage tabPageTransaction;
         private System.Windows.Forms.TabPage tabPageCategory;
         private System.Windows.Forms.TabPage tabPageEvent;
         private System.Windows.Forms.TabPage tabPagePrediction;
         private System.Windows.Forms.TabPage tabPageReport;
         private System.Windows.Forms.TabPage tabPageSettings;
-        private System.Windows.Forms.BindingSource categoryBindingSource;
-        private FinancialToolDataSet financialToolDataSet;
+        private System.Windows.Forms.TabPage tabPageTransaction;
     }
 }

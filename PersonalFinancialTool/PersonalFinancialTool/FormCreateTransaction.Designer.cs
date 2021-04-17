@@ -33,9 +33,9 @@ namespace PersonalFinancialTool
             this.dateTimeTransDate = new System.Windows.Forms.DateTimePicker();
             this.btnUpdateEvent = new System.Windows.Forms.Button();
             this.btnCreateEvent = new System.Windows.Forms.Button();
-            this.comboBoxTransEventType = new System.Windows.Forms.ComboBox();
+            this.comboBoxTransEventName = new System.Windows.Forms.ComboBox();
             this.textBoxTransDesc = new System.Windows.Forms.TextBox();
-            this.labelTransEventType = new System.Windows.Forms.Label();
+            this.labelTransEventName = new System.Windows.Forms.Label();
             this.lblTransDate = new System.Windows.Forms.Label();
             this.lblTransDesc = new System.Windows.Forms.Label();
             this.lblLoginSubTitle = new System.Windows.Forms.Label();
@@ -85,18 +85,19 @@ namespace PersonalFinancialTool
             this.btnCreateEvent.TabIndex = 30;
             this.btnCreateEvent.Text = "Create";
             this.btnCreateEvent.UseVisualStyleBackColor = true;
+            this.btnCreateEvent.Click += new System.EventHandler(this.CreateTransaction);
             // 
-            // comboBoxTransEventType
+            // comboBoxTransEventName
             // 
-            this.comboBoxTransEventType.Font = new System.Drawing.Font("Cambria", 11.25F);
-            this.comboBoxTransEventType.FormattingEnabled = true;
-            this.comboBoxTransEventType.Items.AddRange(new object[] {
+            this.comboBoxTransEventName.Font = new System.Drawing.Font("Cambria", 11.25F);
+            this.comboBoxTransEventName.FormattingEnabled = true;
+            this.comboBoxTransEventName.Items.AddRange(new object[] {
             "Income",
             "Expense"});
-            this.comboBoxTransEventType.Location = new System.Drawing.Point(170, 291);
-            this.comboBoxTransEventType.Name = "comboBoxTransEventType";
-            this.comboBoxTransEventType.Size = new System.Drawing.Size(208, 25);
-            this.comboBoxTransEventType.TabIndex = 29;
+            this.comboBoxTransEventName.Location = new System.Drawing.Point(170, 291);
+            this.comboBoxTransEventName.Name = "comboBoxTransEventName";
+            this.comboBoxTransEventName.Size = new System.Drawing.Size(208, 25);
+            this.comboBoxTransEventName.TabIndex = 29;
             // 
             // textBoxTransDesc
             // 
@@ -106,15 +107,15 @@ namespace PersonalFinancialTool
             this.textBoxTransDesc.Size = new System.Drawing.Size(208, 25);
             this.textBoxTransDesc.TabIndex = 28;
             // 
-            // labelTransEventType
+            // labelTransEventName
             // 
-            this.labelTransEventType.AutoSize = true;
-            this.labelTransEventType.Font = new System.Drawing.Font("Cambria", 11.25F);
-            this.labelTransEventType.Location = new System.Drawing.Point(43, 294);
-            this.labelTransEventType.Name = "labelTransEventType";
-            this.labelTransEventType.Size = new System.Drawing.Size(80, 17);
-            this.labelTransEventType.TabIndex = 27;
-            this.labelTransEventType.Text = "Event Type";
+            this.labelTransEventName.AutoSize = true;
+            this.labelTransEventName.Font = new System.Drawing.Font("Cambria", 11.25F);
+            this.labelTransEventName.Location = new System.Drawing.Point(43, 294);
+            this.labelTransEventName.Name = "labelTransEventName";
+            this.labelTransEventName.Size = new System.Drawing.Size(84, 17);
+            this.labelTransEventName.TabIndex = 27;
+            this.labelTransEventName.Text = "Event Name";
             // 
             // lblTransDate
             // 
@@ -152,7 +153,7 @@ namespace PersonalFinancialTool
             this.comboBoxTransCategoryType.FormattingEnabled = true;
             this.comboBoxTransCategoryType.Items.AddRange(new object[] {
             "Income",
-            "Expense"});
+            "Expenses"});
             this.comboBoxTransCategoryType.Location = new System.Drawing.Point(170, 70);
             this.comboBoxTransCategoryType.Name = "comboBoxTransCategoryType";
             this.comboBoxTransCategoryType.Size = new System.Drawing.Size(208, 25);
@@ -172,9 +173,6 @@ namespace PersonalFinancialTool
             // 
             this.cmbIncomeType.Font = new System.Drawing.Font("Cambria", 11.25F);
             this.cmbIncomeType.FormattingEnabled = true;
-            this.cmbIncomeType.Items.AddRange(new object[] {
-            "Income",
-            "Expense"});
             this.cmbIncomeType.Location = new System.Drawing.Point(170, 105);
             this.cmbIncomeType.Name = "cmbIncomeType";
             this.cmbIncomeType.Size = new System.Drawing.Size(208, 25);
@@ -194,9 +192,6 @@ namespace PersonalFinancialTool
             // 
             this.cmbExpenseType.Font = new System.Drawing.Font("Cambria", 11.25F);
             this.cmbExpenseType.FormattingEnabled = true;
-            this.cmbExpenseType.Items.AddRange(new object[] {
-            "Income",
-            "Expense"});
             this.cmbExpenseType.Location = new System.Drawing.Point(170, 141);
             this.cmbExpenseType.Name = "cmbExpenseType";
             this.cmbExpenseType.Size = new System.Drawing.Size(208, 25);
@@ -236,14 +231,16 @@ namespace PersonalFinancialTool
             this.Controls.Add(this.dateTimeTransDate);
             this.Controls.Add(this.btnUpdateEvent);
             this.Controls.Add(this.btnCreateEvent);
-            this.Controls.Add(this.comboBoxTransEventType);
+            this.Controls.Add(this.comboBoxTransEventName);
             this.Controls.Add(this.textBoxTransDesc);
-            this.Controls.Add(this.labelTransEventType);
+            this.Controls.Add(this.labelTransEventName);
             this.Controls.Add(this.lblTransDate);
             this.Controls.Add(this.lblTransDesc);
             this.Controls.Add(this.lblLoginSubTitle);
+            this.MaximizeBox = false;
             this.Name = "FormCreateTransaction";
             this.Text = "Create Transaction";
+            this.Load += new System.EventHandler(this.FormCreateTransaction_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,11 +249,9 @@ namespace PersonalFinancialTool
         #endregion
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.DateTimePicker dateTimeTransDate;
-        private System.Windows.Forms.Button btnUpdateEvent;
-        private System.Windows.Forms.Button btnCreateEvent;
-        private System.Windows.Forms.ComboBox comboBoxTransEventType;
+        private System.Windows.Forms.ComboBox comboBoxTransEventName;
         private System.Windows.Forms.TextBox textBoxTransDesc;
-        private System.Windows.Forms.Label labelTransEventType;
+        private System.Windows.Forms.Label labelTransEventName;
         private System.Windows.Forms.Label lblTransDate;
         private System.Windows.Forms.Label lblTransDesc;
         private System.Windows.Forms.Label lblLoginSubTitle;
@@ -267,5 +262,7 @@ namespace PersonalFinancialTool
         private System.Windows.Forms.ComboBox cmbExpenseType;
         private System.Windows.Forms.Label lblExpense;
         private System.Windows.Forms.TextBox textBoxTransAmount;
+        public System.Windows.Forms.Button btnUpdateEvent;
+        public System.Windows.Forms.Button btnCreateEvent;
     }
 }

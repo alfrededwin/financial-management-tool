@@ -18,7 +18,10 @@ namespace PersonalFinancialTool
 
         public CategoryDetails categoryDetails { get; set; }
 
-        int index;
+        public String sCategoryName = "";
+        public String sCategoryDesc = "";
+        public String sCategoryType = "";
+
         public FormViewCategory()
         {
             InitializeComponent();
@@ -28,6 +31,7 @@ namespace PersonalFinancialTool
                 this.myDataSet.ReadXml("PersonalFinanceToolDB.xml");
             }
 
+            //loadData();
 
             //myDataSet.ReadXml("PersonalFinanceToolDB.xml");
             this.CategoryDataSet = this.myDataSet;
@@ -39,6 +43,7 @@ namespace PersonalFinancialTool
         private void navCreateCategory(object sender, EventArgs e)
         {
             FormCreateCategory formCreateCategory = new FormCreateCategory();
+            formCreateCategory.btnUpdateCategory.Hide();
             formCreateCategory.ShowDialog();
         }
 
@@ -54,50 +59,26 @@ namespace PersonalFinancialTool
 
         private void SelectCategoryRow(object sender, DataGridViewCellEventArgs e)
         {
-            //index = e.RowIndex;
-            //DataGridViewRow row = dataGridViewCategory.Rows[index];
-            //DataGridViewRow getRow = dataGridViewCategory.Rows[e.RowIndex];
+           DataGridViewRow getRow = dataGridViewCategory.Rows[e.RowIndex];
+           sCategoryName = this.dataGridViewCategory.CurrentRow.Cells[1].Value.ToString();
+           sCategoryDesc = this.dataGridViewCategory.CurrentRow.Cells[2].Value.ToString();
+           sCategoryType = this.dataGridViewCategory.CurrentRow.Cells[3].Value.ToString();
+        }
 
-            //FormCreateCategory formCreateCategory = new FormCreateCategory();
-            //formCreateCategory.textBoxCategoryName = getRow.Cells["CategoryName"].Value.ToString();
-            //formCreateCategory.textBoxCategoryDesc = dataGridViewCategory.CurrentRow.Cells[2].Value.ToString();
-            //formCreateCategory.comboBoxCategoryType = getRow.dataGridViewCategory.CurrentRow.Cells[3].Value.ToString();
-            //formCreateCategory.Show();
+        public void loadData() {
+
+            var st = from s in myDataSet.Categories select s;
+            dataGridViewCategory.DataSource = st;
 
         }
 
         private void navUpdateCategory(object sender, EventArgs e)
         {
-            //CategoryDetails obj = categoriesBindingSource.Current as CategoryDetails;
-            //if (obj != null) {
-
-                FormCreateCategory formCreateCategory = new FormCreateCategory();
-                //// using(FormCreateCategory formCreateCategory = new FormCreateCategory() { categoryDetails = obj })
-                // {
-                //if (formCreateCategory.ShowDialog() == DialogResult.OK)
-                //    {
-
-                //    }
-                formCreateCategory.Show();
-                //categoriesBindingSource.EndEdit();
-                //btnUpdateCategory.Focus();
-
-
-                //// }
-            //}
-
-
-
-
-
-            //FormCreateCategory formCreateCategory = new FormCreateCategory();
-            //formCreateCategory.Show();
+            FormCreateCategory formCreateCategory = new FormCreateCategory();
+            formCreateCategory.SetUpdateFields(sCategoryName, sCategoryDesc, sCategoryType);
+            formCreateCategory.btnCreateCategory.Hide();
+            formCreateCategory.Show();
         }
 
-        private void dataGridViewCategory_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //FormCreateCategory formCreateCategory = new FormCreateCategory();
-            //formCreateCategory.textBoxCategoryName = this.dataGridViewCategory.CurrentRow.Cells[1].Value.ToString();
-        }
     } 
 }

@@ -159,10 +159,10 @@ namespace PersonalFinancialTool
         private System.Windows.Forms.Label lblCategoryName;
         private System.Windows.Forms.Label lblCategoryDescription;
         private System.Windows.Forms.Label labelCatType;
-        private System.Windows.Forms.Button btnCreateCategory;
-        private System.Windows.Forms.Button btnUpdateCategory;
         public System.Windows.Forms.TextBox textBoxCategoryName;
         public System.Windows.Forms.TextBox textBoxCategoryDesc;
         public System.Windows.Forms.ComboBox comboBoxCategoryType;
+        public System.Windows.Forms.Button btnCreateCategory;
+        public System.Windows.Forms.Button btnUpdateCategory;
     }
 }

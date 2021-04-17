@@ -9,14 +9,14 @@ namespace PersonalFinancialTool
     class CategoryModel
     {
 
-        public void SaveCategoryInformation(CategoryDetails info)
+
+            public void SaveCategoryInformation(CategoryDetails info)
         {
             // Apply Biz Rules
             // Throw Exception
             // Push to Database
 
             // We need to use Entity Framework
-
 
             Category category = new Category();
 

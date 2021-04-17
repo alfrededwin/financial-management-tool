@@ -14,6 +14,10 @@ namespace PersonalFinancialTool
     {
         FinancialToolDataSet myDataSet = new FinancialToolDataSet();
         FinancialToolDataSet UserDataSet { get; set; }
+
+        public String sEventName = "";
+        public String sEventStatus = "";
+        public String sEventDate = "";
         public FormViewEvent()
         {
             InitializeComponent();
@@ -22,6 +26,7 @@ namespace PersonalFinancialTool
         private void navCreateEvent(object sender, EventArgs e)
         {
             FormCreateEvent formCreateEvent = new FormCreateEvent();
+            formCreateEvent.btnUpdateEvent.Hide();
             formCreateEvent.Show();
         }
 
@@ -30,8 +35,24 @@ namespace PersonalFinancialTool
             myDataSet.ReadXml("PersonalFinanceToolDB.xml");
             this.UserDataSet = this.myDataSet;
             this.financialToolDataSet = this.myDataSet;
-            this.dataGridView1.DataSource = this.financialToolDataSet;
-            this.dataGridView1.DataMember = "Events";
+            this.dataGridViewEvent.DataSource = this.financialToolDataSet;
+            this.dataGridViewEvent.DataMember = "Events";
+        }
+
+        private void UpdateEvent(object sender, EventArgs e)
+        {
+            FormCreateEvent formCreateEvent = new FormCreateEvent();
+            formCreateEvent.SetUpdateFields(sEventName, sEventDate, sEventStatus);
+            formCreateEvent.btnCreateEvent.Hide();
+            formCreateEvent.Show();
+        }
+
+        private void SelectEventRow(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow getRow = dataGridViewEvent.Rows[e.RowIndex];
+            sEventName = this.dataGridViewEvent.CurrentRow.Cells[1].Value.ToString();
+            sEventDate = this.dataGridViewEvent.CurrentRow.Cells[2].Value.ToString();
+            sEventStatus = this.dataGridViewEvent.CurrentRow.Cells[3].Value.ToString();
         }
     }
 }

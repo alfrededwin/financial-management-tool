@@ -55,5 +55,18 @@ namespace PersonalFinancialTool
 
             this.Close();
         }
+
+
+        public void SetUpdateFields(String eventName, String eventDate, String eventStatus)
+        {
+            this.textBoxEventName.Text = eventName;
+            this.dateTimeEventDate.Text = eventDate;
+            this.rdoRecurring.Text = eventStatus;
+        }
+
+
+
+
+
     }
 }

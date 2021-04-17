@@ -19,13 +19,12 @@ namespace PersonalFinancialTool
         public FinancialToolDataSet CategoryDataSet { get; set; }
 
         public String sCategoryLabel = "Category";
-        public String sCategoryName = null;
-        public String sCategoryDesc = null;
-        public String sCategoryType = null;
+        public String sCategoryName = "";
+        public String sCategoryDesc = "";
+        public String sCategoryType = "";
 
-        public String sCategoryName1 = null;
-        public String sCategoryDesc2 = null;
-        public String sCategoryType3 = null;
+        public String sFormStatus;
+   
 
         public FormCreateCategory()
         {
@@ -36,7 +35,6 @@ namespace PersonalFinancialTool
                 this.AppDataSet.ReadXml("PersonalFinanceToolDB.xml");
             }
 
-           
         }
 
         private void CreateCategory(object sender, EventArgs e)
@@ -70,23 +68,88 @@ namespace PersonalFinancialTool
                 // Might a Web Service or Might call a DB over the internet.
                 // Forwarding
 
+
                 CategoryModel categoryModel = new CategoryModel();
                 categoryModel.SaveCategoryInformation(this.categoryDetails);
+
+            
+
+
+
+
                 MessageBox.Show(String.Format(Properties.Resources.SUCCESS_MESSAGE, this.sCategoryLabel));
 
-                this.Close();
 
-       
+                //FormViewCategory formViewCategory = new FormViewCategory();
+                //formViewCategory.loadData();
+
+
+                this.Close();
             }
 
             
         }
 
+        //void loadData()
+        //{
+
+        //    var st = from s in AppDataSet.Categories select s;
+        //    FormViewCategory formViewCategory = new FormViewCategory();
+        //    var y = formViewCategory.dataGridViewCategory;
+        //    y.DataSource = st;
+
+        //}
+
+        public void SetUpdateFields(String categoryName, String categoryDesc, String categoryType) {
+            this.textBoxCategoryName.Text = categoryName;
+            this.textBoxCategoryDesc.Text = categoryDesc;
+            this.comboBoxCategoryType.Text = categoryType;
+        }
+
+
+
+
         private void UpdateCategory(object sender, EventArgs e)
         {
-            textBoxCategoryName.Text = categoryDetails.categoryName;
-            textBoxCategoryDesc.Text = categoryDetails.categoryDescription;
-            comboBoxCategoryType.Text = categoryDetails.categoryType;
+            //textBoxCategoryName.Text = categoryDetails.categoryName;
+            //textBoxCategoryDesc.Text = categoryDetails.categoryDescription;
+            //comboBoxCategoryType.Text = categoryDetails.categoryType;
+
+            this.categoryDetails = new CategoryDetails();
+            this.categoryDetails.categoryName = this.textBoxCategoryName.Text;
+            this.categoryDetails.categoryDescription = this.textBoxCategoryDesc.Text;
+            this.categoryDetails.categoryType = this.comboBoxCategoryType.Text.ToString();
+
+            sCategoryName = this.categoryDetails.categoryName;
+            sCategoryDesc = this.categoryDetails.categoryDescription;
+            sCategoryType = this.categoryDetails.categoryType;
+
+            FinancialToolDataSet.CategoriesRow categoryRow = this.AppDataSet.Categories.NewCategoriesRow();
+            categoryRow.CategoryName = sCategoryName;
+            categoryRow.CategoryDescription = sCategoryDesc;
+            categoryRow.CategoryType = sCategoryType;
+
+            this.AppDataSet.Categories.AddCategoriesRow(categoryRow);
+            this.AppDataSet.AcceptChanges();
+
+
+            this.AppDataSet.WriteXml("PersonalFinanceToolDB.xml");
+
+            // Wee have now stored into memory // Not dont the Forwarding, that should be done by the Entity Framework.
+            // Might a Web Service or Might call a DB over the internet.
+            // Forwarding
+
+
+            CategoryModel categoryModel = new CategoryModel();
+            categoryModel.SaveCategoryInformation(this.categoryDetails);
+
+
+
+
+
+
+            MessageBox.Show(String.Format(Properties.Resources.SUCCESS_MESSAGE, this.sCategoryLabel));
+            this.Close();
         }
 
         private void FormCreateCategory_Load(object sender, EventArgs e)
