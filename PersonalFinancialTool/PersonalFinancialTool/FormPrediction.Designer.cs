@@ -60,14 +60,15 @@ namespace PersonalFinancialTool
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(120, 27);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(225, 23);
+            this.dateTimePicker1.Size = new System.Drawing.Size(116, 23);
             this.dateTimePicker1.TabIndex = 1;
             // 
             // buttonViewPrediction
             // 
-            this.buttonViewPrediction.Location = new System.Drawing.Point(361, 29);
+            this.buttonViewPrediction.Location = new System.Drawing.Point(259, 27);
             this.buttonViewPrediction.Name = "buttonViewPrediction";
             this.buttonViewPrediction.Size = new System.Drawing.Size(127, 23);
             this.buttonViewPrediction.TabIndex = 2;
