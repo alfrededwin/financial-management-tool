@@ -133,7 +133,9 @@ namespace PersonalFinancialTool
             this.Controls.Add(this.dataGridViewCategory);
             this.Controls.Add(this.btnUpdateCategory);
             this.Controls.Add(this.btnCreateCategory);
+            this.MaximizeBox = false;
             this.Name = "FormViewCategory";
+            this.ShowIcon = false;
             this.Text = "View Category";
             this.Load += new System.EventHandler(this.FormViewCategory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCategory)).EndInit();

@@ -33,9 +33,6 @@ namespace PersonalFinancialTool
             this.buttonCreateTransaction = new System.Windows.Forms.Button();
             this.buttonUpdateTransaction = new System.Windows.Forms.Button();
             this.dataGridViewTransaction = new System.Windows.Forms.DataGridView();
-            this.financialToolDataSet = new PersonalFinancialTool.FinancialToolDataSet();
-            this.financialToolDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.transactionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.transactionIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.incomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,10 +43,13 @@ namespace PersonalFinancialTool
             this.eventNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eventIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.transactionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.financialToolDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.financialToolDataSet = new PersonalFinancialTool.FinancialToolDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransaction)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.financialToolDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.financialToolDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transactionsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.financialToolDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.financialToolDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonCreateTransaction
@@ -96,21 +96,6 @@ namespace PersonalFinancialTool
             this.dataGridViewTransaction.Size = new System.Drawing.Size(752, 309);
             this.dataGridViewTransaction.TabIndex = 32;
             this.dataGridViewTransaction.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SelectTransactionRow);
-            // 
-            // financialToolDataSet
-            // 
-            this.financialToolDataSet.DataSetName = "FinancialToolDataSet";
-            this.financialToolDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // financialToolDataSetBindingSource
-            // 
-            this.financialToolDataSetBindingSource.DataSource = this.financialToolDataSet;
-            this.financialToolDataSetBindingSource.Position = 0;
-            // 
-            // transactionsBindingSource
-            // 
-            this.transactionsBindingSource.DataMember = "Transactions";
-            this.transactionsBindingSource.DataSource = this.financialToolDataSetBindingSource;
             // 
             // transactionIdDataGridViewTextBoxColumn
             // 
@@ -175,6 +160,21 @@ namespace PersonalFinancialTool
             this.eventIdDataGridViewTextBoxColumn.Name = "eventIdDataGridViewTextBoxColumn";
             this.eventIdDataGridViewTextBoxColumn.Visible = false;
             // 
+            // transactionsBindingSource
+            // 
+            this.transactionsBindingSource.DataMember = "Transactions";
+            this.transactionsBindingSource.DataSource = this.financialToolDataSetBindingSource;
+            // 
+            // financialToolDataSetBindingSource
+            // 
+            this.financialToolDataSetBindingSource.DataSource = this.financialToolDataSet;
+            this.financialToolDataSetBindingSource.Position = 0;
+            // 
+            // financialToolDataSet
+            // 
+            this.financialToolDataSet.DataSetName = "FinancialToolDataSet";
+            this.financialToolDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // FormViewTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,12 +183,14 @@ namespace PersonalFinancialTool
             this.Controls.Add(this.dataGridViewTransaction);
             this.Controls.Add(this.buttonUpdateTransaction);
             this.Controls.Add(this.buttonCreateTransaction);
+            this.MaximizeBox = false;
             this.Name = "FormViewTransaction";
+            this.ShowIcon = false;
             this.Text = "View Transaction";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransaction)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.financialToolDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.financialToolDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transactionsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.financialToolDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.financialToolDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

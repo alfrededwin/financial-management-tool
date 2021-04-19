@@ -120,7 +120,9 @@ namespace PersonalFinancialTool
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControlDashboard);
+            this.MaximizeBox = false;
             this.Name = "FormDashboard";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.FormDashboard_Load);

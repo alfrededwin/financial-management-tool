@@ -146,6 +146,7 @@ namespace PersonalFinancialTool
             this.Controls.Add(this.lblLoginSubTitle);
             this.MaximizeBox = false;
             this.Name = "FormCreateCategory";
+            this.ShowIcon = false;
             this.Text = "Create Category";
             this.Load += new System.EventHandler(this.FormCreateCategory_Load);
             this.ResumeLayout(false);

@@ -138,6 +138,7 @@ namespace PersonalFinancialTool
             this.Controls.Add(this.lblLogin);
             this.MaximizeBox = false;
             this.Name = "FormLogin";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

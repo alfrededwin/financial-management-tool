@@ -29,9 +29,9 @@ namespace PersonalFinancialTool
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBoxPrediction = new System.Windows.Forms.GroupBox();
             this.buttonViewPrediction = new System.Windows.Forms.Button();
@@ -83,16 +83,16 @@ namespace PersonalFinancialTool
             // 
             // chartPrediction
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartPrediction.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartPrediction.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chartPrediction.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartPrediction.Legends.Add(legend1);
             this.chartPrediction.Location = new System.Drawing.Point(92, 89);
             this.chartPrediction.Name = "chartPrediction";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Average Category";
-            this.chartPrediction.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Average Category";
+            this.chartPrediction.Series.Add(series1);
             this.chartPrediction.Size = new System.Drawing.Size(587, 283);
             this.chartPrediction.TabIndex = 2;
             this.chartPrediction.Text = "chart1";
@@ -104,7 +104,9 @@ namespace PersonalFinancialTool
             this.ClientSize = new System.Drawing.Size(776, 384);
             this.Controls.Add(this.chartPrediction);
             this.Controls.Add(this.groupBoxPrediction);
+            this.MaximizeBox = false;
             this.Name = "FormPrediction";
+            this.ShowIcon = false;
             this.Text = "Prediction";
             this.groupBoxPrediction.ResumeLayout(false);
             this.groupBoxPrediction.PerformLayout();

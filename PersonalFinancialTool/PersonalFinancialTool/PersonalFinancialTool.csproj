@@ -337,6 +337,8 @@
       <LastGenOutput>FinanceToolDB.cs</LastGenOutput>
       <DependentUpon>FinanceToolDB.edmx</DependentUpon>
     </Content>
+    <None Include="Resources\edituser.png" />
+    <None Include="Resources\settings-edit-user.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

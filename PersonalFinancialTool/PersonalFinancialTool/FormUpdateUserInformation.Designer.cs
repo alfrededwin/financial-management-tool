@@ -200,6 +200,7 @@ namespace PersonalFinancialTool
             this.Controls.Add(this.lblUpdateUserInfo);
             this.MaximizeBox = false;
             this.Name = "FormUpdateUserInformation";
+            this.ShowIcon = false;
             this.Text = "Update User Information";
             this.ResumeLayout(false);
             this.PerformLayout();

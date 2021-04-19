@@ -179,7 +179,9 @@ namespace PersonalFinancialTool
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.lblRegister);
+            this.MaximizeBox = false;
             this.Name = "FormRegister";
+            this.ShowIcon = false;
             this.Text = "Register";
             this.ResumeLayout(false);
             this.PerformLayout();

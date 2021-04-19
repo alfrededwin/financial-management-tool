@@ -161,6 +161,7 @@ namespace PersonalFinancialTool
             this.Controls.Add(this.lblLoginSubTitle);
             this.MaximizeBox = false;
             this.Name = "FormCreateEvent";
+            this.ShowIcon = false;
             this.Text = "Create Event";
             this.ResumeLayout(false);
             this.PerformLayout();

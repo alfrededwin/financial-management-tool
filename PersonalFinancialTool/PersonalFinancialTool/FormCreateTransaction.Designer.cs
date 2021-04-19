@@ -239,6 +239,7 @@ namespace PersonalFinancialTool
             this.Controls.Add(this.lblLoginSubTitle);
             this.MaximizeBox = false;
             this.Name = "FormCreateTransaction";
+            this.ShowIcon = false;
             this.Text = "Create Transaction";
             this.Load += new System.EventHandler(this.FormCreateTransaction_Load);
             this.ResumeLayout(false);

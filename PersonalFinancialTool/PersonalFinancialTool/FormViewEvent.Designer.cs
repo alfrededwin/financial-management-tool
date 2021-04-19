@@ -133,7 +133,9 @@ namespace PersonalFinancialTool
             this.Controls.Add(this.dataGridViewEvent);
             this.Controls.Add(this.btnUpdateEvent);
             this.Controls.Add(this.btnCreateEvent);
+            this.MaximizeBox = false;
             this.Name = "FormViewEvent";
+            this.ShowIcon = false;
             this.Text = "View Event";
             this.Load += new System.EventHandler(this.FormViewEvent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEvent)).EndInit();
