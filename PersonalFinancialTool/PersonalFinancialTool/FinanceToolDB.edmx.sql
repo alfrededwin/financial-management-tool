@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/18/2021 05:45:01
+-- Date Created: 04/19/2021 09:46:40
 -- Generated from EDMX file: C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\FinanceToolDB.edmx
 -- --------------------------------------------------
 
@@ -26,6 +26,18 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_UserTransaction]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Transactions] DROP CONSTRAINT [FK_UserTransaction];
 GO
+IF OBJECT_ID(N'[dbo].[FK_TransactionCategory_Transaction]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[TransactionCategory] DROP CONSTRAINT [FK_TransactionCategory_Transaction];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TransactionCategory_Category]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[TransactionCategory] DROP CONSTRAINT [FK_TransactionCategory_Category];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TransactionEvent_Transaction]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[TransactionEvent] DROP CONSTRAINT [FK_TransactionEvent_Transaction];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TransactionEvent_Event]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[TransactionEvent] DROP CONSTRAINT [FK_TransactionEvent_Event];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -42,6 +54,12 @@ IF OBJECT_ID(N'[dbo].[Events]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Transactions]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Transactions];
+GO
+IF OBJECT_ID(N'[dbo].[TransactionCategory]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TransactionCategory];
+GO
+IF OBJECT_ID(N'[dbo].[TransactionEvent]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TransactionEvent];
 GO
 
 -- --------------------------------------------------

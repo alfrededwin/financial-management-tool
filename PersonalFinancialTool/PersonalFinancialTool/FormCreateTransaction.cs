@@ -229,6 +229,7 @@ namespace PersonalFinancialTool
                     // Apply Changes to DT
                     this.AppDataSet.AcceptChanges();
 
+
                     // Writing to XML File
                     this.AppDataSet.WriteXml("PersonalFinanceToolDB.xml");
 

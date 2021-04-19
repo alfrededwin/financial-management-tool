@@ -2,74 +2,95 @@
 <FinancialToolDataSet xmlns="http://tempuri.org/FinancialToolDataSet.xsd">
   <Categories>
     <CategoryId>1</CategoryId>
-    <CategoryName>TY</CategoryName>
-    <CategoryDescription>rrrrrr</CategoryDescription>
+    <CategoryName>Salary</CategoryName>
+    <CategoryDescription>Month of April</CategoryDescription>
+    <CategoryType>Income</CategoryType>
+  </Categories>
+  <Categories>
+    <CategoryId>2</CategoryId>
+    <CategoryName>Loan</CategoryName>
+    <CategoryDescription>EMI for Macbook</CategoryDescription>
+    <CategoryType>Expense</CategoryType>
+  </Categories>
+  <Categories>
+    <CategoryId>3</CategoryId>
+    <CategoryName>American Express</CategoryName>
+    <CategoryDescription>Credit Card </CategoryDescription>
+    <CategoryType>Expense</CategoryType>
+  </Categories>
+  <Categories>
+    <CategoryId>4</CategoryId>
+    <CategoryName>Medical</CategoryName>
+    <CategoryDescription>Month of March</CategoryDescription>
     <CategoryType>Income</CategoryType>
   </Categories>
   <Events>
     <EventId>1</EventId>
     <EventName>Pay Loan</EventName>
-    <EventDate>4/18/2021</EventDate>
+    <EventDate>4/19/2021</EventDate>
     <EventStatus>Recurring</EventStatus>
   </Events>
   <Events>
     <EventId>2</EventId>
-    <EventName>Dentist1</EventName>
+    <EventName>Pay for AMEX</EventName>
     <EventDate>4/19/2021</EventDate>
     <EventStatus>Recurring</EventStatus>
   </Events>
-  <Users>
-    <FullName>Alfred Edwin</FullName>
-    <Username>alfrededwin</Username>
-    <Email>alfred.edwin@hotmail.com</Email>
-    <Password>alfrededwin</Password>
-    <UserId>1</UserId>
-  </Users>
   <Users>
     <FullName>Admin</FullName>
     <Username>admin</Username>
     <Email>admin@gmail.com</Email>
     <Password>admin</Password>
-    <UserId>2</UserId>
+    <UserId>1</UserId>
   </Users>
   <Transactions>
     <TransactionId>1</TransactionId>
-    <CategoryType>Income	</CategoryType>
-    <Income>Salary</Income>
-    <Expense />
-    <TransDescription>Sal</TransDescription>
-    <Date>4/18/2021</Date>
-    <Amount>50000</Amount>
-    <EventName>Loan</EventName>
-  </Transactions>
-  <Transactions>
-    <TransactionId>2</TransactionId>
-    <CategoryType>Income	</CategoryType>
-    <Income>Medical</Income>
-    <Expense />
-    <TransDescription>Bill</TransDescription>
-    <Date>4/18/2021</Date>
-    <Amount>400</Amount>
+    <CategoryType>Expense</CategoryType>
+    <Income />
+    <Expense>Loan</Expense>
+    <TransDescription>Payment for April 2021</TransDescription>
+    <Date>4/19/2021</Date>
+    <Amount>19745</Amount>
     <EventName>Pay Loan</EventName>
   </Transactions>
   <Transactions>
+    <TransactionId>2</TransactionId>
+    <CategoryType>Expense</CategoryType>
+    <Income />
+    <Expense>American Express</Expense>
+    <TransDescription>iPhone Payment 2021</TransDescription>
+    <Date>4/18/2021</Date>
+    <Amount>10000</Amount>
+    <EventName>Pay for AMEX</EventName>
+  </Transactions>
+  <Transactions>
     <TransactionId>3</TransactionId>
+    <CategoryType>Expense</CategoryType>
+    <Income />
+    <Expense>American Express</Expense>
+    <TransDescription>Annual Payment</TransDescription>
+    <Date>4/19/2021</Date>
+    <Amount>5000</Amount>
+    <EventName />
+  </Transactions>
+  <Transactions>
+    <TransactionId>4</TransactionId>
     <CategoryType>Income	</CategoryType>
     <Income>Salary</Income>
     <Expense />
-    <TransDescription>Month of April</TransDescription>
+    <TransDescription>Month of Aprill</TransDescription>
     <Date>4/19/2021</Date>
     <Amount>100000</Amount>
     <EventName />
   </Transactions>
   <Transactions>
-    <TransactionId>4</TransactionId>
-    <CategoryType>Expense</CategoryType>
-    <Income />
-    <Expense>Medical</Expense>
+    <TransactionId>5</TransactionId>
+    <CategoryType>Income	</CategoryType>
+    <Income>Medical</Income>
+    <Expense />
     <TransDescription>Dentist</TransDescription>
-    <Date>4/19/2021</Date>
-    <Amount>3560</Amount>
-    <EventName>Dentist</EventName>
+    <Date>4/16/2021</Date>
+    <Amount>3500</Amount>
+    <EventName />
   </Transactions>
 </FinancialToolDataSet>
