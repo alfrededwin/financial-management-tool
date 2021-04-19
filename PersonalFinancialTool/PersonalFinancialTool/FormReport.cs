@@ -28,13 +28,18 @@ namespace PersonalFinancialTool
         private void GenerateReport(object sender, EventArgs e)
         {
             try {
-                using(SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\FinanceDB.mdf;Integrated Security=True"))
+
+                string relative = @"C:\Users\Alfred Edwin\Documents\FinanceToolDB.mdf";
+                string absolute = Path.GetDirectoryName(relative);
+                AppDomain.CurrentDomain.SetData("DataDirectory", absolute);
+
+                using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\FinanceToolDB.mdf;Integrated Security=True"))
                 {
                     if (con.State == ConnectionState.Closed)
                         con.Open();
                     using(DataTable dt = new DataTable("Transactions"))
                     {
-                        using( SqlCommand cmd = new SqlCommand("SELECT t.Id, t.CategoryType, t.Income, t.Expense, t.Description, t.Date, t.Amount, t.EventType FROM Transactions t WHERE t.Date between @startdate and @enddate", con))
+                        using( SqlCommand cmd = new SqlCommand("SELECT t.Id, t.CategoryType, t.Income, t.Expense, t.TransactionDescription, t.TransactionDate, t.Amount, t.EventName, t.UserId FROM Transactions t WHERE t.TransactionDate between @startdate and @enddate", con))
                         {
                             cmd.Parameters.AddWithValue("@startdate", dateTimePickerStartDate.Value);
                             cmd.Parameters.AddWithValue("@enddate", dateTimePickerEndDate.Value);

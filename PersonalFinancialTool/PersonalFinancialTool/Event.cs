@@ -15,10 +15,9 @@ namespace PersonalFinancialTool
     public partial class Event
     {
         public int Id { get; set; }
-        public string Property1 { get; set; }
+        public string EventName { get; set; }
         public string EventDate { get; set; }
         public string EventStatus { get; set; }
-    
-        public virtual Transaction Transaction { get; set; }
+        public int UserId { get; set; }
     }
 }

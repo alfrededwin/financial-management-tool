@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,8 @@ namespace PersonalFinancialTool
     public partial class FormLogin : Form
     {
         FinancialToolDataSet myDataSet = new FinancialToolDataSet();
+
+        public static int gblLoggedInUser = 0;
         public FormLogin()
         {
             InitializeComponent();
@@ -33,7 +36,13 @@ namespace PersonalFinancialTool
             {
                 if (isValid())
                 {
-                    using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\FinanceDB.mdf;Integrated Security=True"))
+
+                    string relative = @"C:\Users\Alfred Edwin\Documents\FinanceToolDB.mdf";
+                    string absolute = Path.GetDirectoryName(relative);
+                    AppDomain.CurrentDomain.SetData("DataDirectory", absolute);
+
+
+                    using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\FinanceToolDB.mdf;Integrated Security=True"))
                     {
                         string query = "SELECT * FROM Users WHERE Username = '" + textBoxUsername.Text.Trim() + "' AND Password = '" + textBoxPassword.Text.Trim() + "'  ";
                         con.Open();
@@ -43,6 +52,7 @@ namespace PersonalFinancialTool
                         con.Close();
                         if (dta.Rows.Count == 1)
                         {
+                            getLoggedInUser();
                             FormDashboard formDashboard = new FormDashboard();
                             formDashboard.Show();
                             this.Hide();
@@ -76,6 +86,37 @@ namespace PersonalFinancialTool
                 return false;
             }
             return true;
+        }
+
+        public void getLoggedInUser() {
+
+            int loggedInUser=0;
+
+            string relative = @"C:\Users\Alfred Edwin\Documents\FinanceToolDB.mdf";
+            string absolute = Path.GetDirectoryName(relative);
+            AppDomain.CurrentDomain.SetData("DataDirectory", absolute);
+        
+            using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\FinanceToolDB.mdf;Integrated Security=True"))
+            {
+               
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("SELECT u.Id FROM Users u WHERE u.Username = '" + textBoxUsername.Text.Trim() + "' AND u.Password = '" + textBoxPassword.Text.Trim() + "'  ", con);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    loggedInUser = reader.GetInt32(0);
+
+
+                }
+
+                con.Close();
+            }
+
+            gblLoggedInUser = loggedInUser;
+
         }
 
 

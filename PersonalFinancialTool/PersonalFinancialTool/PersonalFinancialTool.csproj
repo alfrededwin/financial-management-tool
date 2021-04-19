@@ -87,28 +87,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Category.cs">
-      <DependentUpon>FinanceDB.tt</DependentUpon>
+      <DependentUpon>FinanceToolDB.tt</DependentUpon>
     </Compile>
     <Compile Include="CategoryDetails.cs" />
     <Compile Include="CategoryModel.cs" />
     <Compile Include="Event.cs">
-      <DependentUpon>FinanceDB.tt</DependentUpon>
+      <DependentUpon>FinanceToolDB.tt</DependentUpon>
     </Compile>
     <Compile Include="EventDetails.cs" />
-    <Compile Include="FinanceDB.Context.cs">
+    <Compile Include="EventModel.cs" />
+    <Compile Include="FinanceToolDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FinanceDB.Context.tt</DependentUpon>
+      <DependentUpon>FinanceToolDB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="FinanceDB.cs">
+    <Compile Include="FinanceToolDB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FinanceDB.tt</DependentUpon>
+      <DependentUpon>FinanceToolDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="FinanceDB.Designer.cs">
+    <Compile Include="FinanceToolDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FinanceDB.edmx</DependentUpon>
+      <DependentUpon>FinanceToolDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="FinancialToolDataSet.cs">
       <DependentUpon>FinancialToolDataSet.xsd</DependentUpon>
@@ -211,12 +212,12 @@
       <DependentUpon>FormUpdateUserInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="Transaction.cs">
-      <DependentUpon>FinanceDB.tt</DependentUpon>
+      <DependentUpon>FinanceToolDB.tt</DependentUpon>
     </Compile>
     <Compile Include="TransactionDetails.cs" />
     <Compile Include="TransactionModel.cs" />
     <Compile Include="User.cs">
-      <DependentUpon>FinanceDB.tt</DependentUpon>
+      <DependentUpon>FinanceToolDB.tt</DependentUpon>
     </Compile>
     <Compile Include="UserDetails.cs" />
     <Compile Include="UserModel.cs" />
@@ -272,12 +273,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="FinanceDB.edmx">
+    <EntityDeploy Include="FinanceToolDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>FinanceDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>FinanceToolDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="FinanceDB.edmx.diagram">
-      <DependentUpon>FinanceDB.edmx</DependentUpon>
+    <None Include="FinanceToolDB.edmx.diagram">
+      <DependentUpon>FinanceToolDB.edmx</DependentUpon>
     </None>
     <None Include="FinancialToolDataSet.xsc">
       <DependentUpon>FinancialToolDataSet.xsd</DependentUpon>
@@ -312,26 +313,6 @@
     <None Include="Resources\login.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FinanceDB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>FinanceDB.Context.cs</LastGenOutput>
-      <DependentUpon>FinanceDB.edmx</DependentUpon>
-    </Content>
-    <Content Include="FinanceDB.edmx.sql" />
-    <Content Include="FinanceDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FinanceDB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>FinanceDB.cs</LastGenOutput>
-      <DependentUpon>FinanceDB.edmx</DependentUpon>
-    </Content>
-    <Content Include="FinanceDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>FinanceDB.mdf</DependentUpon>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
@@ -342,6 +323,19 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FinanceToolDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>FinanceToolDB.Context.cs</LastGenOutput>
+      <DependentUpon>FinanceToolDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="FinanceToolDB.edmx.sql" />
+    <Content Include="FinanceToolDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>FinanceToolDB.cs</LastGenOutput>
+      <DependentUpon>FinanceToolDB.edmx</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

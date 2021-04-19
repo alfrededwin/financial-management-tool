@@ -24,7 +24,7 @@ namespace PersonalFinancialTool
         public String sCategoryType = "";
 
         public String sFormStatus;
-   
+
 
         public FormCreateCategory()
         {
@@ -39,6 +39,8 @@ namespace PersonalFinancialTool
 
         private void CreateCategory(object sender, EventArgs e)
         {
+            int loggedInUser = FormLogin.gblLoggedInUser;
+
             try
             {
                 this.categoryDetails = new CategoryDetails();
@@ -56,37 +58,23 @@ namespace PersonalFinancialTool
                 }
                 else
                 {
+                    // Assign to Dataset
                     FinancialToolDataSet.CategoriesRow categoryRow = this.AppDataSet.Categories.NewCategoriesRow();
                     categoryRow.CategoryName = sCategoryName;
                     categoryRow.CategoryDescription = sCategoryDesc;
                     categoryRow.CategoryType = sCategoryType;
 
+                    // Apply Changes to DT
                     this.AppDataSet.Categories.AddCategoriesRow(categoryRow);
                     this.AppDataSet.AcceptChanges();
 
-
+                    // Writing to XML File
                     this.AppDataSet.WriteXml("PersonalFinanceToolDB.xml");
 
-                    // Wee have now stored into memory // Not dont the Forwarding, that should be done by the Entity Framework.
-                    // Might a Web Service or Might call a DB over the internet.
-                    // Forwarding
-
-
+                    // Forwarding to Database.
                     CategoryModel categoryModel = new CategoryModel();
                     categoryModel.SaveCategoryInformation(this.categoryDetails);
-
-
-
-
-
-
                     MessageBox.Show(String.Format(Properties.Resources.SUCCESS_MESSAGE, this.sCategoryLabel));
-
-
-                    //FormViewCategory formViewCategory = new FormViewCategory();
-                    //formViewCategory.loadData();
-
-
                     this.Close();
                 }
 

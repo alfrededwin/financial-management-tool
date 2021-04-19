@@ -14,7 +14,7 @@ namespace PersonalFinancialTool
 {
     public partial class FormCreateTransaction : Form
     {
-        //SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\FinanceDB.mdf;Integrated Security=True");
+       
         public String sTransactionLabel = "Transaction";
 
         FinancialToolDataSet AppDataSet = new FinancialToolDataSet();
@@ -82,6 +82,7 @@ namespace PersonalFinancialTool
         {
             try
             {
+                // Assign Values
                 this.transactionDetails = new TransactionDetails();
                 this.transactionDetails.categoryType = this.comboBoxTransCategoryType.Text.ToString();
                 this.transactionDetails.income = this.cmbIncomeType.Text.ToString();
@@ -91,38 +92,39 @@ namespace PersonalFinancialTool
                 this.transactionDetails.amount = this.textBoxTransAmount.Text;
                 this.transactionDetails.eventName = this.comboBoxTransEventName.Text.ToString();
 
-                FinancialToolDataSet.TransactionsRow transactionsRow = this.AppDataSet.Transactions.NewTransactionsRow();
 
-                transactionsRow.CategoryType = this.transactionDetails.categoryType;
-                transactionsRow.Income = this.transactionDetails.income;
-                transactionsRow.Expense = this.transactionDetails.expense;
+                if (string.IsNullOrWhiteSpace(this.transactionDetails.categoryType) || string.IsNullOrEmpty(this.transactionDetails.transactionDescription)  || string.IsNullOrEmpty(this.transactionDetails.transactionDate) || string.IsNullOrEmpty(this.transactionDetails.amount))
+                {
+                    MessageBox.Show(Properties.Resources.COMMON_MISSING_DATA);
+                }
+                else
+                {
+                    // Assign to Dataset
+                    FinancialToolDataSet.TransactionsRow transactionsRow = this.AppDataSet.Transactions.NewTransactionsRow();
 
-                transactionsRow.TransDescription = this.transactionDetails.transactionDescription;
-                transactionsRow.Date = this.transactionDetails.transactionDate;
-                transactionsRow.Amount = this.transactionDetails.amount;
-                transactionsRow.EventName = this.transactionDetails.eventName;
+                    transactionsRow.CategoryType = this.transactionDetails.categoryType;
+                    transactionsRow.Income = this.transactionDetails.income;
+                    transactionsRow.Expense = this.transactionDetails.expense;
+                    transactionsRow.TransDescription = this.transactionDetails.transactionDescription;
+                    transactionsRow.Date = this.transactionDetails.transactionDate;
+                    transactionsRow.Amount = this.transactionDetails.amount;
+                    transactionsRow.EventName = this.transactionDetails.eventName;
 
-                this.AppDataSet.Transactions.AddTransactionsRow(transactionsRow);
-                this.AppDataSet.AcceptChanges();
+                    // Apply Changes to DT
+                    this.AppDataSet.Transactions.AddTransactionsRow(transactionsRow);
+                    this.AppDataSet.AcceptChanges();
 
+                    // Writing to XML File
+                    this.AppDataSet.WriteXml("PersonalFinanceToolDB.xml");
 
-                this.AppDataSet.WriteXml("PersonalFinanceToolDB.xml");
+                    // Forwarding to Database.
+                    TransactionModel transactionModel = new TransactionModel();
+                    transactionModel.SaveTransactionInformation(this.transactionDetails);
 
-                // Wee have now stored into memory // Not dont the Forwarding, that should be done by the Entity Framework.
-                // Might a Web Service or Might call a DB over the internet.
-                // Forwarding
+                    MessageBox.Show(String.Format(Properties.Resources.SUCCESS_MESSAGE, this.sTransactionLabel));
+                    this.Close();
 
-
-                //TransactionModel transactionModel = new TransactionModel();
-                //transactionModel.SaveTransactionInformation(this.transactionDetails);
-
-
-
-
-
-
-                MessageBox.Show(String.Format(Properties.Resources.SUCCESS_MESSAGE, this.sTransactionLabel));
-                this.Close();
+                }
 
             }
             catch (Exception ex)

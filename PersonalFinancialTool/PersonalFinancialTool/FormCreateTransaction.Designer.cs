@@ -152,6 +152,9 @@ namespace PersonalFinancialTool
             // 
             this.comboBoxTransCategoryType.Font = new System.Drawing.Font("Cambria", 11.25F);
             this.comboBoxTransCategoryType.FormattingEnabled = true;
+            this.comboBoxTransCategoryType.Items.AddRange(new object[] {
+            "Income\t",
+            "Expense"});
             this.comboBoxTransCategoryType.Location = new System.Drawing.Point(170, 70);
             this.comboBoxTransCategoryType.Name = "comboBoxTransCategoryType";
             this.comboBoxTransCategoryType.Size = new System.Drawing.Size(208, 25);

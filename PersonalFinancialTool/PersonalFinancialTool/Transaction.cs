@@ -18,12 +18,10 @@ namespace PersonalFinancialTool
         public string CategoryType { get; set; }
         public string Income { get; set; }
         public string Expense { get; set; }
-        public string Description { get; set; }
-        public string Date { get; set; }
+        public string TransactionDescription { get; set; }
+        public string TransactionDate { get; set; }
         public string Amount { get; set; }
-        public string EventType { get; set; }
-    
-        public virtual Event Event { get; set; }
-        public virtual Category Category { get; set; }
+        public string EventName { get; set; }
+        public int UserId { get; set; }
     }
 }

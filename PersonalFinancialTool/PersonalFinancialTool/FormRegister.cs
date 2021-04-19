@@ -64,6 +64,10 @@ namespace PersonalFinancialTool
             userModel.SaveUserInformation(this.userDetails);
 
             this.Close();
+            FormLogin formLogin = new FormLogin();
+            formLogin.ShowDialog();
+
+           
 
 
         }

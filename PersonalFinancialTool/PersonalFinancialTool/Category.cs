@@ -18,7 +18,6 @@ namespace PersonalFinancialTool
         public string CategoryName { get; set; }
         public string CategoryDescription { get; set; }
         public string CategoryType { get; set; }
-    
-        public virtual Transaction Transaction { get; set; }
+        public int UserId { get; set; }
     }
 }

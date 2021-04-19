@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="FinanceToolDB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="FinanceToolDBContainer1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Users" EntityType="FinanceToolDB.User" />
+    <EntitySet Name="Categories" EntityType="FinanceToolDB.Category" />
+    <AssociationSet Name="UserCategory" Association="FinanceToolDB.UserCategory">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Category" EntitySet="Categories" />
+    </AssociationSet>
+    <EntitySet Name="Events" EntityType="FinanceToolDB.Event" />
+    <EntitySet Name="Transactions" EntityType="FinanceToolDB.Transaction" />
+    <AssociationSet Name="UserEvent" Association="FinanceToolDB.UserEvent">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Event" EntitySet="Events" />
+    </AssociationSet>
+    <AssociationSet Name="UserTransaction" Association="FinanceToolDB.UserTransaction">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Transaction" EntitySet="Transactions" />
+    </AssociationSet>
+    <AssociationSet Name="TransactionCategory" Association="FinanceToolDB.TransactionCategory">
+      <End Role="Transaction" EntitySet="Transactions" />
+      <End Role="Category" EntitySet="Categories" />
+    </AssociationSet>
+    <AssociationSet Name="TransactionEvent" Association="FinanceToolDB.TransactionEvent">
+      <End Role="Transaction" EntitySet="Transactions" />
+      <End Role="Event" EntitySet="Events" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" Nullable="false" />
+    <Property Name="Email" Type="String" Nullable="false" />
+    <Property Name="Username" Type="String" Nullable="false" />
+    <Property Name="Password" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" Nullable="false" />
+    <Property Name="CategoryDescription" Type="String" Nullable="false" />
+    <Property Name="CategoryType" Type="String" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="UserCategory">
+    <End Type="FinanceToolDB.User" Role="User" Multiplicity="1" />
+    <End Type="FinanceToolDB.Category" Role="Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Category">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EventName" Type="String" Nullable="false" />
+    <Property Name="EventDate" Type="String" Nullable="false" />
+    <Property Name="EventStatus" Type="String" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Transaction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryType" Type="String" Nullable="false" />
+    <Property Name="Income" Type="String" Nullable="false" />
+    <Property Name="Expense" Type="String" Nullable="false" />
+    <Property Name="TransactionDescription" Type="String" Nullable="false" />
+    <Property Name="TransactionDate" Type="String" Nullable="false" />
+    <Property Name="Amount" Type="String" Nullable="false" />
+    <Property Name="EventName" Type="String" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="UserEvent">
+    <End Type="FinanceToolDB.User" Role="User" Multiplicity="1" />
+    <End Type="FinanceToolDB.Event" Role="Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserTransaction">
+    <End Type="FinanceToolDB.User" Role="User" Multiplicity="1" />
+    <End Type="FinanceToolDB.Transaction" Role="Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Transaction">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TransactionCategory">
+    <End Type="FinanceToolDB.Transaction" Role="Transaction" Multiplicity="*" />
+    <End Type="FinanceToolDB.Category" Role="Category" Multiplicity="*" />
+  </Association>
+  <Association Name="TransactionEvent">
+    <End Type="FinanceToolDB.Transaction" Role="Transaction" Multiplicity="*" />
+    <End Type="FinanceToolDB.Event" Role="Event" Multiplicity="*" />
+  </Association>
+</Schema>

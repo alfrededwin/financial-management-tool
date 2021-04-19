@@ -15,6 +15,8 @@ namespace PersonalFinancialTool
     {
         FinancialToolDataSet AppDataSet = new FinancialToolDataSet();
         public String sEventLabel = "Event";
+        public EventDetails eventDetails { get; set; }
+        public FinancialToolDataSet  EventDataSet { get; set; }
 
         public FormCreateEvent()
         {
@@ -25,37 +27,44 @@ namespace PersonalFinancialTool
             }
         }
 
-        public EventDetails eventDetails;
+        //public EventDetails eventDetails;
 
         private void CreateEvent(object sender, EventArgs e)
         {
             try
             {
+                // Assign Values
                 this.eventDetails = new EventDetails();
                 this.eventDetails.eventName = this.textBoxEventName.Text;
                 this.eventDetails.eventDate = this.dateTimeEventDate.Text;
                 this.eventDetails.eventStatus = this.rdoRecurring.Text;
 
-                FinancialToolDataSet.EventsRow eventsRow = this.AppDataSet.Events.NewEventsRow();
-                eventsRow.EventName = this.eventDetails.eventName;
-                eventsRow.EventDate = this.eventDetails.eventDate;
-                eventsRow.EventStatus = this.eventDetails.eventStatus;
+                if (string.IsNullOrWhiteSpace(this.eventDetails.eventName) || string.IsNullOrWhiteSpace(this.eventDetails.eventDate))
+                {
+                    MessageBox.Show(Properties.Resources.COMMON_MISSING_DATA);
+                }
+                else
+                {
+                    // Assign to Dataset
+                    FinancialToolDataSet.EventsRow eventsRow = this.AppDataSet.Events.NewEventsRow();
+                    eventsRow.EventName = this.eventDetails.eventName;
+                    eventsRow.EventDate = this.eventDetails.eventDate;
+                    eventsRow.EventStatus = this.eventDetails.eventStatus;
 
+                    // Apply Changes to DT
+                    this.AppDataSet.Events.AddEventsRow(eventsRow);
+                    this.AppDataSet.AcceptChanges();
 
-                this.AppDataSet.Events.AddEventsRow(eventsRow);
-                this.AppDataSet.AcceptChanges();
+                    // Writing to XML File
+                    this.AppDataSet.WriteXml("PersonalFinanceToolDB.xml");
 
-                this.AppDataSet.WriteXml("PersonalFinanceToolDB.xml");
+                    // Forwarding to Database.
+                    EventModel eventModel = new EventModel();
+                    eventModel.SaveEventInformation(this.eventDetails);
+                    MessageBox.Show(String.Format(Properties.Resources.SUCCESS_MESSAGE, this.sEventLabel));
+                    this.Close();
+                }
 
-                // Wee have now stored into memory // Not dont the Forwarding, that should be done by the Entity Framework.
-                // Might a Web Service or Might call a DB over the internet.
-                // Forwarding
-
-                //CategoryModel categoryModel = new CategoryModel();
-                //categoryModel.SaveCategoryInformation(this.categoryDetails);
-                //MessageBox.Show(String.Format(Properties.Resources.SUCCESS_MESSAGE, this.sCategoryLabel));
-
-                this.Close();
             }
             catch (Exception ex)
             {

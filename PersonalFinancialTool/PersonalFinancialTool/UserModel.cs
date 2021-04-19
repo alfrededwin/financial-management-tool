@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PersonalFinancialTool
 {
@@ -10,22 +11,25 @@ namespace PersonalFinancialTool
     {
         public void SaveUserInformation(UserDetails info)
         {
-            // Apply Biz Rules
-            // Throw Exception
-            // Push to Database
+            try
+            {
+                User user = new User();
+                user.FullName = info.fullName;
+                user.Username = info.username;
+                user.Email = info.email;
+                user.Password = info.password;
 
-            // We need to use Entity Framework
-
-            User user = new User();
-            user.FullName = info.fullName;
-            user.Username = info.username;
-            user.Email = info.email;
-            user.Password = info.password;
-
-            //// add to database
-            FinanceDBContainer db = new FinanceDBContainer();
-            db.Users.Add(user);
-            db.SaveChanges();
+                // Add to database
+                FinanceToolDBContainer1 db = new FinanceToolDBContainer1();
+                db.Users.Add(user);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
     }
 }
