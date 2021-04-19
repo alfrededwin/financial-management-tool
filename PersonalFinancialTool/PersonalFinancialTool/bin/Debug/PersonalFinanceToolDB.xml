@@ -2,20 +2,20 @@
 <FinancialToolDataSet xmlns="http://tempuri.org/FinancialToolDataSet.xsd">
   <Categories>
     <CategoryId>1</CategoryId>
-    <CategoryName>Salary</CategoryName>
-    <CategoryDescription>Month of April</CategoryDescription>
+    <CategoryName>TY</CategoryName>
+    <CategoryDescription>rrrrrr</CategoryDescription>
     <CategoryType>Income</CategoryType>
-  </Categories>
-  <Categories>
-    <CategoryId>2</CategoryId>
-    <CategoryName>Medical</CategoryName>
-    <CategoryDescription>Medical</CategoryDescription>
-    <CategoryType>Expense</CategoryType>
   </Categories>
   <Events>
     <EventId>1</EventId>
     <EventName>Pay Loan</EventName>
     <EventDate>4/18/2021</EventDate>
+    <EventStatus>Recurring</EventStatus>
+  </Events>
+  <Events>
+    <EventId>2</EventId>
+    <EventName>Dentist1</EventName>
+    <EventDate>4/19/2021</EventDate>
     <EventStatus>Recurring</EventStatus>
   </Events>
   <Users>
@@ -47,10 +47,10 @@
     <CategoryType>Income	</CategoryType>
     <Income>Medical</Income>
     <Expense />
-    <TransDescription>bil</TransDescription>
+    <TransDescription>Bill</TransDescription>
     <Date>4/18/2021</Date>
     <Amount>400</Amount>
-    <EventName>rt</EventName>
+    <EventName>Pay Loan</EventName>
   </Transactions>
   <Transactions>
     <TransactionId>3</TransactionId>
@@ -61,5 +61,15 @@
     <Date>4/19/2021</Date>
     <Amount>100000</Amount>
     <EventName />
+  </Transactions>
+  <Transactions>
+    <TransactionId>4</TransactionId>
+    <CategoryType>Expense</CategoryType>
+    <Income />
+    <Expense>Medical</Expense>
+    <TransDescription>Dentist</TransDescription>
+    <Date>4/19/2021</Date>
+    <Amount>3560</Amount>
+    <EventName>Dentist</EventName>
   </Transactions>
 </FinancialToolDataSet>

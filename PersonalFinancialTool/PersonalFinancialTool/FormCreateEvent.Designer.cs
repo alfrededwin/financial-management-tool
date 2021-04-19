@@ -50,6 +50,7 @@ namespace PersonalFinancialTool
             this.btnUpdateEvent.TabIndex = 19;
             this.btnUpdateEvent.Text = "Update";
             this.btnUpdateEvent.UseVisualStyleBackColor = true;
+            this.btnUpdateEvent.Click += new System.EventHandler(this.UpdateEvent);
             // 
             // btnCreateEvent
             // 

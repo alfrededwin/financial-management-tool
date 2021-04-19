@@ -24,6 +24,7 @@ namespace PersonalFinancialTool
         public String sTransDate = "";
         public String sAmount = "";
         public String sTransEventName = "";
+        public int iTransactionId = 0;
 
 
         public FormViewTransaction()
@@ -50,6 +51,7 @@ namespace PersonalFinancialTool
         private void SelectTransactionRow(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow getRow = dataGridViewTransaction.Rows[e.RowIndex];
+            iTransactionId = Int32.Parse(this.dataGridViewTransaction.CurrentRow.Cells[0].Value.ToString());
             sTransCategoryType = this.dataGridViewTransaction.CurrentRow.Cells[1].Value.ToString();
             sIncome = this.dataGridViewTransaction.CurrentRow.Cells[2].Value.ToString();
             sExpense = this.dataGridViewTransaction.CurrentRow.Cells[3].Value.ToString();
@@ -62,7 +64,7 @@ namespace PersonalFinancialTool
         private void navUpdateTransaction(object sender, EventArgs e)
         {
             FormCreateTransaction formCreateTransaction = new FormCreateTransaction();
-            formCreateTransaction.SetUpdateFields(sTransCategoryType, sIncome, sExpense, sTransDesc, sTransDate, sAmount, sTransEventName);
+            formCreateTransaction.SetUpdateFields(sTransCategoryType, sIncome, sExpense, sTransDesc, sTransDate, sAmount, sTransEventName, iTransactionId);
             formCreateTransaction.btnCreateEvent.Hide();
             formCreateTransaction.Show();
         }

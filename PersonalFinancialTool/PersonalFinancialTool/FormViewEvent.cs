@@ -18,6 +18,7 @@ namespace PersonalFinancialTool
         public String sEventName = "";
         public String sEventStatus = "";
         public String sEventDate = "";
+        public int sEventId = 0;
         public FormViewEvent()
         {
             InitializeComponent();
@@ -42,7 +43,7 @@ namespace PersonalFinancialTool
         private void UpdateEvent(object sender, EventArgs e)
         {
             FormCreateEvent formCreateEvent = new FormCreateEvent();
-            formCreateEvent.SetUpdateFields(sEventName, sEventDate, sEventStatus);
+            formCreateEvent.SetUpdateFields(sEventName, sEventDate, sEventStatus, sEventId);
             formCreateEvent.btnCreateEvent.Hide();
             formCreateEvent.Show();
         }
@@ -50,6 +51,7 @@ namespace PersonalFinancialTool
         private void SelectEventRow(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow getRow = dataGridViewEvent.Rows[e.RowIndex];
+            sEventId = Int32.Parse(this.dataGridViewEvent.CurrentRow.Cells[0].Value.ToString());
             sEventName = this.dataGridViewEvent.CurrentRow.Cells[1].Value.ToString();
             sEventDate = this.dataGridViewEvent.CurrentRow.Cells[2].Value.ToString();
             sEventStatus = this.dataGridViewEvent.CurrentRow.Cells[3].Value.ToString();

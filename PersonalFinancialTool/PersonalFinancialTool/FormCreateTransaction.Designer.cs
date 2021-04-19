@@ -76,6 +76,7 @@ namespace PersonalFinancialTool
             this.btnUpdateEvent.TabIndex = 31;
             this.btnUpdateEvent.Text = "Update";
             this.btnUpdateEvent.UseVisualStyleBackColor = true;
+            this.btnUpdateEvent.Click += new System.EventHandler(this.UpdateTransaction);
             // 
             // btnCreateEvent
             // 
@@ -139,11 +140,11 @@ namespace PersonalFinancialTool
             // 
             this.lblLoginSubTitle.AutoSize = true;
             this.lblLoginSubTitle.Font = new System.Drawing.Font("Cambria", 11.25F);
-            this.lblLoginSubTitle.Location = new System.Drawing.Point(43, 33);
+            this.lblLoginSubTitle.Location = new System.Drawing.Point(27, 32);
             this.lblLoginSubTitle.Name = "lblLoginSubTitle";
-            this.lblLoginSubTitle.Size = new System.Drawing.Size(335, 17);
+            this.lblLoginSubTitle.Size = new System.Drawing.Size(385, 17);
             this.lblLoginSubTitle.TabIndex = 24;
-            this.lblLoginSubTitle.Text = "Fill in the required fields to create a new Transaction";
+            this.lblLoginSubTitle.Text = "Fill in the required fields to create/update a new Transaction";
             // 
             // comboBoxTransCategoryType
             // 

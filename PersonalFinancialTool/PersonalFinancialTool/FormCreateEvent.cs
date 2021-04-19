@@ -15,8 +15,10 @@ namespace PersonalFinancialTool
     {
         FinancialToolDataSet AppDataSet = new FinancialToolDataSet();
         public String sEventLabel = "Event";
+        public static int globalIdToUpdate = 0;
         public EventDetails eventDetails { get; set; }
         public FinancialToolDataSet  EventDataSet { get; set; }
+
 
         public FormCreateEvent()
         {
@@ -73,16 +75,56 @@ namespace PersonalFinancialTool
         }
 
 
-        public void SetUpdateFields(String eventName, String eventDate, String eventStatus)
+        public void SetUpdateFields(String eventName, String eventDate, String eventStatus, int sEventId)
         {
             this.textBoxEventName.Text = eventName;
             this.dateTimeEventDate.Text = eventDate;
             this.rdoRecurring.Text = eventStatus;
+            globalIdToUpdate = sEventId;
         }
 
+        private void UpdateEvent(object sender, EventArgs e)
+        {
+            try
+            {
+                // Assign Values
+                this.eventDetails = new EventDetails();
+                this.eventDetails.eventName = this.textBoxEventName.Text;
+                this.eventDetails.eventDate = this.dateTimeEventDate.Text;
+                this.eventDetails.eventStatus = this.rdoRecurring.Text;
 
+                if (string.IsNullOrWhiteSpace(this.eventDetails.eventName) || string.IsNullOrWhiteSpace(this.eventDetails.eventDate))
+                {
+                    MessageBox.Show(Properties.Resources.COMMON_MISSING_DATA);
+                }
+                else
+                {
+                    // Assign to Dataset
+                    FinancialToolDataSet.EventsRow eventsRow = this.AppDataSet.Events.FindByEventId(globalIdToUpdate);
+                    eventsRow.EventName = this.eventDetails.eventName;
+                    eventsRow.EventDate = this.eventDetails.eventDate;
+                    eventsRow.EventStatus = this.eventDetails.eventStatus;
 
+                    // Apply Changes to DT
+                    this.AppDataSet.AcceptChanges();
 
+                    // Writing to XML File
+                    this.AppDataSet.WriteXml("PersonalFinanceToolDB.xml");
 
+                    // Forwarding to Database.
+                    EventModel eventModel = new EventModel();
+                    eventModel.UpdateEventInformation(globalIdToUpdate,this.eventDetails);
+                    MessageBox.Show(String.Format(Properties.Resources.SUCCESS_UPDATE, this.sEventLabel));
+                    this.Close();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        
+
+    }
     }
 }

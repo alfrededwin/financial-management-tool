@@ -98,7 +98,7 @@ namespace PersonalFinancialTool.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Successfully Updated..
+        ///   Looks up a localized string similar to {0} Successfully Updated..
         /// </summary>
         internal static string SUCCESS_UPDATE {
             get {

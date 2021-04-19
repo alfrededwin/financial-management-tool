@@ -16,5 +16,10 @@ namespace PersonalFinancialTool
         {
             InitializeComponent();
         }
+
+        private void ViewPrediction(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -22,6 +22,7 @@ namespace PersonalFinancialTool
         public String sCategoryName = "";
         public String sCategoryDesc = "";
         public String sCategoryType = "";
+        public static int globalIdToUpdate = 0;
 
         public String sFormStatus;
 
@@ -97,7 +98,8 @@ namespace PersonalFinancialTool
 
         //}
 
-        public void SetUpdateFields(String categoryName, String categoryDesc, String categoryType) {
+        public void SetUpdateFields(String categoryName, String categoryDesc, String categoryType, int sCategoryId) {
+            globalIdToUpdate = sCategoryId;
             this.textBoxCategoryName.Text = categoryName;
             this.textBoxCategoryDesc.Text = categoryDesc;
             this.comboBoxCategoryType.Text = categoryType;
@@ -108,10 +110,7 @@ namespace PersonalFinancialTool
 
         private void UpdateCategory(object sender, EventArgs e)
         {
-            //textBoxCategoryName.Text = categoryDetails.categoryName;
-            //textBoxCategoryDesc.Text = categoryDetails.categoryDescription;
-            //comboBoxCategoryType.Text = categoryDetails.categoryType;
-
+   
             try
             {
 
@@ -124,31 +123,23 @@ namespace PersonalFinancialTool
                 sCategoryDesc = this.categoryDetails.categoryDescription;
                 sCategoryType = this.categoryDetails.categoryType;
 
-                FinancialToolDataSet.CategoriesRow categoryRow = this.AppDataSet.Categories.NewCategoriesRow();
+                FinancialToolDataSet.CategoriesRow categoryRow = this.AppDataSet.Categories.FindByCategoryId(globalIdToUpdate);
                 categoryRow.CategoryName = sCategoryName;
                 categoryRow.CategoryDescription = sCategoryDesc;
                 categoryRow.CategoryType = sCategoryType;
-
-                this.AppDataSet.Categories.AddCategoriesRow(categoryRow);
                 this.AppDataSet.AcceptChanges();
-
 
                 this.AppDataSet.WriteXml("PersonalFinanceToolDB.xml");
 
-                // Wee have now stored into memory // Not dont the Forwarding, that should be done by the Entity Framework.
-                // Might a Web Service or Might call a DB over the internet.
-                // Forwarding
+                FormViewCategory formViewCategory = new FormViewCategory();
+                formViewCategory.dataGridViewCategory.Update();
+                formViewCategory.dataGridViewCategory.Refresh();
 
-
+                // Update to Database
                 CategoryModel categoryModel = new CategoryModel();
-                categoryModel.SaveCategoryInformation(this.categoryDetails);
+                categoryModel.UpdateCategoryInformation(globalIdToUpdate, this.categoryDetails);
 
-
-
-
-
-
-                MessageBox.Show(String.Format(Properties.Resources.SUCCESS_MESSAGE, this.sCategoryLabel));
+                MessageBox.Show(String.Format(Properties.Resources.SUCCESS_UPDATE, this.sCategoryLabel));
                 this.Close();
             }
             catch (Exception ex)

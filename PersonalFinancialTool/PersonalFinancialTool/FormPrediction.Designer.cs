@@ -29,11 +29,16 @@ namespace PersonalFinancialTool
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBoxPrediction = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.buttonViewPrediction = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.chartPrediction = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBoxPrediction.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPrediction)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -58,14 +63,6 @@ namespace PersonalFinancialTool
             this.groupBoxPrediction.TabStop = false;
             this.groupBoxPrediction.Text = "Prediction Criteria";
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(120, 27);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(116, 23);
-            this.dateTimePicker1.TabIndex = 1;
-            // 
             // buttonViewPrediction
             // 
             this.buttonViewPrediction.Location = new System.Drawing.Point(259, 27);
@@ -74,17 +71,44 @@ namespace PersonalFinancialTool
             this.buttonViewPrediction.TabIndex = 2;
             this.buttonViewPrediction.Text = "View Prediction";
             this.buttonViewPrediction.UseVisualStyleBackColor = true;
+            this.buttonViewPrediction.Click += new System.EventHandler(this.ViewPrediction);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(120, 27);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(116, 23);
+            this.dateTimePicker1.TabIndex = 1;
+            // 
+            // chartPrediction
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chartPrediction.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartPrediction.Legends.Add(legend2);
+            this.chartPrediction.Location = new System.Drawing.Point(92, 89);
+            this.chartPrediction.Name = "chartPrediction";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Average Category";
+            this.chartPrediction.Series.Add(series2);
+            this.chartPrediction.Size = new System.Drawing.Size(587, 283);
+            this.chartPrediction.TabIndex = 2;
+            this.chartPrediction.Text = "chart1";
             // 
             // FormPrediction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(776, 384);
+            this.Controls.Add(this.chartPrediction);
             this.Controls.Add(this.groupBoxPrediction);
             this.Name = "FormPrediction";
             this.Text = "Prediction";
             this.groupBoxPrediction.ResumeLayout(false);
             this.groupBoxPrediction.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPrediction)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -95,5 +119,6 @@ namespace PersonalFinancialTool
         private System.Windows.Forms.GroupBox groupBoxPrediction;
         private System.Windows.Forms.Button buttonViewPrediction;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartPrediction;
     }
 }

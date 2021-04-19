@@ -21,6 +21,7 @@ namespace PersonalFinancialTool
         public String sCategoryName = "";
         public String sCategoryDesc = "";
         public String sCategoryType = "";
+        public int sCategoryId =0 ;
 
         public FormViewCategory()
         {
@@ -38,13 +39,16 @@ namespace PersonalFinancialTool
             this.financialToolDataSet = this.CategoryDataSet;
             this.dataGridViewCategory.DataSource = this.financialToolDataSet;
             this.dataGridViewCategory.DataMember = "Categories";
+          
         }
 
         private void navCreateCategory(object sender, EventArgs e)
         {
             FormCreateCategory formCreateCategory = new FormCreateCategory();
             formCreateCategory.btnUpdateCategory.Hide();
-            formCreateCategory.ShowDialog();
+            FormDashboard formDashboard = new FormDashboard();
+            formDashboard.Hide();
+            formCreateCategory.Show();
         }
 
         private void FormViewCategory_Load(object sender, EventArgs e)
@@ -60,6 +64,7 @@ namespace PersonalFinancialTool
         private void SelectCategoryRow(object sender, DataGridViewCellEventArgs e)
         {
            DataGridViewRow getRow = dataGridViewCategory.Rows[e.RowIndex];
+           sCategoryId = Int32.Parse( this.dataGridViewCategory.CurrentRow.Cells[0].Value.ToString());
            sCategoryName = this.dataGridViewCategory.CurrentRow.Cells[1].Value.ToString();
            sCategoryDesc = this.dataGridViewCategory.CurrentRow.Cells[2].Value.ToString();
            sCategoryType = this.dataGridViewCategory.CurrentRow.Cells[3].Value.ToString();
@@ -68,14 +73,16 @@ namespace PersonalFinancialTool
         public void loadData() {
 
             var st = from s in myDataSet.Categories select s;
-            dataGridViewCategory.DataSource = st;
+            this.dataGridViewCategory.DataSource = st;
 
         }
 
         private void navUpdateCategory(object sender, EventArgs e)
         {
+            
             FormCreateCategory formCreateCategory = new FormCreateCategory();
-            formCreateCategory.SetUpdateFields(sCategoryName, sCategoryDesc, sCategoryType);
+
+            formCreateCategory.SetUpdateFields(sCategoryName, sCategoryDesc, sCategoryType, sCategoryId);
             formCreateCategory.btnCreateCategory.Hide();
             formCreateCategory.Show();
         }

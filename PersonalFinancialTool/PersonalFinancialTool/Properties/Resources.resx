@@ -131,6 +131,6 @@
     <value>{0} Records Successfully Saved.</value>
   </data>
   <data name="SUCCESS_UPDATE" xml:space="preserve">
-    <value>Successfully Updated.</value>
+    <value>{0} Successfully Updated.</value>
   </data>
 </root>
