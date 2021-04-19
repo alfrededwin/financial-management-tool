@@ -21,6 +21,7 @@ namespace PersonalFinancialTool
         public TransactionDetails transactionDetails { get; set; }
         public FinancialToolDataSet TransactionDataSet { get; set; }
 
+
         public FormCreateTransaction()
         {
             InitializeComponent();
@@ -30,46 +31,9 @@ namespace PersonalFinancialTool
                 this.AppDataSet.ReadXml("PersonalFinanceToolDB.xml");
             }
 
-            //GetIncome();
+            getEventName();
         }
 
-
-        //void GetIncome()
-        //{
-
-
-        //    SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\FinanceDB.mdf;Integrated Security=True");
-        //    con.Open();
-        //    string query = "SELECT * FROM Catergories";
-        //    //SqlDataAdapter sda = new SqlDataAdapter(query, con);
-        //    //DataTable dta = new DataTable();
-        //    //sda.Fill(dta);
-
-        //    SqlCommand cmd = new SqlCommand("SELECT * FROM Catergories", con);
-
-        //    SqlDataReader reader = cmd.ExecuteReader();
-
-        //    while (reader.Read()) {
-
-        //        string income = reader.GetString(1);
-        //        cmbIncomeType.Items.Add(income);
-
-        //    }
-
-        //    //OleDbCommand cmd = new OleDbCommand("SELECT * FROM ALWO_Airport_Info_TAB ", Con);
-        //    //OleDbDataReader read = cmd.ExecuteReader();
-
-        //    //while (read.Read())
-        //    //{
-
-        //    //    //string iAirportID = read.GetString(1);
-        //    //    // comboBoxAircraftID.Items.Add(iAirportID);
-        //    //    cmbIncomeType.Items.Add(read["CategoryDescription"].ToString());
-
-        //    //}
-        //    con.Close();
-
-        //}
 
         private void FormCreateTransaction_Load(object sender, EventArgs e)
         {
@@ -146,33 +110,78 @@ namespace PersonalFinancialTool
         }
 
 
-        //String getCategoryType(String description)
-        //{
-        //    //String type = "";
-           
-        //    //string MyConnection = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\FinanceDB.mdf;Integrated Security=True";
-        //    //SqlConnection MyConn2 = new SqlConnection(MyConnection);
-        //    //MyConn2.Open();
-        //    //String query = "SELECT * FROM iexpensedb.category_tab  WHERE category_name = '" + description + "' and username = '" + username + "'; ";
-        //    //SqlDataAdapter sqlCommand = new SqlDataAdapter(query, MyConn2);
-        //    //SqlDataReader mySqlDataReader;
-        //    //mySqlDataReader = sqlCommand.ExecuteReader();
-        //    //while (mySqlDataReader.Read())
-        //    //{
+        public void getEventName()
+        {
+            string relative = @"C:\Users\Alfred Edwin\Documents\FinanceToolDB.mdf";
+            string absolute = Path.GetDirectoryName(relative);
+            AppDomain.CurrentDomain.SetData("DataDirectory", absolute);
 
-        //    //    if (mySqlDataReader.GetString("category_name").Equals(description))
-        //    //    {
-        //    //        type = mySqlDataReader.GetString("category_type");
-        //    //        break;
-        //    //    }
-        //    //}
-        //    //MyConn2.Close();
-        //    //return type;
+            using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\FinanceToolDB.mdf;Integrated Security=True"))
+            {
 
+                con.Open();
 
-        //}
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Events e ", con);
+                SqlDataReader reader = cmd.ExecuteReader();
 
+                while (reader.Read())
+                {
+                    String sEventName = reader.GetString(1);
+                    comboBoxTransEventName.Items.Add(sEventName);
+                }
+
+                con.Close();
+            }
+
+        }
 
 
+        public void getIncomeExpense()
+        {
+            string relative = @"C:\Users\Alfred Edwin\Documents\FinanceToolDB.mdf";
+            string absolute = Path.GetDirectoryName(relative);
+            AppDomain.CurrentDomain.SetData("DataDirectory", absolute);
+
+            using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\FinanceToolDB.mdf;Integrated Security=True"))
+            {
+
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Categories e WHERE e.CategoryType = '" + comboBoxTransCategoryType.Text.Trim() +"' ", con);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    String sIncomeExpense = reader.GetString(1);
+                    cmbIncomeType.Items.Add(sIncomeExpense);
+                    cmbExpenseType.Items.Add(sIncomeExpense);
+                }
+                con.Close();
+            }
+
+            if (comboBoxTransCategoryType.Text.Trim().Equals("Income")) {
+                cmbExpenseType.Enabled = false;
+                lblExpense.Enabled = false;
+                cmbIncomeType.Enabled = true;
+                cmbExpenseType.Text = "";
+            }
+
+            if (comboBoxTransCategoryType.Text.Trim().Equals("Expense"))
+            {
+                cmbIncomeType.Enabled = false;
+                lblIncome.Enabled = false;
+                cmbExpenseType.Enabled = true;
+                cmbIncomeType.Text = "";
+            }
+
+
+        }
+
+        private void TriggerCategoryTypeDropDown(object sender, EventArgs e)
+        {
+            cmbIncomeType.Items.Clear();
+            cmbExpenseType.Items.Clear();
+            getIncomeExpense();
+        }
     }
 }

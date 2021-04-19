@@ -52,4 +52,14 @@
     <Amount>400</Amount>
     <EventName>rt</EventName>
   </Transactions>
+  <Transactions>
+    <TransactionId>3</TransactionId>
+    <CategoryType>Income	</CategoryType>
+    <Income>Salary</Income>
+    <Expense />
+    <TransDescription>Month of April</TransDescription>
+    <Date>4/19/2021</Date>
+    <Amount>100000</Amount>
+    <EventName />
+  </Transactions>
 </FinancialToolDataSet>

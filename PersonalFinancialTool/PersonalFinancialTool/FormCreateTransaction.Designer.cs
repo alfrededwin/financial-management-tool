@@ -92,9 +92,6 @@ namespace PersonalFinancialTool
             // 
             this.comboBoxTransEventName.Font = new System.Drawing.Font("Cambria", 11.25F);
             this.comboBoxTransEventName.FormattingEnabled = true;
-            this.comboBoxTransEventName.Items.AddRange(new object[] {
-            "Income",
-            "Expense"});
             this.comboBoxTransEventName.Location = new System.Drawing.Point(170, 291);
             this.comboBoxTransEventName.Name = "comboBoxTransEventName";
             this.comboBoxTransEventName.Size = new System.Drawing.Size(208, 25);
@@ -159,6 +156,7 @@ namespace PersonalFinancialTool
             this.comboBoxTransCategoryType.Name = "comboBoxTransCategoryType";
             this.comboBoxTransCategoryType.Size = new System.Drawing.Size(208, 25);
             this.comboBoxTransCategoryType.TabIndex = 37;
+            this.comboBoxTransCategoryType.SelectedIndexChanged += new System.EventHandler(this.TriggerCategoryTypeDropDown);
             // 
             // labelTransactionCatType
             // 
