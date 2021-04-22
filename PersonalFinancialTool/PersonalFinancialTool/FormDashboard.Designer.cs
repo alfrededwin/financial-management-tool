@@ -35,7 +35,9 @@ namespace PersonalFinancialTool
             this.tabPageEvent = new System.Windows.Forms.TabPage();
             this.tabPagePrediction = new System.Windows.Forms.TabPage();
             this.tabPageReport = new System.Windows.Forms.TabPage();
+            this.tabPageWeeklyView = new System.Windows.Forms.TabPage();
             this.tabPageSettings = new System.Windows.Forms.TabPage();
+            this.logoutButton1 = new PersonalFinancialTool.LogoutButton();
             this.tabControlDashboard.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,11 +48,12 @@ namespace PersonalFinancialTool
             this.tabControlDashboard.Controls.Add(this.tabPageEvent);
             this.tabControlDashboard.Controls.Add(this.tabPagePrediction);
             this.tabControlDashboard.Controls.Add(this.tabPageReport);
+            this.tabControlDashboard.Controls.Add(this.tabPageWeeklyView);
             this.tabControlDashboard.Controls.Add(this.tabPageSettings);
-            this.tabControlDashboard.Location = new System.Drawing.Point(2, 1);
+            this.tabControlDashboard.Location = new System.Drawing.Point(2, 5);
             this.tabControlDashboard.Name = "tabControlDashboard";
             this.tabControlDashboard.SelectedIndex = 0;
-            this.tabControlDashboard.Size = new System.Drawing.Size(800, 449);
+            this.tabControlDashboard.Size = new System.Drawing.Size(800, 445);
             this.tabControlDashboard.TabIndex = 0;
             // 
             // tabPageTransaction
@@ -59,7 +62,7 @@ namespace PersonalFinancialTool
             this.tabPageTransaction.Location = new System.Drawing.Point(4, 22);
             this.tabPageTransaction.Name = "tabPageTransaction";
             this.tabPageTransaction.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTransaction.Size = new System.Drawing.Size(792, 423);
+            this.tabPageTransaction.Size = new System.Drawing.Size(792, 419);
             this.tabPageTransaction.TabIndex = 0;
             this.tabPageTransaction.Text = "Transaction";
             // 
@@ -103,6 +106,16 @@ namespace PersonalFinancialTool
             this.tabPageReport.TabIndex = 4;
             this.tabPageReport.Text = "Report";
             // 
+            // tabPageWeeklyView
+            // 
+            this.tabPageWeeklyView.BackColor = System.Drawing.SystemColors.Highlight;
+            this.tabPageWeeklyView.Location = new System.Drawing.Point(4, 22);
+            this.tabPageWeeklyView.Name = "tabPageWeeklyView";
+            this.tabPageWeeklyView.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageWeeklyView.Size = new System.Drawing.Size(792, 423);
+            this.tabPageWeeklyView.TabIndex = 6;
+            this.tabPageWeeklyView.Text = "Weekly View";
+            // 
             // tabPageSettings
             // 
             this.tabPageSettings.BackColor = System.Drawing.SystemColors.Highlight;
@@ -113,12 +126,20 @@ namespace PersonalFinancialTool
             this.tabPageSettings.TabIndex = 5;
             this.tabPageSettings.Text = "Settings";
             // 
+            // logoutButton1
+            // 
+            this.logoutButton1.Location = new System.Drawing.Point(712, -2);
+            this.logoutButton1.Name = "logoutButton1";
+            this.logoutButton1.Size = new System.Drawing.Size(81, 29);
+            this.logoutButton1.TabIndex = 1;
+            // 
             // FormDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.logoutButton1);
             this.Controls.Add(this.tabControlDashboard);
             this.MaximizeBox = false;
             this.Name = "FormDashboard";
@@ -140,5 +161,7 @@ namespace PersonalFinancialTool
         private System.Windows.Forms.TabPage tabPageReport;
         private System.Windows.Forms.TabPage tabPageSettings;
         private System.Windows.Forms.TabPage tabPageTransaction;
+        private System.Windows.Forms.TabPage tabPageWeeklyView;
+        private LogoutButton logoutButton1;
     }
 }

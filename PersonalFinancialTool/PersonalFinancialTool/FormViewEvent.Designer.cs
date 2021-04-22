@@ -33,17 +33,11 @@ namespace PersonalFinancialTool
             this.btnUpdateEvent = new System.Windows.Forms.Button();
             this.btnCreateEvent = new System.Windows.Forms.Button();
             this.dataGridViewEvent = new System.Windows.Forms.DataGridView();
-            this.eventIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eventNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eventDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eventStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eventsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.financialToolDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.financialToolDataSet = new PersonalFinancialTool.FinancialToolDataSet();
+            this.contextMenuStripEvent = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEvent)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eventsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.financialToolDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.financialToolDataSet)).BeginInit();
+            this.contextMenuStripEvent.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnUpdateEvent
@@ -70,66 +64,41 @@ namespace PersonalFinancialTool
             // 
             // dataGridViewEvent
             // 
-            this.dataGridViewEvent.AutoGenerateColumns = false;
             this.dataGridViewEvent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewEvent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEvent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.eventIdDataGridViewTextBoxColumn,
-            this.eventNameDataGridViewTextBoxColumn,
-            this.eventDateDataGridViewTextBoxColumn,
-            this.eventStatusDataGridViewTextBoxColumn});
-            this.dataGridViewEvent.DataSource = this.eventsBindingSource;
             this.dataGridViewEvent.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewEvent.Name = "dataGridViewEvent";
             this.dataGridViewEvent.Size = new System.Drawing.Size(752, 323);
             this.dataGridViewEvent.TabIndex = 28;
             this.dataGridViewEvent.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SelectEventRow);
             // 
-            // eventIdDataGridViewTextBoxColumn
+            // contextMenuStripEvent
             // 
-            this.eventIdDataGridViewTextBoxColumn.DataPropertyName = "EventId";
-            this.eventIdDataGridViewTextBoxColumn.HeaderText = "EventId";
-            this.eventIdDataGridViewTextBoxColumn.Name = "eventIdDataGridViewTextBoxColumn";
-            this.eventIdDataGridViewTextBoxColumn.Visible = false;
+            this.contextMenuStripEvent.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.refreshToolStripMenuItem,
+            this.settingsToolStripMenuItem});
+            this.contextMenuStripEvent.Name = "contextMenuStripEvent";
+            this.contextMenuStripEvent.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuStripEvent.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MenuStripViewEvent);
             // 
-            // eventNameDataGridViewTextBoxColumn
+            // refreshToolStripMenuItem
             // 
-            this.eventNameDataGridViewTextBoxColumn.DataPropertyName = "EventName";
-            this.eventNameDataGridViewTextBoxColumn.HeaderText = "EventName";
-            this.eventNameDataGridViewTextBoxColumn.Name = "eventNameDataGridViewTextBoxColumn";
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.refreshToolStripMenuItem.Text = "Refresh";
             // 
-            // eventDateDataGridViewTextBoxColumn
+            // settingsToolStripMenuItem
             // 
-            this.eventDateDataGridViewTextBoxColumn.DataPropertyName = "EventDate";
-            this.eventDateDataGridViewTextBoxColumn.HeaderText = "EventDate";
-            this.eventDateDataGridViewTextBoxColumn.Name = "eventDateDataGridViewTextBoxColumn";
-            // 
-            // eventStatusDataGridViewTextBoxColumn
-            // 
-            this.eventStatusDataGridViewTextBoxColumn.DataPropertyName = "EventStatus";
-            this.eventStatusDataGridViewTextBoxColumn.HeaderText = "EventStatus";
-            this.eventStatusDataGridViewTextBoxColumn.Name = "eventStatusDataGridViewTextBoxColumn";
-            // 
-            // eventsBindingSource
-            // 
-            this.eventsBindingSource.DataMember = "Events";
-            this.eventsBindingSource.DataSource = this.financialToolDataSetBindingSource;
-            // 
-            // financialToolDataSetBindingSource
-            // 
-            this.financialToolDataSetBindingSource.DataSource = this.financialToolDataSet;
-            this.financialToolDataSetBindingSource.Position = 0;
-            // 
-            // financialToolDataSet
-            // 
-            this.financialToolDataSet.DataSetName = "FinancialToolDataSet";
-            this.financialToolDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // FormViewEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(776, 384);
+            this.ContextMenuStrip = this.contextMenuStripEvent;
             this.Controls.Add(this.dataGridViewEvent);
             this.Controls.Add(this.btnUpdateEvent);
             this.Controls.Add(this.btnCreateEvent);
@@ -139,9 +108,7 @@ namespace PersonalFinancialTool
             this.Text = "View Event";
             this.Load += new System.EventHandler(this.FormViewEvent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEvent)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eventsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.financialToolDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.financialToolDataSet)).EndInit();
+            this.contextMenuStripEvent.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -151,12 +118,8 @@ namespace PersonalFinancialTool
         private System.Windows.Forms.Button btnUpdateEvent;
         private System.Windows.Forms.Button btnCreateEvent;
         private System.Windows.Forms.DataGridView dataGridViewEvent;
-        private System.Windows.Forms.BindingSource eventsBindingSource;
-        private System.Windows.Forms.BindingSource financialToolDataSetBindingSource;
-        private FinancialToolDataSet financialToolDataSet;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eventIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eventNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eventDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eventStatusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripEvent;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
     }
 }

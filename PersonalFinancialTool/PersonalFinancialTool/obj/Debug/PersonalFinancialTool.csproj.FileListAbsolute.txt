@@ -76,8 +76,11 @@ C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialT
 C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormViewCategory.resources
 C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormViewEvent.resources
 C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormViewTransaction.resources
+C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormWeeklyView.resources
 C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.LogoutButton.resources
 C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.Properties.Resources.resources
+C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.WeeklyView.resources
+C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.WeeklyViewValues.resources
 C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.csproj.GenerateResource.cache
 C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.csproj.CoreCompileInputs.cache
 C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.csproj.CopyComplete

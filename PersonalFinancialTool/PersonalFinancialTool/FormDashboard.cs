@@ -55,6 +55,13 @@ namespace PersonalFinancialTool
             tabPageReport.Controls.Add(formReport);
             formReport.Show();
 
+            FormWeeklyView formWeeklyView = new FormWeeklyView();
+            formWeeklyView.TopLevel = false;
+            formWeeklyView.FormBorderStyle = FormBorderStyle.None;
+            formWeeklyView.Dock = DockStyle.Fill;
+            tabPageWeeklyView.Controls.Add(formWeeklyView);
+            formWeeklyView.Show();
+
             FormSettings formSettings = new FormSettings();
             formSettings.TopLevel = false;
             formSettings.FormBorderStyle = FormBorderStyle.None;

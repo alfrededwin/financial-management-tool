@@ -43,6 +43,7 @@ namespace PersonalFinancialTool
             try
             {
                 Category category = new Category();
+                Transaction transaction = new Transaction();
 
                 category.CategoryName = info.categoryName;
                 category.CategoryDescription = info.categoryDescription;
@@ -59,6 +60,9 @@ namespace PersonalFinancialTool
                     std.CategoryDescription = info.categoryDescription;
                     std.CategoryType = info.categoryType;
                     std.UserId = FormLogin.gblLoggedInUser;
+                    //var transactionUpdate = from b in context.Transactions where b.Income.Contains(info.categoryName) select b;
+
+
                     context.SaveChanges();
                 }
 

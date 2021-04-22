@@ -2,7 +2,7 @@
 <FinancialToolDataSet xmlns="http://tempuri.org/FinancialToolDataSet.xsd">
   <Categories>
     <CategoryId>1</CategoryId>
-    <CategoryName>Salary</CategoryName>
+    <CategoryName>Salary123</CategoryName>
     <CategoryDescription>Month of April</CategoryDescription>
     <CategoryType>Income</CategoryType>
   </Categories>
@@ -24,6 +24,54 @@
     <CategoryDescription>Month of March</CategoryDescription>
     <CategoryType>Income</CategoryType>
   </Categories>
+  <Categories>
+    <CategoryId>5</CategoryId>
+    <CategoryName>Salary</CategoryName>
+    <CategoryDescription>ifs</CategoryDescription>
+    <CategoryType>Income</CategoryType>
+  </Categories>
+  <Categories>
+    <CategoryId>6</CategoryId>
+    <CategoryName>er123</CategoryName>
+    <CategoryDescription>er</CategoryDescription>
+    <CategoryType>Income</CategoryType>
+  </Categories>
+  <Categories>
+    <CategoryId>7</CategoryId>
+    <CategoryName>TEST</CategoryName>
+    <CategoryDescription>test</CategoryDescription>
+    <CategoryType>Expense</CategoryType>
+  </Categories>
+  <Categories>
+    <CategoryId>8</CategoryId>
+    <CategoryName>er</CategoryName>
+    <CategoryDescription>gd</CategoryDescription>
+    <CategoryType>Expense</CategoryType>
+  </Categories>
+  <Categories>
+    <CategoryId>9</CategoryId>
+    <CategoryName>eeee</CategoryName>
+    <CategoryDescription>fsfs</CategoryDescription>
+    <CategoryType>Expense</CategoryType>
+  </Categories>
+  <Categories>
+    <CategoryId>10</CategoryId>
+    <CategoryName>ssss</CategoryName>
+    <CategoryDescription>sgsg</CategoryDescription>
+    <CategoryType>Income</CategoryType>
+  </Categories>
+  <Categories>
+    <CategoryId>11</CategoryId>
+    <CategoryName>sgssss</CategoryName>
+    <CategoryDescription>fff</CategoryDescription>
+    <CategoryType>Income</CategoryType>
+  </Categories>
+  <Categories>
+    <CategoryId>12</CategoryId>
+    <CategoryName>ADAm123</CategoryName>
+    <CategoryDescription>ada</CategoryDescription>
+    <CategoryType>Income</CategoryType>
+  </Categories>
   <Events>
     <EventId>1</EventId>
     <EventName>Pay Loan</EventName>
@@ -36,12 +84,25 @@
     <EventDate>4/19/2021</EventDate>
     <EventStatus>Recurring</EventStatus>
   </Events>
+  <Events>
+    <EventId>3</EventId>
+    <EventName>Loan</EventName>
+    <EventDate>4/22/2021</EventDate>
+    <EventStatus>Recurring</EventStatus>
+  </Events>
   <Users>
     <FullName>Admin</FullName>
     <Username>admin</Username>
     <Email>admin@gmail.com</Email>
     <Password>admin</Password>
     <UserId>1</UserId>
+  </Users>
+  <Users>
+    <FullName>Edwin</FullName>
+    <Username>edwin</Username>
+    <Email>edwin</Email>
+    <Password>edwin</Password>
+    <UserId>2</UserId>
   </Users>
   <Transactions>
     <TransactionId>1</TransactionId>
@@ -91,6 +152,46 @@
     <TransDescription>Dentist</TransDescription>
     <Date>4/16/2021</Date>
     <Amount>3500</Amount>
+    <EventName />
+  </Transactions>
+  <Transactions>
+    <TransactionId>6</TransactionId>
+    <CategoryType>Income	</CategoryType>
+    <Income>Salary ed</Income>
+    <Expense />
+    <TransDescription>Salary fo April</TransDescription>
+    <Date>4/22/2021</Date>
+    <Amount>100000</Amount>
+    <EventName />
+  </Transactions>
+  <Transactions>
+    <TransactionId>7</TransactionId>
+    <CategoryType>Income	</CategoryType>
+    <Income>ADA</Income>
+    <Expense />
+    <TransDescription>tran33</TransDescription>
+    <Date>4/22/2021</Date>
+    <Amount>333</Amount>
+    <EventName>Loan</EventName>
+  </Transactions>
+  <Transactions>
+    <TransactionId>8</TransactionId>
+    <CategoryType>Income	</CategoryType>
+    <Income>ADA123</Income>
+    <Expense />
+    <TransDescription>fsfs</TransDescription>
+    <Date>4/22/2021</Date>
+    <Amount>2323</Amount>
+    <EventName />
+  </Transactions>
+  <Transactions>
+    <TransactionId>9</TransactionId>
+    <CategoryType>Income	</CategoryType>
+    <Income>er</Income>
+    <Expense />
+    <TransDescription>wew</TransDescription>
+    <Date>4/22/2021</Date>
+    <Amount>12</Amount>
     <EventName />
   </Transactions>
 </FinancialToolDataSet>

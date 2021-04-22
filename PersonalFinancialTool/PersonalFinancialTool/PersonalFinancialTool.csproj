@@ -198,6 +198,12 @@
     <Compile Include="FormViewTransaction.Designer.cs">
       <DependentUpon>FormViewTransaction.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormWeeklyView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWeeklyView.Designer.cs">
+      <DependentUpon>FormWeeklyView.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogoutButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -222,6 +228,18 @@
     </Compile>
     <Compile Include="UserDetails.cs" />
     <Compile Include="UserModel.cs" />
+    <Compile Include="WeeklyView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WeeklyView.Designer.cs">
+      <DependentUpon>WeeklyView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WeeklyViewValues.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WeeklyViewValues.Designer.cs">
+      <DependentUpon>WeeklyViewValues.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormCreateCategory.resx">
       <DependentUpon>FormCreateCategory.cs</DependentUpon>
     </EmbeddedResource>
@@ -261,6 +279,9 @@
     <EmbeddedResource Include="FormViewTransaction.resx">
       <DependentUpon>FormViewTransaction.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormWeeklyView.resx">
+      <DependentUpon>FormWeeklyView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LogoutButton.resx">
       <DependentUpon>LogoutButton.cs</DependentUpon>
     </EmbeddedResource>
@@ -274,6 +295,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="WeeklyView.resx">
+      <DependentUpon>WeeklyView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WeeklyViewValues.resx">
+      <DependentUpon>WeeklyViewValues.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="FinanceToolDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>FinanceToolDB.Designer.cs</LastGenOutput>
@@ -338,7 +365,6 @@
       <DependentUpon>FinanceToolDB.edmx</DependentUpon>
     </Content>
     <None Include="Resources\edituser.png" />
-    <None Include="Resources\settings-edit-user.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -33,23 +33,10 @@ namespace PersonalFinancialTool
             this.buttonCreateTransaction = new System.Windows.Forms.Button();
             this.buttonUpdateTransaction = new System.Windows.Forms.Button();
             this.dataGridViewTransaction = new System.Windows.Forms.DataGridView();
-            this.transactionIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.incomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.expenseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.transDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eventNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eventIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.transactionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.financialToolDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.financialToolDataSet = new PersonalFinancialTool.FinancialToolDataSet();
+            this.contextMenuStripTransaction = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransaction)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transactionsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.financialToolDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.financialToolDataSet)).BeginInit();
+            this.contextMenuStripTransaction.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonCreateTransaction
@@ -76,110 +63,34 @@ namespace PersonalFinancialTool
             // 
             // dataGridViewTransaction
             // 
-            this.dataGridViewTransaction.AutoGenerateColumns = false;
             this.dataGridViewTransaction.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTransaction.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.transactionIdDataGridViewTextBoxColumn,
-            this.categoryTypeDataGridViewTextBoxColumn,
-            this.incomeDataGridViewTextBoxColumn,
-            this.expenseDataGridViewTextBoxColumn,
-            this.transDescriptionDataGridViewTextBoxColumn,
-            this.dateDataGridViewTextBoxColumn,
-            this.amountDataGridViewTextBoxColumn,
-            this.eventNameDataGridViewTextBoxColumn,
-            this.categoryIdDataGridViewTextBoxColumn,
-            this.eventIdDataGridViewTextBoxColumn});
-            this.dataGridViewTransaction.DataSource = this.transactionsBindingSource;
             this.dataGridViewTransaction.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewTransaction.Name = "dataGridViewTransaction";
             this.dataGridViewTransaction.Size = new System.Drawing.Size(752, 309);
             this.dataGridViewTransaction.TabIndex = 32;
             this.dataGridViewTransaction.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SelectTransactionRow);
             // 
-            // transactionIdDataGridViewTextBoxColumn
+            // contextMenuStripTransaction
             // 
-            this.transactionIdDataGridViewTextBoxColumn.DataPropertyName = "TransactionId";
-            this.transactionIdDataGridViewTextBoxColumn.HeaderText = "TransactionId";
-            this.transactionIdDataGridViewTextBoxColumn.Name = "transactionIdDataGridViewTextBoxColumn";
-            this.transactionIdDataGridViewTextBoxColumn.Visible = false;
+            this.contextMenuStripTransaction.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.refreshToolStripMenuItem});
+            this.contextMenuStripTransaction.Name = "contextMenuStripTransaction";
+            this.contextMenuStripTransaction.Size = new System.Drawing.Size(114, 26);
+            this.contextMenuStripTransaction.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MenuStripTransaction);
             // 
-            // categoryTypeDataGridViewTextBoxColumn
+            // refreshToolStripMenuItem
             // 
-            this.categoryTypeDataGridViewTextBoxColumn.DataPropertyName = "CategoryType";
-            this.categoryTypeDataGridViewTextBoxColumn.HeaderText = "CategoryType";
-            this.categoryTypeDataGridViewTextBoxColumn.Name = "categoryTypeDataGridViewTextBoxColumn";
-            // 
-            // incomeDataGridViewTextBoxColumn
-            // 
-            this.incomeDataGridViewTextBoxColumn.DataPropertyName = "Income";
-            this.incomeDataGridViewTextBoxColumn.HeaderText = "Income";
-            this.incomeDataGridViewTextBoxColumn.Name = "incomeDataGridViewTextBoxColumn";
-            // 
-            // expenseDataGridViewTextBoxColumn
-            // 
-            this.expenseDataGridViewTextBoxColumn.DataPropertyName = "Expense";
-            this.expenseDataGridViewTextBoxColumn.HeaderText = "Expense";
-            this.expenseDataGridViewTextBoxColumn.Name = "expenseDataGridViewTextBoxColumn";
-            // 
-            // transDescriptionDataGridViewTextBoxColumn
-            // 
-            this.transDescriptionDataGridViewTextBoxColumn.DataPropertyName = "TransDescription";
-            this.transDescriptionDataGridViewTextBoxColumn.HeaderText = "TransDescription";
-            this.transDescriptionDataGridViewTextBoxColumn.Name = "transDescriptionDataGridViewTextBoxColumn";
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            // 
-            // amountDataGridViewTextBoxColumn
-            // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
-            // 
-            // eventNameDataGridViewTextBoxColumn
-            // 
-            this.eventNameDataGridViewTextBoxColumn.DataPropertyName = "EventName";
-            this.eventNameDataGridViewTextBoxColumn.HeaderText = "EventName";
-            this.eventNameDataGridViewTextBoxColumn.Name = "eventNameDataGridViewTextBoxColumn";
-            // 
-            // categoryIdDataGridViewTextBoxColumn
-            // 
-            this.categoryIdDataGridViewTextBoxColumn.DataPropertyName = "CategoryId";
-            this.categoryIdDataGridViewTextBoxColumn.HeaderText = "CategoryId";
-            this.categoryIdDataGridViewTextBoxColumn.Name = "categoryIdDataGridViewTextBoxColumn";
-            this.categoryIdDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // eventIdDataGridViewTextBoxColumn
-            // 
-            this.eventIdDataGridViewTextBoxColumn.DataPropertyName = "EventId";
-            this.eventIdDataGridViewTextBoxColumn.HeaderText = "EventId";
-            this.eventIdDataGridViewTextBoxColumn.Name = "eventIdDataGridViewTextBoxColumn";
-            this.eventIdDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // transactionsBindingSource
-            // 
-            this.transactionsBindingSource.DataMember = "Transactions";
-            this.transactionsBindingSource.DataSource = this.financialToolDataSetBindingSource;
-            // 
-            // financialToolDataSetBindingSource
-            // 
-            this.financialToolDataSetBindingSource.DataSource = this.financialToolDataSet;
-            this.financialToolDataSetBindingSource.Position = 0;
-            // 
-            // financialToolDataSet
-            // 
-            this.financialToolDataSet.DataSetName = "FinancialToolDataSet";
-            this.financialToolDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.refreshToolStripMenuItem.Text = "Refresh";
             // 
             // FormViewTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(776, 384);
+            this.ContextMenuStrip = this.contextMenuStripTransaction;
             this.Controls.Add(this.dataGridViewTransaction);
             this.Controls.Add(this.buttonUpdateTransaction);
             this.Controls.Add(this.buttonCreateTransaction);
@@ -188,9 +99,7 @@ namespace PersonalFinancialTool
             this.ShowIcon = false;
             this.Text = "View Transaction";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransaction)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transactionsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.financialToolDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.financialToolDataSet)).EndInit();
+            this.contextMenuStripTransaction.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -199,18 +108,7 @@ namespace PersonalFinancialTool
         private System.Windows.Forms.Button buttonCreateTransaction;
         private System.Windows.Forms.Button buttonUpdateTransaction;
         private System.Windows.Forms.DataGridView dataGridViewTransaction;
-        private System.Windows.Forms.DataGridViewTextBoxColumn transactionIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoryTypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn incomeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn expenseDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn transDescriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eventNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoryIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eventIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource transactionsBindingSource;
-        private System.Windows.Forms.BindingSource financialToolDataSetBindingSource;
-        private FinancialToolDataSet financialToolDataSet;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripTransaction;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
     }
 }

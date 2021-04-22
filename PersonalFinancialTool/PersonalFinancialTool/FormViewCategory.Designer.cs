@@ -33,17 +33,10 @@ namespace PersonalFinancialTool
             this.btnUpdateCategory = new System.Windows.Forms.Button();
             this.btnCreateCategory = new System.Windows.Forms.Button();
             this.dataGridViewCategory = new System.Windows.Forms.DataGridView();
-            this.categoryIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.financialToolDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.financialToolDataSet = new PersonalFinancialTool.FinancialToolDataSet();
+            this.contextMenuStripCategory = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCategory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.financialToolDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.financialToolDataSet)).BeginInit();
+            this.contextMenuStripCategory.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnUpdateCategory
@@ -70,66 +63,34 @@ namespace PersonalFinancialTool
             // 
             // dataGridViewCategory
             // 
-            this.dataGridViewCategory.AutoGenerateColumns = false;
             this.dataGridViewCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.categoryIdDataGridViewTextBoxColumn,
-            this.categoryNameDataGridViewTextBoxColumn,
-            this.categoryDescriptionDataGridViewTextBoxColumn,
-            this.categoryTypeDataGridViewTextBoxColumn});
-            this.dataGridViewCategory.DataSource = this.categoriesBindingSource;
             this.dataGridViewCategory.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewCategory.Name = "dataGridViewCategory";
             this.dataGridViewCategory.Size = new System.Drawing.Size(752, 323);
             this.dataGridViewCategory.TabIndex = 26;
             this.dataGridViewCategory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SelectCategoryRow);
             // 
-            // categoryIdDataGridViewTextBoxColumn
+            // contextMenuStripCategory
             // 
-            this.categoryIdDataGridViewTextBoxColumn.DataPropertyName = "CategoryId";
-            this.categoryIdDataGridViewTextBoxColumn.HeaderText = "CategoryId";
-            this.categoryIdDataGridViewTextBoxColumn.Name = "categoryIdDataGridViewTextBoxColumn";
-            this.categoryIdDataGridViewTextBoxColumn.Visible = false;
+            this.contextMenuStripCategory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.refreshToolStripMenuItem});
+            this.contextMenuStripCategory.Name = "contextMenuStripCategory";
+            this.contextMenuStripCategory.Size = new System.Drawing.Size(181, 48);
+            this.contextMenuStripCategory.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MenuStripViewCategory);
             // 
-            // categoryNameDataGridViewTextBoxColumn
+            // refreshToolStripMenuItem
             // 
-            this.categoryNameDataGridViewTextBoxColumn.DataPropertyName = "CategoryName";
-            this.categoryNameDataGridViewTextBoxColumn.HeaderText = "CategoryName";
-            this.categoryNameDataGridViewTextBoxColumn.Name = "categoryNameDataGridViewTextBoxColumn";
-            // 
-            // categoryDescriptionDataGridViewTextBoxColumn
-            // 
-            this.categoryDescriptionDataGridViewTextBoxColumn.DataPropertyName = "CategoryDescription";
-            this.categoryDescriptionDataGridViewTextBoxColumn.HeaderText = "CategoryDescription";
-            this.categoryDescriptionDataGridViewTextBoxColumn.Name = "categoryDescriptionDataGridViewTextBoxColumn";
-            // 
-            // categoryTypeDataGridViewTextBoxColumn
-            // 
-            this.categoryTypeDataGridViewTextBoxColumn.DataPropertyName = "CategoryType";
-            this.categoryTypeDataGridViewTextBoxColumn.HeaderText = "CategoryType";
-            this.categoryTypeDataGridViewTextBoxColumn.Name = "categoryTypeDataGridViewTextBoxColumn";
-            // 
-            // categoriesBindingSource
-            // 
-            this.categoriesBindingSource.DataMember = "Categories";
-            this.categoriesBindingSource.DataSource = this.financialToolDataSetBindingSource;
-            // 
-            // financialToolDataSetBindingSource
-            // 
-            this.financialToolDataSetBindingSource.DataSource = this.financialToolDataSet;
-            this.financialToolDataSetBindingSource.Position = 0;
-            // 
-            // financialToolDataSet
-            // 
-            this.financialToolDataSet.DataSetName = "FinancialToolDataSet";
-            this.financialToolDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.refreshToolStripMenuItem.Text = "Refresh";
             // 
             // FormViewCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(776, 384);
+            this.ContextMenuStrip = this.contextMenuStripCategory;
             this.Controls.Add(this.dataGridViewCategory);
             this.Controls.Add(this.btnUpdateCategory);
             this.Controls.Add(this.btnCreateCategory);
@@ -139,9 +100,7 @@ namespace PersonalFinancialTool
             this.Text = "View Category";
             this.Load += new System.EventHandler(this.FormViewCategory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCategory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.financialToolDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.financialToolDataSet)).EndInit();
+            this.contextMenuStripCategory.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -150,13 +109,8 @@ namespace PersonalFinancialTool
 
         private System.Windows.Forms.Button btnUpdateCategory;
         private System.Windows.Forms.Button btnCreateCategory;
-        private System.Windows.Forms.BindingSource categoriesBindingSource;
-        private System.Windows.Forms.BindingSource financialToolDataSetBindingSource;
-        private FinancialToolDataSet financialToolDataSet;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoryIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoryNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoryDescriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoryTypeDataGridViewTextBoxColumn;
         public System.Windows.Forms.DataGridView dataGridViewCategory;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripCategory;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
     }
 }

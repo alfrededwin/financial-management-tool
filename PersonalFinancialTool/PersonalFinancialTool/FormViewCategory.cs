@@ -35,11 +35,31 @@ namespace PersonalFinancialTool
             //loadData();
 
             //myDataSet.ReadXml("PersonalFinanceToolDB.xml");
-            this.CategoryDataSet = this.myDataSet;
-            this.financialToolDataSet = this.CategoryDataSet;
-            this.dataGridViewCategory.DataSource = this.financialToolDataSet;
-            this.dataGridViewCategory.DataMember = "Categories";
-          
+            //this.CategoryDataSet = this.myDataSet;
+            //this.financialToolDataSet = this.CategoryDataSet;
+            //this.dataGridViewCategory.DataSource = this.financialToolDataSet;
+            //this.dataGridViewCategory.DataMember = "Categories";
+
+            //FinanceToolDBContainer1 db = new FinanceToolDBContainer1();
+            //var category1 =
+            //    from category in db.Categories
+            //    where category.UserId == FormLogin.gblLoggedInUser
+            //    select new
+            //    {
+            //        CategoryId = category.Id,
+            //        CategoryName = category.CategoryName,
+            //        CategoryDescription = category.CategoryDescription,
+            //        CategoryType = category.CategoryType,
+            //        UserId = category.UserId
+            //    };
+                
+        
+            //dataGridViewCategory.DataSource = category1.ToList();
+            //dataGridViewCategory.Columns[0].Visible = false;
+            //dataGridViewCategory.Columns[4].Visible = false;
+
+            loadViewCategoryData();
+
         }
 
         private void navCreateCategory(object sender, EventArgs e)
@@ -53,12 +73,14 @@ namespace PersonalFinancialTool
 
         private void FormViewCategory_Load(object sender, EventArgs e)
         {
-          
+
             //myDataSet.ReadXml("PersonalFinanceToolDB.xml");
             //this.CategoryDataSet = this.myDataSet;
             //this.financialToolDataSet = this.CategoryDataSet;
             //this.dataGridView1.DataSource = this.financialToolDataSet;
             //this.dataGridView1.DataMember = "Categories";
+
+            loadViewCategoryData();
         }
 
         private void SelectCategoryRow(object sender, DataGridViewCellEventArgs e)
@@ -70,10 +92,25 @@ namespace PersonalFinancialTool
            sCategoryType = this.dataGridViewCategory.CurrentRow.Cells[3].Value.ToString();
         }
 
-        public void loadData() {
+        public void loadViewCategoryData() {
 
-            var st = from s in myDataSet.Categories select s;
-            this.dataGridViewCategory.DataSource = st;
+            FinanceToolDBContainer1 db = new FinanceToolDBContainer1();
+            var category1 =
+                from category in db.Categories
+                where category.UserId == FormLogin.gblLoggedInUser
+                select new
+                {
+                    CategoryId = category.Id,
+                    CategoryName = category.CategoryName,
+                    CategoryDescription = category.CategoryDescription,
+                    CategoryType = category.CategoryType,
+                    UserId = category.UserId
+                };
+
+
+            dataGridViewCategory.DataSource = category1.ToList();
+            dataGridViewCategory.Columns[0].Visible = false;
+            dataGridViewCategory.Columns[4].Visible = false;
 
         }
 
@@ -87,5 +124,10 @@ namespace PersonalFinancialTool
             formCreateCategory.Show();
         }
 
+  
+        private void MenuStripViewCategory(object sender, MouseEventArgs e)
+        {
+            loadViewCategoryData();
+        }
     } 
 }

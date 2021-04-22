@@ -126,7 +126,7 @@ namespace PersonalFinancialTool
 
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Events e ", con);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Events e WHERE e.UserId = '"+ FormLogin.gblLoggedInUser  + "' ", con);
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read())
@@ -154,7 +154,7 @@ namespace PersonalFinancialTool
 
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Categories e WHERE e.CategoryType = '" + comboBoxTransCategoryType.Text.Trim() +"' ", con);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Categories e WHERE e.CategoryType = '" + comboBoxTransCategoryType.Text.Trim() + "' AND e.UserId = '" + FormLogin.gblLoggedInUser + "' ", con);
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read())

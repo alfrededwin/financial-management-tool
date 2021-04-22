@@ -22,6 +22,7 @@ namespace PersonalFinancialTool
         public FormViewEvent()
         {
             InitializeComponent();
+            loadViewEventData();
         }
 
         private void navCreateEvent(object sender, EventArgs e)
@@ -33,11 +34,12 @@ namespace PersonalFinancialTool
 
         private void FormViewEvent_Load(object sender, EventArgs e)
         {
-            myDataSet.ReadXml("PersonalFinanceToolDB.xml");
-            this.UserDataSet = this.myDataSet;
-            this.financialToolDataSet = this.myDataSet;
-            this.dataGridViewEvent.DataSource = this.financialToolDataSet;
-            this.dataGridViewEvent.DataMember = "Events";
+            // If accessing through the dataset from XML
+            //myDataSet.ReadXml("PersonalFinanceToolDB.xml");
+            //this.UserDataSet = this.myDataSet;
+            //this.financialToolDataSet = this.myDataSet;
+            //this.dataGridViewEvent.DataSource = this.financialToolDataSet;
+            //this.dataGridViewEvent.DataMember = "Events";
         }
 
         private void UpdateEvent(object sender, EventArgs e)
@@ -55,6 +57,34 @@ namespace PersonalFinancialTool
             sEventName = this.dataGridViewEvent.CurrentRow.Cells[1].Value.ToString();
             sEventDate = this.dataGridViewEvent.CurrentRow.Cells[2].Value.ToString();
             sEventStatus = this.dataGridViewEvent.CurrentRow.Cells[3].Value.ToString();
+        }
+
+        public void loadViewEventData()
+        {
+
+            FinanceToolDBContainer1 db = new FinanceToolDBContainer1();
+            var eventData =
+                from event_tab in db.Events
+                where event_tab.UserId == FormLogin.gblLoggedInUser
+                select new
+                {
+                    EventId = event_tab.Id,
+                    EventName = event_tab.EventName,
+                    EventDate = event_tab.EventDate,
+                    EventStatus = event_tab.EventStatus,
+                    UserId = event_tab.UserId
+                };
+
+
+            dataGridViewEvent.DataSource = eventData.ToList();
+            dataGridViewEvent.Columns[0].Visible = false;
+            dataGridViewEvent.Columns[4].Visible = false;
+
+        }
+
+        private void MenuStripViewEvent(object sender, MouseEventArgs e)
+        {
+            loadViewEventData();
         }
     }
 }

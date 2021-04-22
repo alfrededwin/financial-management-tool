@@ -30,15 +30,16 @@ namespace PersonalFinancialTool
         public FormViewTransaction()
         {
             InitializeComponent();
+            loadViewTransactionData();
             if (File.Exists("PersonalFinanceToolDB.xml") == true)
             {
                 this.AppDataSet.ReadXml("PersonalFinanceToolDB.xml");
             }
 
-            this.TransactionDataSet = this.AppDataSet;
-            this.financialToolDataSet = this.TransactionDataSet;
-            this.dataGridViewTransaction.DataSource = this.financialToolDataSet;
-            this.dataGridViewTransaction.DataMember = "Transactions";
+            //this.TransactionDataSet = this.AppDataSet;
+            //this.financialToolDataSet = this.TransactionDataSet;
+            //this.dataGridViewTransaction.DataSource = this.financialToolDataSet;
+            //this.dataGridViewTransaction.DataMember = "Transactions";
         }
 
         private void navCreateTransaction(object sender, EventArgs e)
@@ -67,6 +68,38 @@ namespace PersonalFinancialTool
             formCreateTransaction.SetUpdateFields(sTransCategoryType, sIncome, sExpense, sTransDesc, sTransDate, sAmount, sTransEventName, iTransactionId);
             formCreateTransaction.btnCreateEvent.Hide();
             formCreateTransaction.Show();
+        }
+
+        public void loadViewTransactionData()
+        {
+
+            FinanceToolDBContainer1 db = new FinanceToolDBContainer1();
+            var transactionData =
+                from transaction_tab in db.Transactions
+                where transaction_tab.UserId == FormLogin.gblLoggedInUser
+                select new
+                {
+                    TransactionId = transaction_tab.Id,
+                    CategoryType = transaction_tab.CategoryType,
+                    Income = transaction_tab.Income,
+                    Expense = transaction_tab.Expense,
+                    TransactionDescription = transaction_tab.TransactionDescription,
+                    TransactionDate = transaction_tab.TransactionDate,
+                    Amount = transaction_tab.Amount,
+                    EventName = transaction_tab.EventName,
+                    UserId = transaction_tab.UserId
+                };
+
+
+            dataGridViewTransaction.DataSource = transactionData.ToList();
+            dataGridViewTransaction.Columns[0].Visible = false;
+            dataGridViewTransaction.Columns[8].Visible = false;
+
+        }
+
+        private void MenuStripTransaction(object sender, MouseEventArgs e)
+        {
+            loadViewTransactionData();
         }
     }
 }

@@ -76,7 +76,10 @@ namespace PersonalFinancialTool
                     CategoryModel categoryModel = new CategoryModel();
                     categoryModel.SaveCategoryInformation(this.categoryDetails);
                     MessageBox.Show(String.Format(Properties.Resources.SUCCESS_MESSAGE, this.sCategoryLabel));
+                    loadViewCategoryData();
                     this.Close();
+                    //FormViewCategory formViewCategory = new FormViewCategory();
+                    //formViewCategory.loadData();
                 }
 
             }
@@ -97,6 +100,34 @@ namespace PersonalFinancialTool
         //    y.DataSource = st;
 
         //}
+
+        public void loadViewCategoryData()
+        {
+
+            FinanceToolDBContainer1 db = new FinanceToolDBContainer1();
+            var category1 =
+                from category in db.Categories
+                where category.UserId == FormLogin.gblLoggedInUser
+                select new
+                {
+                    CategoryId = category.Id,
+                    CategoryName = category.CategoryName,
+                    CategoryDescription = category.CategoryDescription,
+                    CategoryType = category.CategoryType,
+                    UserId = category.UserId
+                };
+
+
+            FormViewCategory formViewCategory = new FormViewCategory();
+            formViewCategory.dataGridViewCategory.DataSource = category1.ToList();
+            formViewCategory.dataGridViewCategory.Columns[0].Visible = false;
+            formViewCategory.dataGridViewCategory.Columns[4].Visible = false;
+
+        }
+
+
+
+
 
         public void SetUpdateFields(String categoryName, String categoryDesc, String categoryType, int sCategoryId) {
             globalIdToUpdate = sCategoryId;

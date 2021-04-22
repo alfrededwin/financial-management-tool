@@ -34,7 +34,7 @@ namespace PersonalFinancialTool
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(22, 12);
+            this.btnLogout.Location = new System.Drawing.Point(3, 3);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(75, 23);
             this.btnLogout.TabIndex = 0;
@@ -48,7 +48,7 @@ namespace PersonalFinancialTool
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnLogout);
             this.Name = "LogoutButton";
-            this.Size = new System.Drawing.Size(122, 54);
+            this.Size = new System.Drawing.Size(81, 29);
             this.ResumeLayout(false);
 
         }
