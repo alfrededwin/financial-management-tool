@@ -23,5 +23,7 @@ namespace PersonalFinancialTool
         public string Amount { get; set; }
         public string EventName { get; set; }
         public int UserId { get; set; }
+        public int CategoryId { get; set; }
+        public Nullable<int> EventId { get; set; }
     }
 }

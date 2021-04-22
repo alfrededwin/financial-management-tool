@@ -17,6 +17,9 @@ namespace PersonalFinancialTool
        
         public String sTransactionLabel = "Transaction";
         public static int globalIdToUpdate = 0;
+        public static int CatIdToUpdate = 0;
+        public static int EventIdToUpdate = 0;
+
 
         FinancialToolDataSet AppDataSet = new FinancialToolDataSet();
         public TransactionDetails transactionDetails { get; set; }
@@ -52,13 +55,13 @@ namespace PersonalFinancialTool
             {
                 // Assign Values
                 this.transactionDetails = new TransactionDetails();
-                this.transactionDetails.categoryType = this.comboBoxTransCategoryType.Text.ToString();
-                this.transactionDetails.income = this.cmbIncomeType.Text.ToString();
-                this.transactionDetails.expense = this.cmbExpenseType.Text.ToString();
+                this.transactionDetails.categoryType = this.comboBoxTransCategoryType.Text;
+                this.transactionDetails.income = this.cmbIncomeType.Text;
+                this.transactionDetails.expense = this.cmbExpenseType.Text;
                 this.transactionDetails.transactionDescription = this.textBoxTransDesc.Text;
-                this.transactionDetails.transactionDate = this.dateTimeTransDate.Text.ToString();
+                this.transactionDetails.transactionDate = this.dateTimeTransDate.Text;
                 this.transactionDetails.amount = this.textBoxTransAmount.Text;
-                this.transactionDetails.eventName = this.comboBoxTransEventName.Text.ToString();
+                this.transactionDetails.eventName = this.comboBoxTransEventName.Text;
 
 
                 if (string.IsNullOrWhiteSpace(this.transactionDetails.categoryType) || string.IsNullOrEmpty(this.transactionDetails.transactionDescription)  || string.IsNullOrEmpty(this.transactionDetails.transactionDate) || string.IsNullOrEmpty(this.transactionDetails.amount))
@@ -162,6 +165,7 @@ namespace PersonalFinancialTool
                     String sIncomeExpense = reader.GetString(1);
                     cmbIncomeType.Items.Add(sIncomeExpense);
                     cmbExpenseType.Items.Add(sIncomeExpense);
+                  
                 }
                 con.Close();
             }
@@ -248,6 +252,81 @@ namespace PersonalFinancialTool
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void TriggerIncomeDropDown(object sender, EventArgs e)
+        {
+            string relative = @"C:\Users\Alfred Edwin\Documents\FinanceToolDB.mdf";
+            string absolute = Path.GetDirectoryName(relative);
+            AppDomain.CurrentDomain.SetData("DataDirectory", absolute);
+
+
+
+            using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\FinanceToolDB.mdf;Integrated Security=True"))
+            {
+
+                con.Open();
+                string query = "SELECT * FROM Categories e WHERE e.CategoryName = '" + cmbIncomeType.Text.Trim() + "' AND e.UserId = '" + FormLogin.gblLoggedInUser + "' ";
+                SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                DataTable dta = new DataTable();
+                sda.Fill(dta);
+                con.Close();
+                if (dta.Rows.Count == 1)
+                {
+                    labelCategoryId.Text = dta.Rows[0]["Id"].ToString();
+                    CatIdToUpdate = Int32.Parse(labelCategoryId.Text);
+                }
+            }
+
+        }
+
+        private void TriggerExpenseDropDown(object sender, EventArgs e)
+        {
+            string relative = @"C:\Users\Alfred Edwin\Documents\FinanceToolDB.mdf";
+            string absolute = Path.GetDirectoryName(relative);
+            AppDomain.CurrentDomain.SetData("DataDirectory", absolute);
+
+            using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\FinanceToolDB.mdf;Integrated Security=True"))
+            {
+
+                con.Open();
+                string query = "SELECT * FROM Categories e WHERE e.CategoryName = '" + cmbExpenseType.Text.Trim() + "' AND e.UserId = '" + FormLogin.gblLoggedInUser + "' ";
+                SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                DataTable dta = new DataTable();
+                sda.Fill(dta);
+                con.Close();
+                if (dta.Rows.Count == 1)
+                {
+                    labelCategoryId.Text = dta.Rows[0]["Id"].ToString();
+                    CatIdToUpdate = Int32.Parse(labelCategoryId.Text);
+                   
+                }
+            }
+        }
+
+        private void TriggerEventNameDropDown(object sender, EventArgs e)
+        {
+            string relative = @"C:\Users\Alfred Edwin\Documents\FinanceToolDB.mdf";
+            string absolute = Path.GetDirectoryName(relative);
+            AppDomain.CurrentDomain.SetData("DataDirectory", absolute);
+
+
+
+            using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\FinanceToolDB.mdf;Integrated Security=True"))
+            {
+
+                con.Open();
+                string query = "SELECT * FROM Events e WHERE e.EventName = '" + comboBoxTransEventName.Text.Trim() + "' AND e.UserId = '" + FormLogin.gblLoggedInUser + "' ";
+                SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                DataTable dta = new DataTable();
+                sda.Fill(dta);
+                con.Close();
+                if (dta.Rows.Count == 1)
+                {
+                    labelEventId.Text = dta.Rows[0]["Id"].ToString();
+                    EventIdToUpdate = Int32.Parse(dta.Rows[0]["Id"].ToString());
+                }
+            }
         }
     }
 }

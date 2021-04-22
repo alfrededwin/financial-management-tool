@@ -78,8 +78,6 @@ namespace PersonalFinancialTool
                     MessageBox.Show(String.Format(Properties.Resources.SUCCESS_MESSAGE, this.sCategoryLabel));
                     loadViewCategoryData();
                     this.Close();
-                    //FormViewCategory formViewCategory = new FormViewCategory();
-                    //formViewCategory.loadData();
                 }
 
             }
@@ -91,15 +89,6 @@ namespace PersonalFinancialTool
 
         }
 
-        //void loadData()
-        //{
-
-        //    var st = from s in AppDataSet.Categories select s;
-        //    FormViewCategory formViewCategory = new FormViewCategory();
-        //    var y = formViewCategory.dataGridViewCategory;
-        //    y.DataSource = st;
-
-        //}
 
         public void loadViewCategoryData()
         {

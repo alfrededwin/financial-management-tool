@@ -87,13 +87,17 @@ namespace PersonalFinancialTool
                     TransactionDate = transaction_tab.TransactionDate,
                     Amount = transaction_tab.Amount,
                     EventName = transaction_tab.EventName,
-                    UserId = transaction_tab.UserId
+                    UserId = transaction_tab.UserId,
+                    CategoryId = transaction_tab.CategoryId,
+                    EventId = transaction_tab.EventId
                 };
 
 
             dataGridViewTransaction.DataSource = transactionData.ToList();
             dataGridViewTransaction.Columns[0].Visible = false;
             dataGridViewTransaction.Columns[8].Visible = false;
+            dataGridViewTransaction.Columns[9].Visible = false;
+            dataGridViewTransaction.Columns[10].Visible = false;
 
         }
 

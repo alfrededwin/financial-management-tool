@@ -17,13 +17,13 @@
       <End Role="User" EntitySet="Users" />
       <End Role="Transaction" EntitySet="Transactions" />
     </AssociationSet>
-    <AssociationSet Name="TransactionCategory" Association="FinanceToolDB.TransactionCategory">
-      <End Role="Transaction" EntitySet="Transactions" />
+    <AssociationSet Name="CategoryTransaction" Association="FinanceToolDB.CategoryTransaction">
       <End Role="Category" EntitySet="Categories" />
-    </AssociationSet>
-    <AssociationSet Name="TransactionEvent" Association="FinanceToolDB.TransactionEvent">
       <End Role="Transaction" EntitySet="Transactions" />
+    </AssociationSet>
+    <AssociationSet Name="EventTransaction" Association="FinanceToolDB.EventTransaction">
       <End Role="Event" EntitySet="Events" />
+      <End Role="Transaction" EntitySet="Transactions" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="User">
@@ -79,8 +79,10 @@
     <Property Name="TransactionDescription" Type="String" Nullable="false" />
     <Property Name="TransactionDate" Type="String" Nullable="false" />
     <Property Name="Amount" Type="String" Nullable="false" />
-    <Property Name="EventName" Type="String" Nullable="false" />
+    <Property Name="EventName" Type="String" Nullable="true" />
     <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="EventId" Type="Int32" Nullable="true" />
   </EntityType>
   <Association Name="UserEvent">
     <End Type="FinanceToolDB.User" Role="User" Multiplicity="1" />
@@ -106,12 +108,28 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="TransactionCategory">
+  <Association Name="CategoryTransaction">
+    <End Type="FinanceToolDB.Category" Role="Category" Multiplicity="1" />
     <End Type="FinanceToolDB.Transaction" Role="Transaction" Multiplicity="*" />
-    <End Type="FinanceToolDB.Category" Role="Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Transaction">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
   </Association>
-  <Association Name="TransactionEvent">
+  <Association Name="EventTransaction">
+    <End Type="FinanceToolDB.Event" Role="Event" Multiplicity="0..1" />
     <End Type="FinanceToolDB.Transaction" Role="Transaction" Multiplicity="*" />
-    <End Type="FinanceToolDB.Event" Role="Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Transaction">
+        <PropertyRef Name="EventId" />
+      </Dependent>
+    </ReferentialConstraint>
   </Association>
 </Schema>

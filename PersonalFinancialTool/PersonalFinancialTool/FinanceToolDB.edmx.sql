@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/19/2021 09:46:40
+-- Date Created: 04/22/2021 14:44:58
 -- Generated from EDMX file: C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\FinanceToolDB.edmx
 -- --------------------------------------------------
 
@@ -26,17 +26,11 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_UserTransaction]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Transactions] DROP CONSTRAINT [FK_UserTransaction];
 GO
-IF OBJECT_ID(N'[dbo].[FK_TransactionCategory_Transaction]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[TransactionCategory] DROP CONSTRAINT [FK_TransactionCategory_Transaction];
+IF OBJECT_ID(N'[dbo].[FK_CategoryTransaction]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Transactions] DROP CONSTRAINT [FK_CategoryTransaction];
 GO
-IF OBJECT_ID(N'[dbo].[FK_TransactionCategory_Category]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[TransactionCategory] DROP CONSTRAINT [FK_TransactionCategory_Category];
-GO
-IF OBJECT_ID(N'[dbo].[FK_TransactionEvent_Transaction]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[TransactionEvent] DROP CONSTRAINT [FK_TransactionEvent_Transaction];
-GO
-IF OBJECT_ID(N'[dbo].[FK_TransactionEvent_Event]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[TransactionEvent] DROP CONSTRAINT [FK_TransactionEvent_Event];
+IF OBJECT_ID(N'[dbo].[FK_EventTransaction]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Transactions] DROP CONSTRAINT [FK_EventTransaction];
 GO
 
 -- --------------------------------------------------
@@ -54,12 +48,6 @@ IF OBJECT_ID(N'[dbo].[Events]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Transactions]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Transactions];
-GO
-IF OBJECT_ID(N'[dbo].[TransactionCategory]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[TransactionCategory];
-GO
-IF OBJECT_ID(N'[dbo].[TransactionEvent]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[TransactionEvent];
 GO
 
 -- --------------------------------------------------
@@ -105,22 +93,10 @@ CREATE TABLE [dbo].[Transactions] (
     [TransactionDescription] nvarchar(max)  NOT NULL,
     [TransactionDate] nvarchar(max)  NOT NULL,
     [Amount] nvarchar(max)  NOT NULL,
-    [EventName] nvarchar(max)  NOT NULL,
-    [UserId] int  NOT NULL
-);
-GO
-
--- Creating table 'TransactionCategory'
-CREATE TABLE [dbo].[TransactionCategory] (
-    [TransactionCategory_Category_Id] int  NOT NULL,
-    [TransactionCategory_Transaction_Id] int  NOT NULL
-);
-GO
-
--- Creating table 'TransactionEvent'
-CREATE TABLE [dbo].[TransactionEvent] (
-    [TransactionEvent_Event_Id] int  NOT NULL,
-    [TransactionEvent_Transaction_Id] int  NOT NULL
+    [EventName] nvarchar(max)  NULL,
+    [UserId] int  NOT NULL,
+    [CategoryId] int  NOT NULL,
+    [EventId] int  NULL
 );
 GO
 
@@ -150,18 +126,6 @@ GO
 ALTER TABLE [dbo].[Transactions]
 ADD CONSTRAINT [PK_Transactions]
     PRIMARY KEY CLUSTERED ([Id] ASC);
-GO
-
--- Creating primary key on [TransactionCategory_Category_Id], [TransactionCategory_Transaction_Id] in table 'TransactionCategory'
-ALTER TABLE [dbo].[TransactionCategory]
-ADD CONSTRAINT [PK_TransactionCategory]
-    PRIMARY KEY CLUSTERED ([TransactionCategory_Category_Id], [TransactionCategory_Transaction_Id] ASC);
-GO
-
--- Creating primary key on [TransactionEvent_Event_Id], [TransactionEvent_Transaction_Id] in table 'TransactionEvent'
-ALTER TABLE [dbo].[TransactionEvent]
-ADD CONSTRAINT [PK_TransactionEvent]
-    PRIMARY KEY CLUSTERED ([TransactionEvent_Event_Id], [TransactionEvent_Transaction_Id] ASC);
 GO
 
 -- --------------------------------------------------
@@ -213,52 +177,34 @@ ON [dbo].[Transactions]
     ([UserId]);
 GO
 
--- Creating foreign key on [TransactionCategory_Category_Id] in table 'TransactionCategory'
-ALTER TABLE [dbo].[TransactionCategory]
-ADD CONSTRAINT [FK_TransactionCategory_Transaction]
-    FOREIGN KEY ([TransactionCategory_Category_Id])
-    REFERENCES [dbo].[Transactions]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating foreign key on [TransactionCategory_Transaction_Id] in table 'TransactionCategory'
-ALTER TABLE [dbo].[TransactionCategory]
-ADD CONSTRAINT [FK_TransactionCategory_Category]
-    FOREIGN KEY ([TransactionCategory_Transaction_Id])
+-- Creating foreign key on [CategoryId] in table 'Transactions'
+ALTER TABLE [dbo].[Transactions]
+ADD CONSTRAINT [FK_CategoryTransaction]
+    FOREIGN KEY ([CategoryId])
     REFERENCES [dbo].[Categories]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_TransactionCategory_Category'
-CREATE INDEX [IX_FK_TransactionCategory_Category]
-ON [dbo].[TransactionCategory]
-    ([TransactionCategory_Transaction_Id]);
+-- Creating non-clustered index for FOREIGN KEY 'FK_CategoryTransaction'
+CREATE INDEX [IX_FK_CategoryTransaction]
+ON [dbo].[Transactions]
+    ([CategoryId]);
 GO
 
--- Creating foreign key on [TransactionEvent_Event_Id] in table 'TransactionEvent'
-ALTER TABLE [dbo].[TransactionEvent]
-ADD CONSTRAINT [FK_TransactionEvent_Transaction]
-    FOREIGN KEY ([TransactionEvent_Event_Id])
-    REFERENCES [dbo].[Transactions]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating foreign key on [TransactionEvent_Transaction_Id] in table 'TransactionEvent'
-ALTER TABLE [dbo].[TransactionEvent]
-ADD CONSTRAINT [FK_TransactionEvent_Event]
-    FOREIGN KEY ([TransactionEvent_Transaction_Id])
+-- Creating foreign key on [EventId] in table 'Transactions'
+ALTER TABLE [dbo].[Transactions]
+ADD CONSTRAINT [FK_EventTransaction]
+    FOREIGN KEY ([EventId])
     REFERENCES [dbo].[Events]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_TransactionEvent_Event'
-CREATE INDEX [IX_FK_TransactionEvent_Event]
-ON [dbo].[TransactionEvent]
-    ([TransactionEvent_Transaction_Id]);
+-- Creating non-clustered index for FOREIGN KEY 'FK_EventTransaction'
+CREATE INDEX [IX_FK_EventTransaction]
+ON [dbo].[Transactions]
+    ([EventId]);
 GO
 
 -- --------------------------------------------------

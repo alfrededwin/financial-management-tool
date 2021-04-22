@@ -10,8 +10,6 @@
     <EntitySet Name="Categories" EntityType="FinanceToolDB.Store.Categories" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Events" EntityType="FinanceToolDB.Store.Events" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Transactions" EntityType="FinanceToolDB.Store.Transactions" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TransactionCategory" EntityType="FinanceToolDB.Store.TransactionCategory" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TransactionEvent" EntityType="FinanceToolDB.Store.TransactionEvent" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="UserCategory" Association="FinanceToolDB.Store.UserCategory">
       <End Role="User" EntitySet="Users" />
       <End Role="Category" EntitySet="Categories" />
@@ -24,21 +22,13 @@
       <End Role="User" EntitySet="Users" />
       <End Role="Transaction" EntitySet="Transactions" />
     </AssociationSet>
-    <AssociationSet Name="FK_TransactionCategory_Transaction" Association="FinanceToolDB.Store.FK_TransactionCategory_Transaction">
-      <End Role="Transaction" EntitySet="Transactions" />
-      <End Role="TransactionCategory" EntitySet="TransactionCategory" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TransactionCategory_Category" Association="FinanceToolDB.Store.FK_TransactionCategory_Category">
+    <AssociationSet Name="CategoryTransaction" Association="FinanceToolDB.Store.CategoryTransaction">
       <End Role="Category" EntitySet="Categories" />
-      <End Role="TransactionCategory" EntitySet="TransactionCategory" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TransactionEvent_Transaction" Association="FinanceToolDB.Store.FK_TransactionEvent_Transaction">
       <End Role="Transaction" EntitySet="Transactions" />
-      <End Role="TransactionEvent" EntitySet="TransactionEvent" />
     </AssociationSet>
-    <AssociationSet Name="FK_TransactionEvent_Event" Association="FinanceToolDB.Store.FK_TransactionEvent_Event">
+    <AssociationSet Name="EventTransaction" Association="FinanceToolDB.Store.EventTransaction">
       <End Role="Event" EntitySet="Events" />
-      <End Role="TransactionEvent" EntitySet="TransactionEvent" />
+      <End Role="Transaction" EntitySet="Transactions" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Users">
@@ -82,24 +72,10 @@
     <Property Name="TransactionDescription" Type="nvarchar(max)" Nullable="false" />
     <Property Name="TransactionDate" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Amount" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="EventName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EventName" Type="nvarchar(max)" Nullable="true" />
     <Property Name="UserId" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="TransactionCategory">
-    <Key>
-      <PropertyRef Name="TransactionCategory_Category_Id" />
-      <PropertyRef Name="TransactionCategory_Transaction_Id" />
-    </Key>
-    <Property Name="TransactionCategory_Category_Id" Type="int" Nullable="false" />
-    <Property Name="TransactionCategory_Transaction_Id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="TransactionEvent">
-    <Key>
-      <PropertyRef Name="TransactionEvent_Event_Id" />
-      <PropertyRef Name="TransactionEvent_Transaction_Id" />
-    </Key>
-    <Property Name="TransactionEvent_Event_Id" Type="int" Nullable="false" />
-    <Property Name="TransactionEvent_Transaction_Id" Type="int" Nullable="false" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="EventId" Type="int" Nullable="true" />
   </EntityType>
   <Association Name="UserCategory">
     <End Role="User" Type="FinanceToolDB.Store.Users" Multiplicity="1" />
@@ -137,51 +113,27 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_TransactionCategory_Transaction">
-    <End Role="Transaction" Type="FinanceToolDB.Store.Transactions" Multiplicity="1" />
-    <End Role="TransactionCategory" Type="FinanceToolDB.Store.TransactionCategory" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Transaction">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="TransactionCategory">
-        <PropertyRef Name="TransactionCategory_Category_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_TransactionCategory_Category">
-    <End Role="TransactionCategory" Type="FinanceToolDB.Store.TransactionCategory" Multiplicity="*" />
+  <Association Name="CategoryTransaction">
     <End Role="Category" Type="FinanceToolDB.Store.Categories" Multiplicity="1" />
+    <End Role="Transaction" Type="FinanceToolDB.Store.Transactions" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Category">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="TransactionCategory">
-        <PropertyRef Name="TransactionCategory_Transaction_Id" />
+      <Dependent Role="Transaction">
+        <PropertyRef Name="CategoryId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_TransactionEvent_Transaction">
-    <End Role="Transaction" Type="FinanceToolDB.Store.Transactions" Multiplicity="1" />
-    <End Role="TransactionEvent" Type="FinanceToolDB.Store.TransactionEvent" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Transaction">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="TransactionEvent">
-        <PropertyRef Name="TransactionEvent_Event_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_TransactionEvent_Event">
-    <End Role="TransactionEvent" Type="FinanceToolDB.Store.TransactionEvent" Multiplicity="*" />
-    <End Role="Event" Type="FinanceToolDB.Store.Events" Multiplicity="1" />
+  <Association Name="EventTransaction">
+    <End Role="Event" Type="FinanceToolDB.Store.Events" Multiplicity="0..1" />
+    <End Role="Transaction" Type="FinanceToolDB.Store.Transactions" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Event">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="TransactionEvent">
-        <PropertyRef Name="TransactionEvent_Transaction_Id" />
+      <Dependent Role="Transaction">
+        <PropertyRef Name="EventId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -206,13 +158,13 @@
             <End Role="User" EntitySet="Users" />
             <End Role="Transaction" EntitySet="Transactions" />
           </AssociationSet>
-          <AssociationSet Name="TransactionCategory" Association="FinanceToolDB.TransactionCategory">
-            <End Role="Transaction" EntitySet="Transactions" />
+          <AssociationSet Name="CategoryTransaction" Association="FinanceToolDB.CategoryTransaction">
             <End Role="Category" EntitySet="Categories" />
-          </AssociationSet>
-          <AssociationSet Name="TransactionEvent" Association="FinanceToolDB.TransactionEvent">
             <End Role="Transaction" EntitySet="Transactions" />
+          </AssociationSet>
+          <AssociationSet Name="EventTransaction" Association="FinanceToolDB.EventTransaction">
             <End Role="Event" EntitySet="Events" />
+            <End Role="Transaction" EntitySet="Transactions" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="User">
@@ -268,8 +220,10 @@
           <Property Name="TransactionDescription" Type="String" Nullable="false" />
           <Property Name="TransactionDate" Type="String" Nullable="false" />
           <Property Name="Amount" Type="String" Nullable="false" />
-          <Property Name="EventName" Type="String" Nullable="false" />
+          <Property Name="EventName" Type="String" Nullable="true" />
           <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="CategoryId" Type="Int32" Nullable="false" />
+          <Property Name="EventId" Type="Int32" Nullable="true" />
         </EntityType>
         <Association Name="UserEvent">
           <End Type="FinanceToolDB.User" Role="User" Multiplicity="1" />
@@ -295,13 +249,29 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="TransactionCategory">
+        <Association Name="CategoryTransaction">
+          <End Type="FinanceToolDB.Category" Role="Category" Multiplicity="1" />
           <End Type="FinanceToolDB.Transaction" Role="Transaction" Multiplicity="*" />
-          <End Type="FinanceToolDB.Category" Role="Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
-        <Association Name="TransactionEvent">
+        <Association Name="EventTransaction">
+          <End Type="FinanceToolDB.Event" Role="Event" Multiplicity="0..1" />
           <End Type="FinanceToolDB.Transaction" Role="Transaction" Multiplicity="*" />
-          <End Type="FinanceToolDB.Event" Role="Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="EventId" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -354,25 +324,11 @@
           <ScalarProperty Name="Amount" ColumnName="Amount" />
           <ScalarProperty Name="EventName" ColumnName="EventName" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="TransactionCategory" TypeName="FinanceToolDB.TransactionCategory" StoreEntitySet="TransactionCategory">
-      <EndProperty Name="Transaction">
-        <ScalarProperty Name="Id" ColumnName="TransactionCategory_Category_Id" />
-      </EndProperty>
-      <EndProperty Name="Category">
-        <ScalarProperty Name="Id" ColumnName="TransactionCategory_Transaction_Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="TransactionEvent" TypeName="FinanceToolDB.TransactionEvent" StoreEntitySet="TransactionEvent">
-      <EndProperty Name="Transaction">
-        <ScalarProperty Name="Id" ColumnName="TransactionEvent_Event_Id" />
-      </EndProperty>
-      <EndProperty Name="Event">
-        <ScalarProperty Name="Id" ColumnName="TransactionEvent_Transaction_Id" />
-      </EndProperty>
-    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

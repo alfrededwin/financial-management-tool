@@ -22,6 +22,15 @@ namespace PersonalFinancialTool
                 transaction.Amount = info.amount;
                 transaction.EventName = info.eventName;
                 transaction.UserId = FormLogin.gblLoggedInUser;
+                transaction.CategoryId = FormCreateTransaction.CatIdToUpdate;
+                if (FormCreateTransaction.EventIdToUpdate > 0)
+                {
+                    transaction.EventId = FormCreateTransaction.EventIdToUpdate;
+                }
+                else
+                {
+                    transaction.EventId = null;
+                }
 
                 // Add to database
                 FinanceToolDBContainer1 db = new FinanceToolDBContainer1();
@@ -49,6 +58,16 @@ namespace PersonalFinancialTool
                 transaction.Amount = info.amount;
                 transaction.EventName = info.eventName;
                 transaction.UserId = FormLogin.gblLoggedInUser;
+                transaction.CategoryId = FormCreateTransaction.CatIdToUpdate;
+                if (FormCreateTransaction.EventIdToUpdate > 0)
+                {
+                    transaction.EventId = FormCreateTransaction.EventIdToUpdate;
+                }
+                else
+                {
+                    transaction.EventId = null;
+                }
+
 
                 // Update to database
                 FinanceToolDBContainer1 db = new FinanceToolDBContainer1();
@@ -63,6 +82,8 @@ namespace PersonalFinancialTool
                     std.Amount = info.amount;
                     std.EventName = info.eventName;
                     std.UserId = FormLogin.gblLoggedInUser;
+                    std.CategoryId = FormCreateTransaction.CatIdToUpdate;
+                    std.EventId = FormCreateTransaction.EventIdToUpdate;
                     context.SaveChanges();
                 }
             }

@@ -2195,11 +2195,11 @@ namespace PersonalFinancialTool {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string EventName {
                 get {
-                    try {
-                        return ((string)(this[this.tableTransactions.EventNameColumn]));
+                    if (this.IsEventNameNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EventName\' in table \'Transactions\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableTransactions.EventNameColumn]));
                     }
                 }
                 set {

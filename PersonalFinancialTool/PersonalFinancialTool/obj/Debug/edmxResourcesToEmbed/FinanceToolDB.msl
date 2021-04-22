@@ -46,24 +46,10 @@
           <ScalarProperty Name="Amount" ColumnName="Amount" />
           <ScalarProperty Name="EventName" ColumnName="EventName" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="TransactionCategory" TypeName="FinanceToolDB.TransactionCategory" StoreEntitySet="TransactionCategory">
-      <EndProperty Name="Transaction">
-        <ScalarProperty Name="Id" ColumnName="TransactionCategory_Category_Id" />
-      </EndProperty>
-      <EndProperty Name="Category">
-        <ScalarProperty Name="Id" ColumnName="TransactionCategory_Transaction_Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="TransactionEvent" TypeName="FinanceToolDB.TransactionEvent" StoreEntitySet="TransactionEvent">
-      <EndProperty Name="Transaction">
-        <ScalarProperty Name="Id" ColumnName="TransactionEvent_Event_Id" />
-      </EndProperty>
-      <EndProperty Name="Event">
-        <ScalarProperty Name="Id" ColumnName="TransactionEvent_Transaction_Id" />
-      </EndProperty>
-    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

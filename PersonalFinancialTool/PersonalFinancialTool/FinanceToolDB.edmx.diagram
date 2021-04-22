@@ -9,11 +9,11 @@
         <EntityTypeShape EntityType="FinanceToolDB.Category" Width="2.125" PointX="2.75" PointY="0.5" />
         <AssociationConnector Association="FinanceToolDB.UserCategory" />
         <EntityTypeShape EntityType="FinanceToolDB.Event" Width="2.125" PointX="4.875" PointY="5.25" />
-        <EntityTypeShape EntityType="FinanceToolDB.Transaction" Width="2.125" PointX="6.25" PointY="1.875" />
+        <EntityTypeShape EntityType="FinanceToolDB.Transaction" Width="2.125" PointX="6.375" PointY="1.5" />
         <AssociationConnector Association="FinanceToolDB.UserEvent" />
         <AssociationConnector Association="FinanceToolDB.UserTransaction" />
-        <AssociationConnector Association="FinanceToolDB.TransactionCategory" />
-        <AssociationConnector Association="FinanceToolDB.TransactionEvent" />
+        <AssociationConnector Association="FinanceToolDB.CategoryTransaction" />
+        <AssociationConnector Association="FinanceToolDB.EventTransaction" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
