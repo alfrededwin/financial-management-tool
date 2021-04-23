@@ -46,8 +46,6 @@ namespace PersonalFinancialTool
             this.cmbExpenseType = new System.Windows.Forms.ComboBox();
             this.lblExpense = new System.Windows.Forms.Label();
             this.textBoxTransAmount = new System.Windows.Forms.TextBox();
-            this.labelEventId = new System.Windows.Forms.Label();
-            this.labelCategoryId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblAmount
@@ -220,31 +218,11 @@ namespace PersonalFinancialTool
             this.textBoxTransAmount.Size = new System.Drawing.Size(208, 25);
             this.textBoxTransAmount.TabIndex = 42;
             // 
-            // labelEventId
-            // 
-            this.labelEventId.AutoSize = true;
-            this.labelEventId.Location = new System.Drawing.Point(167, 376);
-            this.labelEventId.Name = "labelEventId";
-            this.labelEventId.Size = new System.Drawing.Size(44, 13);
-            this.labelEventId.TabIndex = 44;
-            this.labelEventId.Text = "EventId";
-            // 
-            // labelCategoryId
-            // 
-            this.labelCategoryId.AutoSize = true;
-            this.labelCategoryId.Location = new System.Drawing.Point(42, 380);
-            this.labelCategoryId.Name = "labelCategoryId";
-            this.labelCategoryId.Size = new System.Drawing.Size(58, 13);
-            this.labelCategoryId.TabIndex = 45;
-            this.labelCategoryId.Text = "CategoryId";
-            // 
             // FormCreateTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 401);
-            this.Controls.Add(this.labelCategoryId);
-            this.Controls.Add(this.labelEventId);
             this.Controls.Add(this.textBoxTransAmount);
             this.Controls.Add(this.cmbExpenseType);
             this.Controls.Add(this.lblExpense);
@@ -290,7 +268,5 @@ namespace PersonalFinancialTool
         private System.Windows.Forms.TextBox textBoxTransAmount;
         public System.Windows.Forms.Button btnUpdateEvent;
         public System.Windows.Forms.Button btnCreateEvent;
-        public System.Windows.Forms.Label labelEventId;
-        public System.Windows.Forms.Label labelCategoryId;
     }
 }

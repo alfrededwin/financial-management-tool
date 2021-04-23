@@ -8,13 +8,31 @@
   </Categories>
   <Categories>
     <CategoryId>2</CategoryId>
-    <CategoryName>ed</CategoryName>
+    <CategoryName>Testui</CategoryName>
     <CategoryDescription>ed</CategoryDescription>
+    <CategoryType>Expense</CategoryType>
+  </Categories>
+  <Categories>
+    <CategoryId>3</CategoryId>
+    <CategoryName>TEST</CategoryName>
+    <CategoryDescription>qa</CategoryDescription>
+    <CategoryType>Income</CategoryType>
+  </Categories>
+  <Categories>
+    <CategoryId>4</CategoryId>
+    <CategoryName>Sal1</CategoryName>
+    <CategoryDescription>Sal Desc</CategoryDescription>
+    <CategoryType>Income</CategoryType>
+  </Categories>
+  <Categories>
+    <CategoryId>5</CategoryId>
+    <CategoryName>Loan</CategoryName>
+    <CategoryDescription>loan ddesf</CategoryDescription>
     <CategoryType>Expense</CategoryType>
   </Categories>
   <Events>
     <EventId>1</EventId>
-    <EventName>sfsf</EventName>
+    <EventName>Amex</EventName>
     <EventDate>4/22/2021</EventDate>
     <EventStatus>Recurring</EventStatus>
   </Events>
@@ -24,6 +42,13 @@
     <Email>admin</Email>
     <Password>admin</Password>
     <UserId>1</UserId>
+  </Users>
+  <Users>
+    <FullName>Edwin</FullName>
+    <Username>edwin</Username>
+    <Email>edwin</Email>
+    <Password>edwin</Password>
+    <UserId>2</UserId>
   </Users>
   <Transactions>
     <TransactionId>1</TransactionId>
@@ -49,21 +74,21 @@
     <TransactionId>3</TransactionId>
     <CategoryType>Expense</CategoryType>
     <Income />
-    <Expense>ed</Expense>
-    <TransDescription>cdhc</TransDescription>
+    <Expense>Testui</Expense>
+    <TransDescription>cdhcjbjb</TransDescription>
     <Date>4/22/2021</Date>
     <Amount>35</Amount>
-    <EventName>sfsf</EventName>
+    <EventName>Amex</EventName>
   </Transactions>
   <Transactions>
     <TransactionId>4</TransactionId>
     <CategoryType>Income	</CategoryType>
-    <Income>sa</Income>
+    <Income>AZ</Income>
     <Expense />
-    <TransDescription>eed</TransDescription>
-    <Date>4/22/2021</Date>
-    <Amount>123</Amount>
-    <EventName />
+    <TransDescription>test</TransDescription>
+    <Date>4/23/2021</Date>
+    <Amount>10000</Amount>
+    <EventName>sfsf</EventName>
   </Transactions>
   <Transactions>
     <TransactionId>5</TransactionId>
@@ -113,6 +138,36 @@
     <TransDescription>cdhc</TransDescription>
     <Date>4/22/2021</Date>
     <Amount>35</Amount>
+    <EventName />
+  </Transactions>
+  <Transactions>
+    <TransactionId>10</TransactionId>
+    <CategoryType>Income	</CategoryType>
+    <Income>AZ</Income>
+    <Expense />
+    <TransDescription>test</TransDescription>
+    <Date>4/23/2021</Date>
+    <Amount>10000</Amount>
+    <EventName />
+  </Transactions>
+  <Transactions>
+    <TransactionId>11</TransactionId>
+    <CategoryType>Income	</CategoryType>
+    <Income>Sal</Income>
+    <Expense />
+    <TransDescription>sfs</TransDescription>
+    <Date>4/23/2021</Date>
+    <Amount>1000</Amount>
+    <EventName />
+  </Transactions>
+  <Transactions>
+    <TransactionId>12</TransactionId>
+    <CategoryType>Income	</CategoryType>
+    <Income>AZqw</Income>
+    <Expense />
+    <TransDescription>tyty</TransDescription>
+    <Date>4/23/2021</Date>
+    <Amount>56</Amount>
     <EventName />
   </Transactions>
 </FinancialToolDataSet>

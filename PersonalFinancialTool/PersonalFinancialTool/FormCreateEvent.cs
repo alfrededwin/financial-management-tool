@@ -63,8 +63,9 @@ namespace PersonalFinancialTool
                     // Forwarding to Database.
                     EventModel eventModel = new EventModel();
                     eventModel.SaveEventInformation(this.eventDetails);
-                    MessageBox.Show(String.Format(Properties.Resources.SUCCESS_MESSAGE, this.sEventLabel));
                     this.Close();
+                    MessageBox.Show(String.Format(Properties.Resources.SUCCESS_MESSAGE, this.sEventLabel));
+                    
                 }
 
             }
@@ -114,8 +115,9 @@ namespace PersonalFinancialTool
                     // Forwarding to Database.
                     EventModel eventModel = new EventModel();
                     eventModel.UpdateEventInformation(globalIdToUpdate,this.eventDetails);
-                    MessageBox.Show(String.Format(Properties.Resources.SUCCESS_UPDATE, this.sEventLabel));
                     this.Close();
+                    MessageBox.Show(String.Format(Properties.Resources.SUCCESS_UPDATE, this.sEventLabel));
+                    
                 }
 
             }

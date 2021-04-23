@@ -16,5 +16,9 @@ namespace PersonalFinancialTool
         {
             InitializeComponent();
         }
+
+        public WeeklyView(List<FinancialToolDataSet.TransactionsRow> transactionsRows)
+        {
+        }
     }
 }

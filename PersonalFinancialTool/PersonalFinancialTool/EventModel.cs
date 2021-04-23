@@ -54,6 +54,14 @@ namespace PersonalFinancialTool
                     std.EventDate = info.eventDate;
                     std.EventStatus = info.eventStatus;
                     std.UserId = FormLogin.gblLoggedInUser;
+
+                    // Updating the Event Name based on the Event Name From Events Table.
+                    var transactionUpdate = context.Transactions.Where(x => x.EventId == IdToUpdate).ToList();
+                    foreach (var item in transactionUpdate)
+                    {
+                        item.EventName = info.eventName;
+                    }
+
                     context.SaveChanges();
                 }
 

@@ -60,7 +60,19 @@ namespace PersonalFinancialTool
                     std.CategoryDescription = info.categoryDescription;
                     std.CategoryType = info.categoryType;
                     std.UserId = FormLogin.gblLoggedInUser;
-                    //var transactionUpdate = from b in context.Transactions where b.Income.Contains(info.categoryName) select b;
+                 
+                    // Updating the Income and Expense based on the Category Name from Category Table.
+                    var transactionUpdate = context.Transactions.Where(x=>x.CategoryId == IdToUpdate).ToList();
+                    foreach (var item in transactionUpdate) {
+                        if (info.categoryType == "Income")
+                        {
+                            item.Income = info.categoryName;
+                        }
+                        else {
+                            item.Expense = info.categoryName;
+                        }
+                       
+                    }
 
 
                     context.SaveChanges();

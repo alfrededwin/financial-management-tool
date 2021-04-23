@@ -136,6 +136,19 @@ namespace PersonalFinancialTool
                 {
                     String sEventName = reader.GetString(1);
                     comboBoxTransEventName.Items.Add(sEventName);
+
+
+                    //if (reader.GetString(1).Equals(description))
+                    //{
+                    //    type = mySqlDataReader.GetString("category_type");
+                    //    break;
+                    //}
+
+                    //if (mySqlDataReader.GetString("category_name").Equals(description))
+                    //{
+                    //    type = mySqlDataReader.GetString("category_type");
+                    //    break;
+                    //}
                 }
 
                 con.Close();
@@ -241,8 +254,8 @@ namespace PersonalFinancialTool
                     TransactionModel transactionModel = new TransactionModel();
                     transactionModel.UpdateTransactionInformation(globalIdToUpdate,this.transactionDetails);
 
-                    MessageBox.Show(String.Format(Properties.Resources.SUCCESS_UPDATE, this.sTransactionLabel));
                     this.Close();
+                    MessageBox.Show(String.Format(Properties.Resources.SUCCESS_UPDATE, this.sTransactionLabel));
 
                 }
 
@@ -273,8 +286,8 @@ namespace PersonalFinancialTool
                 con.Close();
                 if (dta.Rows.Count == 1)
                 {
-                    labelCategoryId.Text = dta.Rows[0]["Id"].ToString();
-                    CatIdToUpdate = Int32.Parse(labelCategoryId.Text);
+                    //labelCategoryId.Text = dta.Rows[0]["Id"].ToString();
+                    CatIdToUpdate = Int32.Parse(dta.Rows[0]["Id"].ToString());
                 }
             }
 
@@ -297,8 +310,8 @@ namespace PersonalFinancialTool
                 con.Close();
                 if (dta.Rows.Count == 1)
                 {
-                    labelCategoryId.Text = dta.Rows[0]["Id"].ToString();
-                    CatIdToUpdate = Int32.Parse(labelCategoryId.Text);
+                    //labelCategoryId.Text = dta.Rows[0]["Id"].ToString();
+                    CatIdToUpdate = Int32.Parse(dta.Rows[0]["Id"].ToString());
                    
                 }
             }
@@ -323,7 +336,7 @@ namespace PersonalFinancialTool
                 con.Close();
                 if (dta.Rows.Count == 1)
                 {
-                    labelEventId.Text = dta.Rows[0]["Id"].ToString();
+                    //labelEventId.Text = dta.Rows[0]["Id"].ToString();
                     EventIdToUpdate = Int32.Parse(dta.Rows[0]["Id"].ToString());
                 }
             }

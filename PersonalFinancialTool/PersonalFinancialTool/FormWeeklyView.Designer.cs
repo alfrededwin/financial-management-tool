@@ -60,11 +60,13 @@ namespace PersonalFinancialTool
             // 
             // dateTimePickerWeeklyView
             // 
+            this.dateTimePickerWeeklyView.CustomFormat = "dd MMM yyyy";
             this.dateTimePickerWeeklyView.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerWeeklyView.Location = new System.Drawing.Point(68, 27);
             this.dateTimePickerWeeklyView.Name = "dateTimePickerWeeklyView";
             this.dateTimePickerWeeklyView.Size = new System.Drawing.Size(116, 23);
             this.dateTimePickerWeeklyView.TabIndex = 1;
+            this.dateTimePickerWeeklyView.ValueChanged += new System.EventHandler(this.dateTimePickerWeeklyView_ValueChanged);
             // 
             // labelEndDate
             // 

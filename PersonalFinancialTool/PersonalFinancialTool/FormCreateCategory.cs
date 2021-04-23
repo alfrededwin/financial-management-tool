@@ -75,9 +75,10 @@ namespace PersonalFinancialTool
                     // Forwarding to Database.
                     CategoryModel categoryModel = new CategoryModel();
                     categoryModel.SaveCategoryInformation(this.categoryDetails);
-                    MessageBox.Show(String.Format(Properties.Resources.SUCCESS_MESSAGE, this.sCategoryLabel));
-                    loadViewCategoryData();
                     this.Close();
+                    MessageBox.Show(String.Format(Properties.Resources.SUCCESS_MESSAGE, this.sCategoryLabel));
+                  
+                    
                 }
 
             }
@@ -158,9 +159,9 @@ namespace PersonalFinancialTool
                 // Update to Database
                 CategoryModel categoryModel = new CategoryModel();
                 categoryModel.UpdateCategoryInformation(globalIdToUpdate, this.categoryDetails);
-
-                MessageBox.Show(String.Format(Properties.Resources.SUCCESS_UPDATE, this.sCategoryLabel));
                 this.Close();
+                MessageBox.Show(String.Format(Properties.Resources.SUCCESS_UPDATE, this.sCategoryLabel));
+                
             }
             catch (Exception ex)
             {
