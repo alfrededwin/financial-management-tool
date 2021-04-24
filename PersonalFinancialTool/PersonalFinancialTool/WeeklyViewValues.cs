@@ -14,6 +14,12 @@ namespace PersonalFinancialTool
     {
         FinancialToolDataSet.TransactionsRow _transaction;
 
+        //public WeeklyViewValues()
+        //{
+        //    InitializeComponent();
+        //    SetUpViewData();
+        //}
+
         public WeeklyViewValues(FinancialToolDataSet.TransactionsRow transaction)
         {
             InitializeComponent();
@@ -24,7 +30,11 @@ namespace PersonalFinancialTool
 
         private void SetUpViewData()
         {
-            labelCategory.Text = _transaction.Expense;
+            //labelCategory.Text = _transaction.Expense;
+            labelCategory.Text = "TEST";
+
+
+
             //lblNote.Text = _transaction.Note;
             labelAmount.Text = WeeklyViewController.GetFormattedCurrency(_transaction.Amount);
             //this.BackColor = Color.FromName(_transaction.FinancialAccountRow.Color);

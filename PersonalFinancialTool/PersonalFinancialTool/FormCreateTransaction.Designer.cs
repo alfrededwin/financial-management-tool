@@ -60,8 +60,9 @@ namespace PersonalFinancialTool
             // 
             // dateTimeTransDate
             // 
+            this.dateTimeTransDate.CustomFormat = "dd MMM yyyy ";
             this.dateTimeTransDate.Font = new System.Drawing.Font("Cambria", 11.25F);
-            this.dateTimeTransDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimeTransDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimeTransDate.Location = new System.Drawing.Point(170, 215);
             this.dateTimeTransDate.Name = "dateTimeTransDate";
             this.dateTimeTransDate.Size = new System.Drawing.Size(208, 25);

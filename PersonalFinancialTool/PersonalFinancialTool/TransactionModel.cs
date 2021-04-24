@@ -83,15 +83,15 @@ namespace PersonalFinancialTool
                     std.EventName = info.eventName;
                     std.UserId = FormLogin.gblLoggedInUser;
                     std.CategoryId = FormCreateTransaction.CatIdToUpdate;
-                    std.EventId = FormCreateTransaction.EventIdToUpdate;
+                    std.EventId = transaction.EventId;
                     context.SaveChanges();
                 }
-            }
+        }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+}
 
 
 

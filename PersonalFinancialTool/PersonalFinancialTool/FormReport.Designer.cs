@@ -116,14 +116,14 @@ namespace PersonalFinancialTool
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 80);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(752, 292);
+            this.dataGridView1.Size = new System.Drawing.Size(980, 314);
             this.dataGridView1.TabIndex = 1;
             // 
             // FormReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 384);
+            this.ClientSize = new System.Drawing.Size(1004, 406);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBoxFilter);
             this.MaximizeBox = false;

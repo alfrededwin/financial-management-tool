@@ -87,13 +87,13 @@ namespace PersonalFinancialTool
             this.chartPrediction.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartPrediction.Legends.Add(legend1);
-            this.chartPrediction.Location = new System.Drawing.Point(92, 89);
+            this.chartPrediction.Location = new System.Drawing.Point(177, 89);
             this.chartPrediction.Name = "chartPrediction";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Average Category";
             this.chartPrediction.Series.Add(series1);
-            this.chartPrediction.Size = new System.Drawing.Size(587, 283);
+            this.chartPrediction.Size = new System.Drawing.Size(680, 279);
             this.chartPrediction.TabIndex = 2;
             this.chartPrediction.Text = "chart1";
             // 
@@ -101,7 +101,7 @@ namespace PersonalFinancialTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 384);
+            this.ClientSize = new System.Drawing.Size(996, 380);
             this.Controls.Add(this.chartPrediction);
             this.Controls.Add(this.groupBoxPrediction);
             this.MaximizeBox = false;

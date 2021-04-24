@@ -12,6 +12,7 @@ namespace PersonalFinancialTool
 {
     public partial class FormDashboard : Form
     {
+        private WeeklyViewController _weeklyViewController;
 
         public FormDashboard()
         {

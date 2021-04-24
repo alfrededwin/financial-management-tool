@@ -43,9 +43,9 @@ namespace PersonalFinancialTool
             // btnUpdateEvent
             // 
             this.btnUpdateEvent.Font = new System.Drawing.Font("Cambria", 11.25F);
-            this.btnUpdateEvent.Location = new System.Drawing.Point(376, 341);
+            this.btnUpdateEvent.Location = new System.Drawing.Point(490, 341);
             this.btnUpdateEvent.Name = "btnUpdateEvent";
-            this.btnUpdateEvent.Size = new System.Drawing.Size(131, 31);
+            this.btnUpdateEvent.Size = new System.Drawing.Size(130, 30);
             this.btnUpdateEvent.TabIndex = 27;
             this.btnUpdateEvent.Text = "Update Event";
             this.btnUpdateEvent.UseVisualStyleBackColor = true;
@@ -54,9 +54,9 @@ namespace PersonalFinancialTool
             // btnCreateEvent
             // 
             this.btnCreateEvent.Font = new System.Drawing.Font("Cambria", 11.25F);
-            this.btnCreateEvent.Location = new System.Drawing.Point(239, 341);
+            this.btnCreateEvent.Location = new System.Drawing.Point(353, 341);
             this.btnCreateEvent.Name = "btnCreateEvent";
-            this.btnCreateEvent.Size = new System.Drawing.Size(131, 31);
+            this.btnCreateEvent.Size = new System.Drawing.Size(130, 30);
             this.btnCreateEvent.TabIndex = 26;
             this.btnCreateEvent.Text = "Create Event";
             this.btnCreateEvent.UseVisualStyleBackColor = true;
@@ -68,7 +68,7 @@ namespace PersonalFinancialTool
             this.dataGridViewEvent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewEvent.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewEvent.Name = "dataGridViewEvent";
-            this.dataGridViewEvent.Size = new System.Drawing.Size(752, 323);
+            this.dataGridViewEvent.Size = new System.Drawing.Size(972, 323);
             this.dataGridViewEvent.TabIndex = 28;
             this.dataGridViewEvent.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SelectEventRow);
             // 
@@ -78,26 +78,26 @@ namespace PersonalFinancialTool
             this.refreshToolStripMenuItem,
             this.settingsToolStripMenuItem});
             this.contextMenuStripEvent.Name = "contextMenuStripEvent";
-            this.contextMenuStripEvent.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuStripEvent.Size = new System.Drawing.Size(117, 48);
             this.contextMenuStripEvent.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MenuStripViewEvent);
             // 
             // refreshToolStripMenuItem
             // 
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.refreshToolStripMenuItem.Text = "Refresh";
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // FormViewEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 384);
+            this.ClientSize = new System.Drawing.Size(996, 380);
             this.ContextMenuStrip = this.contextMenuStripEvent;
             this.Controls.Add(this.dataGridViewEvent);
             this.Controls.Add(this.btnUpdateEvent);

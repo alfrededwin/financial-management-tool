@@ -58,9 +58,9 @@ namespace PersonalFinancialTool
                 this.transactionDetails.eventName = this.comboBoxTransEventName.Text;
 
 
-                if (string.IsNullOrWhiteSpace(this.transactionDetails.categoryType) || string.IsNullOrEmpty(this.transactionDetails.transactionDescription))
+                if (this.dateTimeTransDate.Value == null || this.textBoxTransDesc.Text == "")
                 {
-                    MessageBox.Show(Properties.Resources.COMMON_MISSING_DATA);
+                    MessageBox.Show(String.Format(Properties.Resources.COMMON_MISSING_DATA, MessageBoxButtons.OK, MessageBoxIcon.Error));
                 }
                 else
                 {
@@ -216,16 +216,22 @@ namespace PersonalFinancialTool
                 this.transactionDetails.expense = this.cmbExpenseType.Text;
                 this.transactionDetails.transactionDescription = this.textBoxTransDesc.Text;
                 this.transactionDetails.transactionDate = this.dateTimeTransDate.Value;
-                this.transactionDetails.amount = decimal.Parse(this.textBoxTransAmount.Text);
+                this.transactionDetails.amount =  decimal.Parse( this.textBoxTransAmount.Text);
                 this.transactionDetails.eventName = this.comboBoxTransEventName.Text;
 
 
-                if (string.IsNullOrWhiteSpace(this.transactionDetails.categoryType) || string.IsNullOrEmpty(this.transactionDetails.transactionDescription))
+                if (this.dateTimeTransDate.Value == null || this.textBoxTransDesc.Text == "")
                 {
-                    MessageBox.Show(Properties.Resources.COMMON_MISSING_DATA);
+                    MessageBox.Show(String.Format(Properties.Resources.COMMON_MISSING_DATA, MessageBoxButtons.OK, MessageBoxIcon.Error));
                 }
                 else
                 {
+
+                    if (comboBoxTransEventName.Text == "")
+                    {
+                        EventIdToUpdate = 0;
+                    }
+
                     // Assign to Dataset
                     FinancialToolDataSet.TransactionsRow transactionsRow = this.AppDataSet.Transactions.FindByTransactionId(globalIdToUpdate);
 
@@ -236,6 +242,7 @@ namespace PersonalFinancialTool
                     transactionsRow.Date = this.transactionDetails.transactionDate;
                     transactionsRow.Amount = this.transactionDetails.amount;
                     transactionsRow.EventName = this.transactionDetails.eventName;
+
 
                     // Apply Changes to DT
                     this.AppDataSet.AcceptChanges();
@@ -249,7 +256,7 @@ namespace PersonalFinancialTool
                     transactionModel.UpdateTransactionInformation(globalIdToUpdate,this.transactionDetails);
 
                     this.Close();
-                    MessageBox.Show(String.Format(Properties.Resources.SUCCESS_UPDATE, this.sTransactionLabel));
+                    MessageBox.Show(String.Format(Properties.Resources.SUCCESS_UPDATE, this.sTransactionLabel, MessageBoxIcon.Information));
 
                 }
 

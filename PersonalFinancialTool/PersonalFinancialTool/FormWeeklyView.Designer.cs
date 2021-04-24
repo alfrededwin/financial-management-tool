@@ -50,7 +50,7 @@ namespace PersonalFinancialTool
             // dateTimePickerWeeklyView
             // 
             this.dateTimePickerWeeklyView.CustomFormat = "dd MMM yyyy";
-            this.dateTimePickerWeeklyView.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerWeeklyView.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerWeeklyView.Location = new System.Drawing.Point(161, 27);
             this.dateTimePickerWeeklyView.Name = "dateTimePickerWeeklyView";
             this.dateTimePickerWeeklyView.Size = new System.Drawing.Size(121, 23);

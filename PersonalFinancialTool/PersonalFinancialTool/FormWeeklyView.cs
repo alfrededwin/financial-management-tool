@@ -16,6 +16,7 @@ namespace PersonalFinancialTool
         //private readonly WeeklyViewController weeklyViewController;
 
         WeeklyViewController weeklyViewController = new WeeklyViewController();
+        FinancialToolDataSet finance_dataset = new FinancialToolDataSet();
 
         public FormWeeklyView()
         {
@@ -61,6 +62,12 @@ namespace PersonalFinancialTool
                 date = date.AddDays(-1);
                 _groupBoxes[i].Controls.Add(day);
             }
+        }
+
+
+        public List<FinancialToolDataSet.TransactionsRow> GetExpenses(DateTime date)
+        {
+            return finance_dataset.Transactions.Where(t => t.Date.Year == date.Year && t.Date.Month == date.Month && t.Date.Day == date.Day).ToList();
         }
     }
 }

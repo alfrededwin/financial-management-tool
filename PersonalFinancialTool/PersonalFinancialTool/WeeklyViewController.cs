@@ -38,8 +38,7 @@ namespace PersonalFinancialTool
         public List<FinancialToolDataSet.TransactionsRow> GetExpenses(DateTime date)
         {
            
-            return finance_dataset.Transactions.Where(t => t.Expense == t.CategoryType  &&
-            t.Date.Year == date.Year && t.Date.Month == date.Month && t.Date.Day == date.Day).ToList();
+            return finance_dataset.Transactions.Where(t => t.Date.Year == date.Year && t.Date.Month == date.Month && t.Date.Day == date.Day).ToList();
         }
 
        

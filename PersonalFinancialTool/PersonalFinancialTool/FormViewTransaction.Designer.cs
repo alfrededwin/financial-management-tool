@@ -42,9 +42,9 @@ namespace PersonalFinancialTool
             // buttonCreateTransaction
             // 
             this.buttonCreateTransaction.Font = new System.Drawing.Font("Cambria", 11.25F);
-            this.buttonCreateTransaction.Location = new System.Drawing.Point(233, 341);
+            this.buttonCreateTransaction.Location = new System.Drawing.Point(316, 337);
             this.buttonCreateTransaction.Name = "buttonCreateTransaction";
-            this.buttonCreateTransaction.Size = new System.Drawing.Size(138, 31);
+            this.buttonCreateTransaction.Size = new System.Drawing.Size(144, 30);
             this.buttonCreateTransaction.TabIndex = 30;
             this.buttonCreateTransaction.Text = "Create Transaction";
             this.buttonCreateTransaction.UseVisualStyleBackColor = true;
@@ -53,9 +53,9 @@ namespace PersonalFinancialTool
             // buttonUpdateTransaction
             // 
             this.buttonUpdateTransaction.Font = new System.Drawing.Font("Cambria", 11.25F);
-            this.buttonUpdateTransaction.Location = new System.Drawing.Point(377, 341);
+            this.buttonUpdateTransaction.Location = new System.Drawing.Point(466, 337);
             this.buttonUpdateTransaction.Name = "buttonUpdateTransaction";
-            this.buttonUpdateTransaction.Size = new System.Drawing.Size(138, 31);
+            this.buttonUpdateTransaction.Size = new System.Drawing.Size(144, 30);
             this.buttonUpdateTransaction.TabIndex = 31;
             this.buttonUpdateTransaction.Text = "Update Transaction";
             this.buttonUpdateTransaction.UseVisualStyleBackColor = true;
@@ -67,7 +67,7 @@ namespace PersonalFinancialTool
             this.dataGridViewTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTransaction.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewTransaction.Name = "dataGridViewTransaction";
-            this.dataGridViewTransaction.Size = new System.Drawing.Size(752, 309);
+            this.dataGridViewTransaction.Size = new System.Drawing.Size(972, 319);
             this.dataGridViewTransaction.TabIndex = 32;
             this.dataGridViewTransaction.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SelectTransactionRow);
             // 
@@ -82,14 +82,14 @@ namespace PersonalFinancialTool
             // refreshToolStripMenuItem
             // 
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.refreshToolStripMenuItem.Text = "Refresh";
             // 
             // FormViewTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 384);
+            this.ClientSize = new System.Drawing.Size(996, 380);
             this.ContextMenuStrip = this.contextMenuStripTransaction;
             this.Controls.Add(this.dataGridViewTransaction);
             this.Controls.Add(this.buttonUpdateTransaction);

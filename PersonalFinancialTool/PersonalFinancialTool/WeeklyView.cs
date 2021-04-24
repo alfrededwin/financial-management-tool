@@ -16,6 +16,13 @@ namespace PersonalFinancialTool
         private readonly List<FinancialToolDataSet.TransactionsRow> _transactions;
 
 
+        //public WeeklyView()
+        //{
+        //    InitializeComponent();
+           
+        //    SetUpViewData();
+        //}
+
         public WeeklyView(List<FinancialToolDataSet.TransactionsRow> transactionsRows)
         {
             InitializeComponent();
@@ -31,6 +38,12 @@ namespace PersonalFinancialTool
         {
             SetUpViewData();
         }
+        public static string GetFormattedCurrency(decimal amount)
+        {
+            return string.Format("{0} {1}",
+                Properties.Resources.CURRENCY_PREFIX,
+                amount.ToString("#,##0.00"));
+        }
 
         private void SetUpViewData()
         {
@@ -38,12 +51,12 @@ namespace PersonalFinancialTool
             foreach (var item in _transactions)
             {
                 WeeklyViewValues dayItem = new WeeklyViewValues(item);
-                dayItem.Location = new Point(3, ySpacer);
+                dayItem.Location = new Point(0, 1);
                 panelWeekView.Controls.Add(dayItem);
                 ySpacer += dayItem.Height + 3;
             }
 
-            lbltotal.Text = WeeklyViewController.GetFormattedCurrency(_transactions.Sum(t => t.Amount));
+            lbltotal.Text = GetFormattedCurrency(_transactions.Sum(t => t.Amount));
         }
 
 

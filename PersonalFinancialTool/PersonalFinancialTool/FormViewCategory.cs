@@ -32,7 +32,7 @@ namespace PersonalFinancialTool
                 this.myDataSet.ReadXml("PersonalFinanceToolDB.xml");
             }
 
-            //loadData();
+            
 
             //myDataSet.ReadXml("PersonalFinanceToolDB.xml");
             //this.CategoryDataSet = this.myDataSet;
@@ -40,23 +40,7 @@ namespace PersonalFinancialTool
             //this.dataGridViewCategory.DataSource = this.financialToolDataSet;
             //this.dataGridViewCategory.DataMember = "Categories";
 
-            //FinanceToolDBContainer1 db = new FinanceToolDBContainer1();
-            //var category1 =
-            //    from category in db.Categories
-            //    where category.UserId == FormLogin.gblLoggedInUser
-            //    select new
-            //    {
-            //        CategoryId = category.Id,
-            //        CategoryName = category.CategoryName,
-            //        CategoryDescription = category.CategoryDescription,
-            //        CategoryType = category.CategoryType,
-            //        UserId = category.UserId
-            //    };
-                
-        
-            //dataGridViewCategory.DataSource = category1.ToList();
-            //dataGridViewCategory.Columns[0].Visible = false;
-            //dataGridViewCategory.Columns[4].Visible = false;
+            
 
             loadViewCategoryData();
 
@@ -128,6 +112,11 @@ namespace PersonalFinancialTool
         private void MenuStripViewCategory(object sender, MouseEventArgs e)
         {
             loadViewCategoryData();
+        }
+
+        private void SearchCategory(object sender, KeyPressEventArgs e)
+        {
+            //var result = entity
         }
     } 
 }

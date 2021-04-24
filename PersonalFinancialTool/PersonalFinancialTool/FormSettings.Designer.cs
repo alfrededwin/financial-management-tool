@@ -39,7 +39,7 @@ namespace PersonalFinancialTool
             // btnEditProfile
             // 
             this.btnEditProfile.Font = new System.Drawing.Font("Cambria", 11.25F);
-            this.btnEditProfile.Location = new System.Drawing.Point(319, 220);
+            this.btnEditProfile.Location = new System.Drawing.Point(420, 255);
             this.btnEditProfile.Name = "btnEditProfile";
             this.btnEditProfile.Size = new System.Drawing.Size(131, 31);
             this.btnEditProfile.TabIndex = 25;
@@ -50,7 +50,7 @@ namespace PersonalFinancialTool
             // profilePicture
             // 
             this.profilePicture.Image = global::PersonalFinancialTool.Properties.Resources.edituser;
-            this.profilePicture.Location = new System.Drawing.Point(340, 87);
+            this.profilePicture.Location = new System.Drawing.Point(441, 122);
             this.profilePicture.Name = "profilePicture";
             this.profilePicture.Size = new System.Drawing.Size(96, 96);
             this.profilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -61,7 +61,7 @@ namespace PersonalFinancialTool
             // 
             this.lblProfileName.AutoSize = true;
             this.lblProfileName.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProfileName.Location = new System.Drawing.Point(352, 186);
+            this.lblProfileName.Location = new System.Drawing.Point(453, 221);
             this.lblProfileName.Name = "lblProfileName";
             this.lblProfileName.Size = new System.Drawing.Size(65, 22);
             this.lblProfileName.TabIndex = 27;
@@ -71,7 +71,7 @@ namespace PersonalFinancialTool
             // 
             this.lblSetting.AutoSize = true;
             this.lblSetting.Font = new System.Drawing.Font("Cambria", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSetting.Location = new System.Drawing.Point(311, 41);
+            this.lblSetting.Location = new System.Drawing.Point(412, 76);
             this.lblSetting.Name = "lblSetting";
             this.lblSetting.Size = new System.Drawing.Size(156, 43);
             this.lblSetting.TabIndex = 28;
@@ -81,7 +81,7 @@ namespace PersonalFinancialTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(996, 380);
             this.Controls.Add(this.lblSetting);
             this.Controls.Add(this.lblProfileName);
             this.Controls.Add(this.profilePicture);
