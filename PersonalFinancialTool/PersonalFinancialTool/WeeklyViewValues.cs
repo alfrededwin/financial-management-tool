@@ -12,9 +12,22 @@ namespace PersonalFinancialTool
 {
     public partial class WeeklyViewValues : UserControl
     {
-        public WeeklyViewValues()
+        FinancialToolDataSet.TransactionsRow _transaction;
+
+        public WeeklyViewValues(FinancialToolDataSet.TransactionsRow transaction)
         {
             InitializeComponent();
+            _transaction = transaction;
+
+            SetUpViewData();
+        }
+
+        private void SetUpViewData()
+        {
+            labelCategory.Text = _transaction.Expense;
+            //lblNote.Text = _transaction.Note;
+            labelAmount.Text = WeeklyViewController.GetFormattedCurrency(_transaction.Amount);
+            //this.BackColor = Color.FromName(_transaction.FinancialAccountRow.Color);
         }
     }
 }

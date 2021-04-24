@@ -53,7 +53,7 @@ namespace PersonalFinancialTool
             this.tabControlDashboard.Location = new System.Drawing.Point(2, 5);
             this.tabControlDashboard.Name = "tabControlDashboard";
             this.tabControlDashboard.SelectedIndex = 0;
-            this.tabControlDashboard.Size = new System.Drawing.Size(800, 445);
+            this.tabControlDashboard.Size = new System.Drawing.Size(1020, 445);
             this.tabControlDashboard.TabIndex = 0;
             // 
             // tabPageTransaction
@@ -62,7 +62,7 @@ namespace PersonalFinancialTool
             this.tabPageTransaction.Location = new System.Drawing.Point(4, 22);
             this.tabPageTransaction.Name = "tabPageTransaction";
             this.tabPageTransaction.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTransaction.Size = new System.Drawing.Size(792, 419);
+            this.tabPageTransaction.Size = new System.Drawing.Size(1012, 419);
             this.tabPageTransaction.TabIndex = 0;
             this.tabPageTransaction.Text = "Transaction";
             // 
@@ -72,7 +72,7 @@ namespace PersonalFinancialTool
             this.tabPageCategory.Location = new System.Drawing.Point(4, 22);
             this.tabPageCategory.Name = "tabPageCategory";
             this.tabPageCategory.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCategory.Size = new System.Drawing.Size(792, 423);
+            this.tabPageCategory.Size = new System.Drawing.Size(1012, 412);
             this.tabPageCategory.TabIndex = 1;
             this.tabPageCategory.Text = "Category";
             // 
@@ -82,7 +82,7 @@ namespace PersonalFinancialTool
             this.tabPageEvent.Location = new System.Drawing.Point(4, 22);
             this.tabPageEvent.Name = "tabPageEvent";
             this.tabPageEvent.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageEvent.Size = new System.Drawing.Size(792, 423);
+            this.tabPageEvent.Size = new System.Drawing.Size(1012, 412);
             this.tabPageEvent.TabIndex = 2;
             this.tabPageEvent.Text = "Event";
             // 
@@ -92,7 +92,7 @@ namespace PersonalFinancialTool
             this.tabPagePrediction.Location = new System.Drawing.Point(4, 22);
             this.tabPagePrediction.Name = "tabPagePrediction";
             this.tabPagePrediction.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePrediction.Size = new System.Drawing.Size(792, 423);
+            this.tabPagePrediction.Size = new System.Drawing.Size(1012, 412);
             this.tabPagePrediction.TabIndex = 3;
             this.tabPagePrediction.Text = "Prediction";
             // 
@@ -102,7 +102,7 @@ namespace PersonalFinancialTool
             this.tabPageReport.Location = new System.Drawing.Point(4, 22);
             this.tabPageReport.Name = "tabPageReport";
             this.tabPageReport.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageReport.Size = new System.Drawing.Size(792, 423);
+            this.tabPageReport.Size = new System.Drawing.Size(1012, 412);
             this.tabPageReport.TabIndex = 4;
             this.tabPageReport.Text = "Report";
             // 
@@ -112,7 +112,7 @@ namespace PersonalFinancialTool
             this.tabPageWeeklyView.Location = new System.Drawing.Point(4, 22);
             this.tabPageWeeklyView.Name = "tabPageWeeklyView";
             this.tabPageWeeklyView.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageWeeklyView.Size = new System.Drawing.Size(792, 423);
+            this.tabPageWeeklyView.Size = new System.Drawing.Size(1012, 412);
             this.tabPageWeeklyView.TabIndex = 6;
             this.tabPageWeeklyView.Text = "Weekly View";
             // 
@@ -122,7 +122,7 @@ namespace PersonalFinancialTool
             this.tabPageSettings.Location = new System.Drawing.Point(4, 22);
             this.tabPageSettings.Name = "tabPageSettings";
             this.tabPageSettings.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSettings.Size = new System.Drawing.Size(792, 423);
+            this.tabPageSettings.Size = new System.Drawing.Size(1012, 412);
             this.tabPageSettings.TabIndex = 5;
             this.tabPageSettings.Text = "Settings";
             // 
@@ -138,7 +138,7 @@ namespace PersonalFinancialTool
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1022, 451);
             this.Controls.Add(this.logoutButton1);
             this.Controls.Add(this.tabControlDashboard);
             this.MaximizeBox = false;

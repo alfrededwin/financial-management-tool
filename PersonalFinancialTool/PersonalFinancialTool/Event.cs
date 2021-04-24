@@ -16,7 +16,7 @@ namespace PersonalFinancialTool
     {
         public int Id { get; set; }
         public string EventName { get; set; }
-        public string EventDate { get; set; }
+        public System.DateTime EventDate { get; set; }
         public string EventStatus { get; set; }
         public int UserId { get; set; }
     }

@@ -2,38 +2,14 @@
 <FinancialToolDataSet xmlns="http://tempuri.org/FinancialToolDataSet.xsd">
   <Categories>
     <CategoryId>1</CategoryId>
-    <CategoryName>sa</CategoryName>
-    <CategoryDescription>sa</CategoryDescription>
+    <CategoryName>Sal</CategoryName>
+    <CategoryDescription>df</CategoryDescription>
     <CategoryType>Income</CategoryType>
-  </Categories>
-  <Categories>
-    <CategoryId>2</CategoryId>
-    <CategoryName>Testui</CategoryName>
-    <CategoryDescription>ed</CategoryDescription>
-    <CategoryType>Expense</CategoryType>
-  </Categories>
-  <Categories>
-    <CategoryId>3</CategoryId>
-    <CategoryName>TEST</CategoryName>
-    <CategoryDescription>qa</CategoryDescription>
-    <CategoryType>Income</CategoryType>
-  </Categories>
-  <Categories>
-    <CategoryId>4</CategoryId>
-    <CategoryName>Sal1</CategoryName>
-    <CategoryDescription>Sal Desc</CategoryDescription>
-    <CategoryType>Income</CategoryType>
-  </Categories>
-  <Categories>
-    <CategoryId>5</CategoryId>
-    <CategoryName>Loan</CategoryName>
-    <CategoryDescription>loan ddesf</CategoryDescription>
-    <CategoryType>Expense</CategoryType>
   </Categories>
   <Events>
     <EventId>1</EventId>
-    <EventName>Amex</EventName>
-    <EventDate>4/22/2021</EventDate>
+    <EventName>dchdf</EventName>
+    <EventDate>2021-04-24T08:53:51.4879694-07:00</EventDate>
     <EventStatus>Recurring</EventStatus>
   </Events>
   <Users>
@@ -43,131 +19,14 @@
     <Password>admin</Password>
     <UserId>1</UserId>
   </Users>
-  <Users>
-    <FullName>Edwin</FullName>
-    <Username>edwin</Username>
-    <Email>edwin</Email>
-    <Password>edwin</Password>
-    <UserId>2</UserId>
-  </Users>
   <Transactions>
     <TransactionId>1</TransactionId>
     <CategoryType>Income	</CategoryType>
-    <Income>sa</Income>
-    <Expense />
-    <TransDescription>fsf</TransDescription>
-    <Date>4/22/2021</Date>
-    <Amount>123</Amount>
-    <EventName />
-  </Transactions>
-  <Transactions>
-    <TransactionId>2</TransactionId>
-    <CategoryType>Income	</CategoryType>
-    <Income>sa</Income>
-    <Expense />
-    <TransDescription>nhd</TransDescription>
-    <Date>4/22/2021</Date>
-    <Amount>234</Amount>
-    <EventName>sfsf</EventName>
-  </Transactions>
-  <Transactions>
-    <TransactionId>3</TransactionId>
-    <CategoryType>Expense</CategoryType>
-    <Income />
-    <Expense>Testui</Expense>
-    <TransDescription>cdhcjbjb</TransDescription>
-    <Date>4/22/2021</Date>
-    <Amount>35</Amount>
-    <EventName>Amex</EventName>
-  </Transactions>
-  <Transactions>
-    <TransactionId>4</TransactionId>
-    <CategoryType>Income	</CategoryType>
-    <Income>AZ</Income>
-    <Expense />
-    <TransDescription>test</TransDescription>
-    <Date>4/23/2021</Date>
-    <Amount>10000</Amount>
-    <EventName>sfsf</EventName>
-  </Transactions>
-  <Transactions>
-    <TransactionId>5</TransactionId>
-    <CategoryType>Income	</CategoryType>
-    <Income>sa</Income>
-    <Expense />
-    <TransDescription>bc</TransDescription>
-    <Date>4/22/2021</Date>
-    <Amount>234234</Amount>
-    <EventName />
-  </Transactions>
-  <Transactions>
-    <TransactionId>6</TransactionId>
-    <CategoryType>Income	</CategoryType>
-    <Income>sa</Income>
-    <Expense />
-    <TransDescription>dbnd</TransDescription>
-    <Date>4/22/2021</Date>
-    <Amount>1324</Amount>
-    <EventName />
-  </Transactions>
-  <Transactions>
-    <TransactionId>7</TransactionId>
-    <CategoryType>Income	</CategoryType>
-    <Income>sa</Income>
-    <Expense />
-    <TransDescription>sgfs</TransDescription>
-    <Date>4/22/2021</Date>
-    <Amount>224</Amount>
-    <EventName />
-  </Transactions>
-  <Transactions>
-    <TransactionId>8</TransactionId>
-    <CategoryType>Income	</CategoryType>
-    <Income>sa</Income>
-    <Expense />
-    <TransDescription>nhd</TransDescription>
-    <Date>4/22/2021</Date>
-    <Amount>234</Amount>
-    <EventName />
-  </Transactions>
-  <Transactions>
-    <TransactionId>9</TransactionId>
-    <CategoryType>Expense</CategoryType>
-    <Income />
-    <Expense>ed</Expense>
-    <TransDescription>cdhc</TransDescription>
-    <Date>4/22/2021</Date>
-    <Amount>35</Amount>
-    <EventName />
-  </Transactions>
-  <Transactions>
-    <TransactionId>10</TransactionId>
-    <CategoryType>Income	</CategoryType>
-    <Income>AZ</Income>
-    <Expense />
-    <TransDescription>test</TransDescription>
-    <Date>4/23/2021</Date>
-    <Amount>10000</Amount>
-    <EventName />
-  </Transactions>
-  <Transactions>
-    <TransactionId>11</TransactionId>
-    <CategoryType>Income	</CategoryType>
     <Income>Sal</Income>
     <Expense />
-    <TransDescription>sfs</TransDescription>
-    <Date>4/23/2021</Date>
-    <Amount>1000</Amount>
-    <EventName />
-  </Transactions>
-  <Transactions>
-    <TransactionId>12</TransactionId>
-    <CategoryType>Income	</CategoryType>
-    <Income>AZqw</Income>
-    <Expense />
-    <TransDescription>tyty</TransDescription>
-    <Date>4/23/2021</Date>
-    <Amount>56</Amount>
+    <TransDescription>sfsf</TransDescription>
+    <Date>2021-04-24T08:54:05.0795914-07:00</Date>
+    <Amount>134</Amount>
     <EventName />
   </Transactions>
 </FinancialToolDataSet>

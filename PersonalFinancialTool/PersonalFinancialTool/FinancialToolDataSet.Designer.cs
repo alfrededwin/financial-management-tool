@@ -810,7 +810,7 @@ namespace PersonalFinancialTool {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public EventsRow AddEventsRow(string EventName, string EventDate, string EventStatus) {
+            public EventsRow AddEventsRow(string EventName, System.DateTime EventDate, string EventStatus) {
                 EventsRow rowEventsRow = ((EventsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -859,7 +859,7 @@ namespace PersonalFinancialTool {
                 base.Columns.Add(this.columnEventId);
                 this.columnEventName = new global::System.Data.DataColumn("EventName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEventName);
-                this.columnEventDate = new global::System.Data.DataColumn("EventDate", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnEventDate = new global::System.Data.DataColumn("EventDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEventDate);
                 this.columnEventStatus = new global::System.Data.DataColumn("EventStatus", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEventStatus);
@@ -1492,7 +1492,7 @@ namespace PersonalFinancialTool {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TransactionsRow AddTransactionsRow(string CategoryType, string Income, string Expense, string TransDescription, string Date, string Amount, string EventName, CategoriesRow parentCategoriesRowByCategories_Transactions, EventsRow parentEventsRowByEvents_Transactions) {
+            public TransactionsRow AddTransactionsRow(string CategoryType, string Income, string Expense, string TransDescription, System.DateTime Date, decimal Amount, string EventName, CategoriesRow parentCategoriesRowByCategories_Transactions, EventsRow parentEventsRowByEvents_Transactions) {
                 TransactionsRow rowTransactionsRow = ((TransactionsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1565,9 +1565,9 @@ namespace PersonalFinancialTool {
                 base.Columns.Add(this.columnExpense);
                 this.columnTransDescription = new global::System.Data.DataColumn("TransDescription", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTransDescription);
-                this.columnDate = new global::System.Data.DataColumn("Date", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDate);
-                this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount);
                 this.columnEventName = new global::System.Data.DataColumn("EventName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEventName);
@@ -1871,10 +1871,10 @@ namespace PersonalFinancialTool {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string EventDate {
+            public System.DateTime EventDate {
                 get {
                     try {
-                        return ((string)(this[this.tableEvents.EventDateColumn]));
+                        return ((global::System.DateTime)(this[this.tableEvents.EventDateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'EventDate\' in table \'Events\' is DBNull.", e);
@@ -2161,10 +2161,10 @@ namespace PersonalFinancialTool {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Date {
+            public System.DateTime Date {
                 get {
                     try {
-                        return ((string)(this[this.tableTransactions.DateColumn]));
+                        return ((global::System.DateTime)(this[this.tableTransactions.DateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Date\' in table \'Transactions\' is DBNull.", e);
@@ -2177,10 +2177,10 @@ namespace PersonalFinancialTool {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Amount {
+            public decimal Amount {
                 get {
                     try {
-                        return ((string)(this[this.tableTransactions.AmountColumn]));
+                        return ((decimal)(this[this.tableTransactions.AmountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Amount\' in table \'Transactions\' is DBNull.", e);

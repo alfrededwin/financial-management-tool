@@ -9,7 +9,7 @@ namespace PersonalFinancialTool
     public class EventDetails
     {
         public string eventName { get; set; }
-        public string eventDate { get; set; }
+        public DateTime eventDate { get; set; }
         public string eventStatus { get; set; }
     }
 }

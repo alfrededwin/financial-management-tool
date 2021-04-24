@@ -52,7 +52,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="EventName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="EventDate" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EventDate" Type="datetime" Nullable="false" />
     <Property Name="EventStatus" Type="nvarchar(max)" Nullable="false" />
     <Property Name="UserId" Type="int" Nullable="false" />
   </EntityType>
@@ -65,8 +65,8 @@
     <Property Name="Income" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Expense" Type="nvarchar(max)" Nullable="false" />
     <Property Name="TransactionDescription" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="TransactionDate" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Amount" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TransactionDate" Type="datetime" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Nullable="false" />
     <Property Name="EventName" Type="nvarchar(max)" Nullable="true" />
     <Property Name="UserId" Type="int" Nullable="false" />
     <Property Name="CategoryId" Type="int" Nullable="false" />

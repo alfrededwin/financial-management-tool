@@ -38,10 +38,10 @@ namespace PersonalFinancialTool
                 // Assign Values
                 this.eventDetails = new EventDetails();
                 this.eventDetails.eventName = this.textBoxEventName.Text;
-                this.eventDetails.eventDate = this.dateTimeEventDate.Text;
+                this.eventDetails.eventDate = this.dateTimeEventDate.Value;
                 this.eventDetails.eventStatus = this.rdoRecurring.Text;
 
-                if (string.IsNullOrWhiteSpace(this.eventDetails.eventName) || string.IsNullOrWhiteSpace(this.eventDetails.eventDate))
+                if (string.IsNullOrWhiteSpace(this.eventDetails.eventName))
                 {
                     MessageBox.Show(Properties.Resources.COMMON_MISSING_DATA);
                 }
@@ -91,10 +91,10 @@ namespace PersonalFinancialTool
                 // Assign Values
                 this.eventDetails = new EventDetails();
                 this.eventDetails.eventName = this.textBoxEventName.Text;
-                this.eventDetails.eventDate = this.dateTimeEventDate.Text;
+                this.eventDetails.eventDate = this.dateTimeEventDate.Value;
                 this.eventDetails.eventStatus = this.rdoRecurring.Text;
 
-                if (string.IsNullOrWhiteSpace(this.eventDetails.eventName) || string.IsNullOrWhiteSpace(this.eventDetails.eventDate))
+                if (string.IsNullOrWhiteSpace(this.eventDetails.eventName))
                 {
                     MessageBox.Show(Properties.Resources.COMMON_MISSING_DATA);
                 }

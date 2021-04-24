@@ -29,21 +29,21 @@ namespace PersonalFinancialTool
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelWeekView = new System.Windows.Forms.Panel();
             this.lbltotal = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelWeekView
             // 
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(138, 268);
-            this.panel1.TabIndex = 0;
+            this.panelWeekView.Location = new System.Drawing.Point(0, 0);
+            this.panelWeekView.Name = "panelWeekView";
+            this.panelWeekView.Size = new System.Drawing.Size(138, 255);
+            this.panelWeekView.TabIndex = 0;
             // 
             // lbltotal
             // 
             this.lbltotal.AutoSize = true;
-            this.lbltotal.Location = new System.Drawing.Point(24, 271);
+            this.lbltotal.Location = new System.Drawing.Point(21, 258);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(90, 13);
             this.lbltotal.TabIndex = 1;
@@ -56,9 +56,9 @@ namespace PersonalFinancialTool
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.Controls.Add(this.lbltotal);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelWeekView);
             this.Name = "WeeklyView";
-            this.Size = new System.Drawing.Size(138, 304);
+            this.Size = new System.Drawing.Size(138, 281);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -66,7 +66,7 @@ namespace PersonalFinancialTool
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelWeekView;
         private System.Windows.Forms.Label lbltotal;
     }
 }

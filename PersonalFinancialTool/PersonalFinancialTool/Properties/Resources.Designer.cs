@@ -70,6 +70,15 @@ namespace PersonalFinancialTool.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rs..
+        /// </summary>
+        internal static string CURRENCY_PREFIX {
+            get {
+                return ResourceManager.GetString("CURRENCY_PREFIX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap edituser {

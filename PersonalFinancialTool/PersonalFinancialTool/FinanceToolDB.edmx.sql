@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/22/2021 14:44:58
+-- Date Created: 04/24/2021 08:43:20
 -- Generated from EDMX file: C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\FinanceToolDB.edmx
 -- --------------------------------------------------
 
@@ -78,7 +78,7 @@ GO
 CREATE TABLE [dbo].[Events] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [EventName] nvarchar(max)  NOT NULL,
-    [EventDate] nvarchar(max)  NOT NULL,
+    [EventDate] datetime  NOT NULL,
     [EventStatus] nvarchar(max)  NOT NULL,
     [UserId] int  NOT NULL
 );
@@ -91,8 +91,8 @@ CREATE TABLE [dbo].[Transactions] (
     [Income] nvarchar(max)  NOT NULL,
     [Expense] nvarchar(max)  NOT NULL,
     [TransactionDescription] nvarchar(max)  NOT NULL,
-    [TransactionDate] nvarchar(max)  NOT NULL,
-    [Amount] nvarchar(max)  NOT NULL,
+    [TransactionDate] datetime  NOT NULL,
+    [Amount] decimal(18,0)  NOT NULL,
     [EventName] nvarchar(max)  NULL,
     [UserId] int  NOT NULL,
     [CategoryId] int  NOT NULL,

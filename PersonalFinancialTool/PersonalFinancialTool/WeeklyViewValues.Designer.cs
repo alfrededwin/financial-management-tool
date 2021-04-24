@@ -58,7 +58,7 @@ namespace PersonalFinancialTool
             this.Controls.Add(this.labelAmount);
             this.Controls.Add(this.labelCategory);
             this.Name = "WeeklyViewValues";
-            this.Size = new System.Drawing.Size(138, 54);
+            this.Size = new System.Drawing.Size(121, 51);
             this.ResumeLayout(false);
             this.PerformLayout();
 

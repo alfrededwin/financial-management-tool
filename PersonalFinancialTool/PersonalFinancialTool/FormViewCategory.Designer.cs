@@ -42,7 +42,7 @@ namespace PersonalFinancialTool
             // btnUpdateCategory
             // 
             this.btnUpdateCategory.Font = new System.Drawing.Font("Cambria", 11.25F);
-            this.btnUpdateCategory.Location = new System.Drawing.Point(384, 341);
+            this.btnUpdateCategory.Location = new System.Drawing.Point(497, 341);
             this.btnUpdateCategory.Name = "btnUpdateCategory";
             this.btnUpdateCategory.Size = new System.Drawing.Size(131, 31);
             this.btnUpdateCategory.TabIndex = 25;
@@ -53,7 +53,7 @@ namespace PersonalFinancialTool
             // btnCreateCategory
             // 
             this.btnCreateCategory.Font = new System.Drawing.Font("Cambria", 11.25F);
-            this.btnCreateCategory.Location = new System.Drawing.Point(247, 341);
+            this.btnCreateCategory.Location = new System.Drawing.Point(360, 341);
             this.btnCreateCategory.Name = "btnCreateCategory";
             this.btnCreateCategory.Size = new System.Drawing.Size(131, 31);
             this.btnCreateCategory.TabIndex = 24;
@@ -67,7 +67,7 @@ namespace PersonalFinancialTool
             this.dataGridViewCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCategory.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewCategory.Name = "dataGridViewCategory";
-            this.dataGridViewCategory.Size = new System.Drawing.Size(752, 323);
+            this.dataGridViewCategory.Size = new System.Drawing.Size(998, 323);
             this.dataGridViewCategory.TabIndex = 26;
             this.dataGridViewCategory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SelectCategoryRow);
             // 
@@ -76,20 +76,20 @@ namespace PersonalFinancialTool
             this.contextMenuStripCategory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.refreshToolStripMenuItem});
             this.contextMenuStripCategory.Name = "contextMenuStripCategory";
-            this.contextMenuStripCategory.Size = new System.Drawing.Size(181, 48);
+            this.contextMenuStripCategory.Size = new System.Drawing.Size(114, 26);
             this.contextMenuStripCategory.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MenuStripViewCategory);
             // 
             // refreshToolStripMenuItem
             // 
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.refreshToolStripMenuItem.Text = "Refresh";
             // 
             // FormViewCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 384);
+            this.ClientSize = new System.Drawing.Size(1022, 451);
             this.ContextMenuStrip = this.contextMenuStripCategory;
             this.Controls.Add(this.dataGridViewCategory);
             this.Controls.Add(this.btnUpdateCategory);

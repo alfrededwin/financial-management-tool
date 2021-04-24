@@ -54,7 +54,7 @@ namespace PersonalFinancialTool
                 transaction.Income = info.income;
                 transaction.Expense = info.expense;
                 transaction.TransactionDescription = info.transactionDescription;
-                transaction.TransactionDate = info.transactionDate;
+                transaction.TransactionDate = info.transactionDate; 
                 transaction.Amount = info.amount;
                 transaction.EventName = info.eventName;
                 transaction.UserId = FormLogin.gblLoggedInUser;

@@ -64,7 +64,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="EventName" Type="String" Nullable="false" />
-    <Property Name="EventDate" Type="String" Nullable="false" />
+    <Property Name="EventDate" Type="DateTime" Nullable="false" />
     <Property Name="EventStatus" Type="String" Nullable="false" />
     <Property Name="UserId" Type="Int32" Nullable="false" />
   </EntityType>
@@ -77,8 +77,8 @@
     <Property Name="Income" Type="String" Nullable="false" />
     <Property Name="Expense" Type="String" Nullable="false" />
     <Property Name="TransactionDescription" Type="String" Nullable="false" />
-    <Property Name="TransactionDate" Type="String" Nullable="false" />
-    <Property Name="Amount" Type="String" Nullable="false" />
+    <Property Name="TransactionDate" Type="DateTime" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Nullable="false" />
     <Property Name="EventName" Type="String" Nullable="true" />
     <Property Name="UserId" Type="Int32" Nullable="false" />
     <Property Name="CategoryId" Type="Int32" Nullable="false" />

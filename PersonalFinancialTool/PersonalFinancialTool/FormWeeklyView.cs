@@ -13,33 +13,36 @@ namespace PersonalFinancialTool
     public partial class FormWeeklyView : Form
     {
         private GroupBox[] _groupBoxes;
-        //private readonly WeeklyViewController _controller;
+        //private readonly WeeklyViewController weeklyViewController;
 
         WeeklyViewController weeklyViewController = new WeeklyViewController();
 
         public FormWeeklyView()
         {
             InitializeComponent();
+            //weeklyViewController = controller;
             SetUpViewData();
+
         }
 
         private void dateTimePickerWeeklyView_ValueChanged(object sender, EventArgs e)
         {
             this.Controls.Clear();
             this.Controls.Add(groupBoxWeeklyView);
+            SetUpViewData();
         }
 
         private void SetUpViewData()
         {
             DateTime date = dateTimePickerWeeklyView.Value;
             int xStartPoint = 4;
-            int yStartPoint = 65;
+            int yStartPoint = 100;
             _groupBoxes = new GroupBox[7];
             for (int i = 0; i < 7; i++)
             {
-                xStartPoint += 6;
+                xStartPoint += 4;
                 GroupBox groupBox = new GroupBox();
-                groupBox.Size = new Size(150, 375);
+                groupBox.Size = new Size(138, 304);
                 groupBox.Location = new Point(xStartPoint, yStartPoint);
                 //groupBox.Text = "GroupBox" + (i + 1).ToString();
                 this.Controls.Add(groupBox);
@@ -51,8 +54,8 @@ namespace PersonalFinancialTool
             {
                 _groupBoxes[i].Text = date.ToString(System.Globalization.CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern);
 
-                WeeklyView day = new WeeklyView(weeklyViewController.GetExpensesOn(date));
-                //day.RefreshControls();
+                WeeklyView day = new WeeklyView(weeklyViewController.GetExpenses(date));
+                day.RefreshControls();
                 day.Location = new Point(0, 19);
 
                 date = date.AddDays(-1);

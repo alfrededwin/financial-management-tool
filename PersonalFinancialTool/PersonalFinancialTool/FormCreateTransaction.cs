@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PersonalFinancialTool
@@ -59,12 +53,12 @@ namespace PersonalFinancialTool
                 this.transactionDetails.income = this.cmbIncomeType.Text;
                 this.transactionDetails.expense = this.cmbExpenseType.Text;
                 this.transactionDetails.transactionDescription = this.textBoxTransDesc.Text;
-                this.transactionDetails.transactionDate = this.dateTimeTransDate.Text;
-                this.transactionDetails.amount = this.textBoxTransAmount.Text;
+                this.transactionDetails.transactionDate = this.dateTimeTransDate.Value;
+                this.transactionDetails.amount = decimal.Parse(this.textBoxTransAmount.Text);
                 this.transactionDetails.eventName = this.comboBoxTransEventName.Text;
 
 
-                if (string.IsNullOrWhiteSpace(this.transactionDetails.categoryType) || string.IsNullOrEmpty(this.transactionDetails.transactionDescription)  || string.IsNullOrEmpty(this.transactionDetails.transactionDate) || string.IsNullOrEmpty(this.transactionDetails.amount))
+                if (string.IsNullOrWhiteSpace(this.transactionDetails.categoryType) || string.IsNullOrEmpty(this.transactionDetails.transactionDescription))
                 {
                     MessageBox.Show(Properties.Resources.COMMON_MISSING_DATA);
                 }
@@ -217,16 +211,16 @@ namespace PersonalFinancialTool
             {
                 // Assign Values
                 this.transactionDetails = new TransactionDetails();
-                this.transactionDetails.categoryType = this.comboBoxTransCategoryType.Text.ToString();
-                this.transactionDetails.income = this.cmbIncomeType.Text.ToString();
-                this.transactionDetails.expense = this.cmbExpenseType.Text.ToString();
+                this.transactionDetails.categoryType = this.comboBoxTransCategoryType.Text;
+                this.transactionDetails.income = this.cmbIncomeType.Text;
+                this.transactionDetails.expense = this.cmbExpenseType.Text;
                 this.transactionDetails.transactionDescription = this.textBoxTransDesc.Text;
-                this.transactionDetails.transactionDate = this.dateTimeTransDate.Text.ToString();
-                this.transactionDetails.amount = this.textBoxTransAmount.Text;
-                this.transactionDetails.eventName = this.comboBoxTransEventName.Text.ToString();
+                this.transactionDetails.transactionDate = this.dateTimeTransDate.Value;
+                this.transactionDetails.amount = decimal.Parse(this.textBoxTransAmount.Text);
+                this.transactionDetails.eventName = this.comboBoxTransEventName.Text;
 
 
-                if (string.IsNullOrWhiteSpace(this.transactionDetails.categoryType) || string.IsNullOrEmpty(this.transactionDetails.transactionDescription) || string.IsNullOrEmpty(this.transactionDetails.transactionDate) || string.IsNullOrEmpty(this.transactionDetails.amount))
+                if (string.IsNullOrWhiteSpace(this.transactionDetails.categoryType) || string.IsNullOrEmpty(this.transactionDetails.transactionDescription))
                 {
                     MessageBox.Show(Properties.Resources.COMMON_MISSING_DATA);
                 }

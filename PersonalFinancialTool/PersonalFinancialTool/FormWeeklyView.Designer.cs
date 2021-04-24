@@ -30,7 +30,6 @@ namespace PersonalFinancialTool
         private void InitializeComponent()
         {
             this.groupBoxWeeklyView = new System.Windows.Forms.GroupBox();
-            this.buttonViewWeekly = new System.Windows.Forms.Button();
             this.dateTimePickerWeeklyView = new System.Windows.Forms.DateTimePicker();
             this.labelEndDate = new System.Windows.Forms.Label();
             this.groupBoxWeeklyView.SuspendLayout();
@@ -38,33 +37,23 @@ namespace PersonalFinancialTool
             // 
             // groupBoxWeeklyView
             // 
-            this.groupBoxWeeklyView.Controls.Add(this.buttonViewWeekly);
             this.groupBoxWeeklyView.Controls.Add(this.dateTimePickerWeeklyView);
             this.groupBoxWeeklyView.Controls.Add(this.labelEndDate);
             this.groupBoxWeeklyView.Font = new System.Drawing.Font("Cambria", 9.75F);
             this.groupBoxWeeklyView.Location = new System.Drawing.Point(12, 12);
             this.groupBoxWeeklyView.Name = "groupBoxWeeklyView";
-            this.groupBoxWeeklyView.Size = new System.Drawing.Size(752, 71);
+            this.groupBoxWeeklyView.Size = new System.Drawing.Size(758, 71);
             this.groupBoxWeeklyView.TabIndex = 2;
             this.groupBoxWeeklyView.TabStop = false;
             this.groupBoxWeeklyView.Text = "Weekly View Criteria";
-            // 
-            // buttonViewWeekly
-            // 
-            this.buttonViewWeekly.Location = new System.Drawing.Point(200, 27);
-            this.buttonViewWeekly.Name = "buttonViewWeekly";
-            this.buttonViewWeekly.Size = new System.Drawing.Size(85, 23);
-            this.buttonViewWeekly.TabIndex = 2;
-            this.buttonViewWeekly.Text = "View ";
-            this.buttonViewWeekly.UseVisualStyleBackColor = true;
             // 
             // dateTimePickerWeeklyView
             // 
             this.dateTimePickerWeeklyView.CustomFormat = "dd MMM yyyy";
             this.dateTimePickerWeeklyView.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerWeeklyView.Location = new System.Drawing.Point(68, 27);
+            this.dateTimePickerWeeklyView.Location = new System.Drawing.Point(161, 27);
             this.dateTimePickerWeeklyView.Name = "dateTimePickerWeeklyView";
-            this.dateTimePickerWeeklyView.Size = new System.Drawing.Size(116, 23);
+            this.dateTimePickerWeeklyView.Size = new System.Drawing.Size(121, 23);
             this.dateTimePickerWeeklyView.TabIndex = 1;
             this.dateTimePickerWeeklyView.ValueChanged += new System.EventHandler(this.dateTimePickerWeeklyView_ValueChanged);
             // 
@@ -73,9 +62,9 @@ namespace PersonalFinancialTool
             this.labelEndDate.AutoSize = true;
             this.labelEndDate.Location = new System.Drawing.Point(6, 33);
             this.labelEndDate.Name = "labelEndDate";
-            this.labelEndDate.Size = new System.Drawing.Size(56, 15);
+            this.labelEndDate.Size = new System.Drawing.Size(149, 15);
             this.labelEndDate.TabIndex = 0;
-            this.labelEndDate.Text = "End Date";
+            this.labelEndDate.Text = "Choose Week Ending Date";
             // 
             // FormWeeklyView
             // 
@@ -95,7 +84,6 @@ namespace PersonalFinancialTool
         #endregion
 
         private System.Windows.Forms.GroupBox groupBoxWeeklyView;
-        private System.Windows.Forms.Button buttonViewWeekly;
         private System.Windows.Forms.DateTimePicker dateTimePickerWeeklyView;
         private System.Windows.Forms.Label labelEndDate;
     }

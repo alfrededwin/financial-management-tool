@@ -19,8 +19,8 @@ namespace PersonalFinancialTool
         public string Income { get; set; }
         public string Expense { get; set; }
         public string TransactionDescription { get; set; }
-        public string TransactionDate { get; set; }
-        public string Amount { get; set; }
+        public System.DateTime TransactionDate { get; set; }
+        public decimal Amount { get; set; }
         public string EventName { get; set; }
         public int UserId { get; set; }
         public int CategoryId { get; set; }
