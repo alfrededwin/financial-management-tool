@@ -32,6 +32,13 @@ namespace PersonalFinancialTool
             }  
         }
 
+        // References For Threading https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task?view=net-5.0
+        // Threading for Save Event
+        public Task SaveEventAsync(EventDetails obj)
+        {
+            return Task.Run(() => SaveEventInformation(obj));
+        }
+
         public void UpdateEventInformation(int IdToUpdate, EventDetails info)
         {
 
@@ -71,6 +78,12 @@ namespace PersonalFinancialTool
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        // Threading for Update Event
+        public Task UpdateEventAsync(int IdToUpdate, EventDetails obj)
+        {
+            return Task.Run(() => UpdateEventInformation(IdToUpdate, obj));
         }
 
 

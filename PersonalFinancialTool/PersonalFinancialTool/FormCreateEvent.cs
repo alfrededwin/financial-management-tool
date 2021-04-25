@@ -18,7 +18,7 @@ namespace PersonalFinancialTool
         public static int globalIdToUpdate = 0;
         public EventDetails eventDetails { get; set; }
         public FinancialToolDataSet  EventDataSet { get; set; }
-
+        public String rdoEventStatus = "";
 
         public FormCreateEvent()
         {
@@ -29,7 +29,6 @@ namespace PersonalFinancialTool
             }
         }
 
-        //public EventDetails eventDetails;
 
         private void CreateEvent(object sender, EventArgs e)
         {
@@ -37,12 +36,22 @@ namespace PersonalFinancialTool
 
             try
             {
+                if (rdoRecurring.Checked)
+                {
+                    rdoEventStatus = "Recurring";
+                }
+                else
+                {
+                    rdoEventStatus = "One Time";
+                }
+
                 // Assign Values
                 this.eventDetails = new EventDetails();
                 this.eventDetails.eventName = this.textBoxEventName.Text;
                 this.eventDetails.eventDate = this.dateTimeEventDate.Value;
-                this.eventDetails.eventStatus = this.rdoRecurring.Text;
+                this.eventDetails.eventStatus = rdoEventStatus;
 
+                
                 if (string.IsNullOrWhiteSpace(this.eventDetails.eventName))
                 {
                     MessageBox.Show(Properties.Resources.COMMON_MISSING_DATA);
@@ -65,7 +74,11 @@ namespace PersonalFinancialTool
 
                     // Forwarding to Database.
                     EventModel eventModel = new EventModel();
-                    eventModel.SaveEventInformation(this.eventDetails);
+                    //eventModel.SaveEventInformation(this.eventDetails);
+
+                    // Handled using Threads
+                    Task.Run(() => eventModel.SaveEventAsync(this.eventDetails));
+
                     this.Close();
                     MessageBox.Show(String.Format(Properties.Resources.SUCCESS_MESSAGE, this.sEventLabel));
                     

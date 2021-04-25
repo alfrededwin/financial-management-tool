@@ -18,6 +18,8 @@ namespace PersonalFinancialTool
         public CategoryDetails categoryDetails { get; set; }
         public FinancialToolDataSet CategoryDataSet { get; set; }
 
+        CategoryModel categoryModel = new CategoryModel();
+
         public String sCategoryLabel = "Category";
         public String sCategoryName = "";
         public String sCategoryDesc = "";
@@ -66,6 +68,8 @@ namespace PersonalFinancialTool
                     categoryRow.CategoryType = sCategoryType;
                     categoryRow.UserId = loggedInUser;
 
+                  
+
                     // Apply Changes to DT
                     this.AppDataSet.Categories.AddCategoriesRow(categoryRow);
                     this.AppDataSet.AcceptChanges();
@@ -75,7 +79,11 @@ namespace PersonalFinancialTool
 
                     // Forwarding to Database.
                     CategoryModel categoryModel = new CategoryModel();
-                    categoryModel.SaveCategoryInformation(this.categoryDetails);
+                    //categoryModel.SaveCategoryInformation(this.categoryDetails);
+
+                    // Handled using Threads
+                    Task.Run(() => categoryModel.SaveCategoryAsync(this.categoryDetails));
+
                     this.Close();
                     MessageBox.Show(String.Format(Properties.Resources.SUCCESS_MESSAGE, this.sCategoryLabel));
                   
@@ -159,7 +167,11 @@ namespace PersonalFinancialTool
 
                 // Update to Database
                 CategoryModel categoryModel = new CategoryModel();
-                categoryModel.UpdateCategoryInformation(globalIdToUpdate, this.categoryDetails);
+                //categoryModel.UpdateCategoryInformation(globalIdToUpdate, this.categoryDetails);
+
+                // Handled using Threads
+                Task.Run(() => categoryModel.UpdateCategoryAsync(globalIdToUpdate,this.categoryDetails));
+
                 this.Close();
                 MessageBox.Show(String.Format(Properties.Resources.SUCCESS_UPDATE, this.sCategoryLabel));
                 

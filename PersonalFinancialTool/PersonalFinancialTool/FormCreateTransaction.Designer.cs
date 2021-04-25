@@ -245,7 +245,6 @@ namespace PersonalFinancialTool
             this.Name = "FormCreateTransaction";
             this.ShowIcon = false;
             this.Text = "Create Transaction";
-            this.Load += new System.EventHandler(this.FormCreateTransaction_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

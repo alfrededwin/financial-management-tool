@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PersonalFinancialTool
@@ -35,13 +36,6 @@ namespace PersonalFinancialTool
 
         }
 
-
-        private void FormCreateTransaction_Load(object sender, EventArgs e)
-        {
-            //using (FinancialToolDataSet financialToolDataSet = new FinancialToolDataSet()) {
-            //    categoriesBindingSource.DataSource = financialToolDataSet.Categories.ToList();
-            //}
-        }
 
         private void CreateTransaction(object sender, EventArgs e)
         {
@@ -87,7 +81,11 @@ namespace PersonalFinancialTool
 
                     // Forwarding to Database.
                     TransactionModel transactionModel = new TransactionModel();
-                    transactionModel.SaveTransactionInformation(this.transactionDetails);
+                    //transactionModel.SaveTransactionInformation(this.transactionDetails);
+
+                    // Handled using Threads
+                    Task.Run(() => transactionModel.SaveTransactionAsync(this.transactionDetails));
+
 
                     MessageBox.Show(String.Format(Properties.Resources.SUCCESS_MESSAGE, this.sTransactionLabel));
                     this.Close();
@@ -133,19 +131,6 @@ namespace PersonalFinancialTool
                 {
                     String sEventName = reader.GetString(1);
                     comboBoxTransEventName.Items.Add(sEventName);
-
-
-                    //if (reader.GetString(1).Equals(description))
-                    //{
-                    //    type = mySqlDataReader.GetString("category_type");
-                    //    break;
-                    //}
-
-                    //if (mySqlDataReader.GetString("category_name").Equals(description))
-                    //{
-                    //    type = mySqlDataReader.GetString("category_type");
-                    //    break;
-                    //}
                 }
 
                 con.Close();
@@ -256,7 +241,10 @@ namespace PersonalFinancialTool
 
                     // Forwarding to Database.
                     TransactionModel transactionModel = new TransactionModel();
-                    transactionModel.UpdateTransactionInformation(globalIdToUpdate,this.transactionDetails);
+                    //transactionModel.UpdateTransactionInformation(globalIdToUpdate,this.transactionDetails);
+
+                    // Handled using Threads
+                    Task.Run(() => transactionModel.UpdateTransactionAsync(globalIdToUpdate,this.transactionDetails));
 
                     this.Close();
                     MessageBox.Show(String.Format(Properties.Resources.SUCCESS_UPDATE, this.sTransactionLabel, MessageBoxIcon.Information));

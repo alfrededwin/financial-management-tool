@@ -23,7 +23,7 @@ namespace PersonalFinancialTool
 
         private void SetUpViewData()
         {
-       
+            labelTransactionDesc.Text = _transaction.transactionDescription;
             labelCategory.Text = _transaction.expense;
             labelAmount.Text = "Rs." + _transaction.amount;
         }

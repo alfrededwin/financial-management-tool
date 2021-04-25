@@ -46,6 +46,13 @@ namespace PersonalFinancialTool
 
         }
 
+        // References For Threading https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task?view=net-5.0
+        // Threading for Save Transaction
+        public Task SaveTransactionAsync(TransactionDetails obj)
+        {
+            return Task.Run(() => SaveTransactionInformation(obj));
+        }
+
 
         public void UpdateTransactionInformation(int IdToUpdate, TransactionDetails info)
         {
@@ -95,6 +102,13 @@ namespace PersonalFinancialTool
             }
         }
 
+        // Threading for Update Transaction
+        public Task UpdateTransactionAsync(int IdToUpdate, TransactionDetails obj)
+        {
+            return Task.Run(() => UpdateTransactionInformation(IdToUpdate, obj));
+        }
+
+        // List to get the Transactions for the Weekly View
         public List<WeeklyViewDetails> GetListOfTransactions(DateTime selectedDate)
         {
             List<WeeklyViewDetails> transactionListForWeeklyView = new List<WeeklyViewDetails>();

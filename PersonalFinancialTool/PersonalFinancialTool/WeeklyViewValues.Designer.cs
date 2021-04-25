@@ -31,12 +31,13 @@ namespace PersonalFinancialTool
         {
             this.labelCategory = new System.Windows.Forms.Label();
             this.labelAmount = new System.Windows.Forms.Label();
+            this.labelTransactionDesc = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelCategory
             // 
             this.labelCategory.AutoSize = true;
-            this.labelCategory.Location = new System.Drawing.Point(8, 8);
+            this.labelCategory.Location = new System.Drawing.Point(8, 25);
             this.labelCategory.Name = "labelCategory";
             this.labelCategory.Size = new System.Drawing.Size(49, 13);
             this.labelCategory.TabIndex = 0;
@@ -45,11 +46,20 @@ namespace PersonalFinancialTool
             // labelAmount
             // 
             this.labelAmount.AutoSize = true;
-            this.labelAmount.Location = new System.Drawing.Point(8, 28);
+            this.labelAmount.Location = new System.Drawing.Point(8, 44);
             this.labelAmount.Name = "labelAmount";
             this.labelAmount.Size = new System.Drawing.Size(43, 13);
             this.labelAmount.TabIndex = 1;
             this.labelAmount.Text = "Amount";
+            // 
+            // labelTransactionDesc
+            // 
+            this.labelTransactionDesc.AutoSize = true;
+            this.labelTransactionDesc.Location = new System.Drawing.Point(8, 7);
+            this.labelTransactionDesc.Name = "labelTransactionDesc";
+            this.labelTransactionDesc.Size = new System.Drawing.Size(88, 13);
+            this.labelTransactionDesc.TabIndex = 2;
+            this.labelTransactionDesc.Text = "TransactionDesc";
             // 
             // WeeklyViewValues
             // 
@@ -57,10 +67,11 @@ namespace PersonalFinancialTool
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.labelTransactionDesc);
             this.Controls.Add(this.labelAmount);
             this.Controls.Add(this.labelCategory);
             this.Name = "WeeklyViewValues";
-            this.Size = new System.Drawing.Size(119, 49);
+            this.Size = new System.Drawing.Size(119, 66);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -70,5 +81,6 @@ namespace PersonalFinancialTool
 
         private System.Windows.Forms.Label labelCategory;
         private System.Windows.Forms.Label labelAmount;
+        private System.Windows.Forms.Label labelTransactionDesc;
     }
 }
