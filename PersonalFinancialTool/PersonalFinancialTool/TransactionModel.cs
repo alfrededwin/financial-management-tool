@@ -9,6 +9,8 @@ namespace PersonalFinancialTool
 {
     class TransactionModel
     {
+        int userId = FormLogin.gblLoggedInUser;
+
         public void SaveTransactionInformation(TransactionDetails info)
         {
             try
@@ -54,7 +56,7 @@ namespace PersonalFinancialTool
                 transaction.Income = info.income;
                 transaction.Expense = info.expense;
                 transaction.TransactionDescription = info.transactionDescription;
-                transaction.TransactionDate = info.transactionDate; 
+                transaction.TransactionDate = info.transactionDate;
                 transaction.Amount = info.amount;
                 transaction.EventName = info.eventName;
                 transaction.UserId = FormLogin.gblLoggedInUser;
@@ -86,13 +88,46 @@ namespace PersonalFinancialTool
                     std.EventId = transaction.EventId;
                     context.SaveChanges();
                 }
-        }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-}
+        }
 
+        public List<WeeklyViewDetails> GetListOfTransactions(DateTime selectedDate)
+        {
+            List<WeeklyViewDetails> transactionListForWeeklyView = new List<WeeklyViewDetails>();
+
+            using (var context = new FinanceToolDBContainer1())
+            {
+                var x = context.Transactions.Where(t => t.UserId == userId && t.CategoryType == "Expense" && (t.TransactionDate.Year == selectedDate.Year && t.TransactionDate.Month == selectedDate.Month && t.TransactionDate.Day == selectedDate.Day)).ToList();
+
+                foreach (var item in x)
+                {
+                    transactionListForWeeklyView.Add(new WeeklyViewDetails(item.CategoryType, item.Income, item.Expense, item.TransactionDescription, item.TransactionDate, item.Amount, item.EventName));
+                }
+
+                return transactionListForWeeklyView;
+            }
+        }
+
+        //public List<WeeklyViewDetails> GetListOfTransactions(DateTime selectedDate)
+        //{
+        //    List<WeeklyViewDetails> transactionListForWeeklyView = new List<WeeklyViewDetails>();
+
+        //    using (var context = new FinanceToolDBContainer1())
+        //    {
+        //        var x = context.Transactions.Where(t => t.UserId == userId && t.CategoryType == "Expense" && (t.TransactionDate.Year == selectedDate.Year && t.TransactionDate.Month == selectedDate.Month && t.TransactionDate.Day == selectedDate.Day)).ToList();
+
+        //        foreach (var item in x)
+        //        {
+        //            transactionListForWeeklyView.Add(new WeeklyViewDetails(item.CategoryType, item.Income, item.Expense, item.TransactionDescription, item.TransactionDate , item.Amount, item.EventName));
+        //        }
+
+        //        return transactionListForWeeklyView;
+        //    }
+        //}
 
 
 

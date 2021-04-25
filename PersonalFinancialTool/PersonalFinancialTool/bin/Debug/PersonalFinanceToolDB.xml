@@ -6,6 +6,18 @@
     <CategoryDescription>df</CategoryDescription>
     <CategoryType>Income</CategoryType>
   </Categories>
+  <Categories>
+    <CategoryId>2</CategoryId>
+    <CategoryName>Uber eat</CategoryName>
+    <CategoryDescription>wfw</CategoryDescription>
+    <CategoryType>Expense</CategoryType>
+  </Categories>
+  <Categories>
+    <CategoryId>3</CategoryId>
+    <CategoryName>Loan</CategoryName>
+    <CategoryDescription>gd</CategoryDescription>
+    <CategoryType>Expense</CategoryType>
+  </Categories>
   <Events>
     <EventId>1</EventId>
     <EventName>dchdf</EventName>
@@ -57,6 +69,36 @@
     <TransDescription>gsgs</TransDescription>
     <Date>2021-04-24T13:37:45-07:00</Date>
     <Amount>34.9909</Amount>
+    <EventName />
+  </Transactions>
+  <Transactions>
+    <TransactionId>5</TransactionId>
+    <CategoryType>Expense</CategoryType>
+    <Income />
+    <Expense>ew</Expense>
+    <TransDescription>qqq</TransDescription>
+    <Date>2021-04-25T06:57:29.9481856-07:00</Date>
+    <Amount>1000</Amount>
+    <EventName />
+  </Transactions>
+  <Transactions>
+    <TransactionId>6</TransactionId>
+    <CategoryType>Expense</CategoryType>
+    <Income />
+    <Expense>Uber eat</Expense>
+    <TransDescription>sds</TransDescription>
+    <Date>2021-04-25T07:20:47.8810557-07:00</Date>
+    <Amount>112</Amount>
+    <EventName>dchdf</EventName>
+  </Transactions>
+  <Transactions>
+    <TransactionId>7</TransactionId>
+    <CategoryType>Expense</CategoryType>
+    <Income />
+    <Expense>Loan</Expense>
+    <TransDescription>fn</TransDescription>
+    <Date>2021-04-24T08:40:02-07:00</Date>
+    <Amount>15000</Amount>
     <EventName />
   </Transactions>
 </FinancialToolDataSet>

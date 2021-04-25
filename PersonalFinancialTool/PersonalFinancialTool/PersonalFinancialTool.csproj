@@ -234,7 +234,7 @@
     <Compile Include="WeeklyView.Designer.cs">
       <DependentUpon>WeeklyView.cs</DependentUpon>
     </Compile>
-    <Compile Include="WeeklyViewController.cs" />
+    <Compile Include="WeeklyViewDetails.cs" />
     <Compile Include="WeeklyViewValues.cs">
       <SubType>UserControl</SubType>
     </Compile>

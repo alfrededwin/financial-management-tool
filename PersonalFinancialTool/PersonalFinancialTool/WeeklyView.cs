@@ -12,51 +12,38 @@ namespace PersonalFinancialTool
 {
     public partial class WeeklyView : UserControl
     {
-       
-        private readonly List<FinancialToolDataSet.TransactionsRow> _transactions;
 
+        private readonly List<WeeklyViewDetails> _transactions;
 
-        //public WeeklyView()
-        //{
-        //    InitializeComponent();
-           
-        //    SetUpViewData();
-        //}
-
-        public WeeklyView(List<FinancialToolDataSet.TransactionsRow> transactionsRows)
+        public WeeklyView(List<WeeklyViewDetails> transactionsRows)
         {
             InitializeComponent();
             _transactions = transactionsRows;
             SetUpViewData();
         }
 
-        //public WeeklyView(List<FinancialToolDataSet.TransactionsRow> transactionsRows)
-        //{
-
-        //}
+   
         public void RefreshControls()
         {
             SetUpViewData();
         }
-        public static string GetFormattedCurrency(decimal amount)
-        {
-            return string.Format("{0} {1}",
-                Properties.Resources.CURRENCY_PREFIX,
-                amount.ToString("#,##0.00"));
-        }
-
+      
         private void SetUpViewData()
         {
+
+            decimal amount = 0;
             int ySpacer = 3;
             foreach (var item in _transactions)
             {
                 WeeklyViewValues dayItem = new WeeklyViewValues(item);
-                dayItem.Location = new Point(0, 1);
+                dayItem.Location = new Point(3, ySpacer);
                 panelWeekView.Controls.Add(dayItem);
                 ySpacer += dayItem.Height + 3;
+                amount += item.amount;
             }
 
-            lbltotal.Text = GetFormattedCurrency(_transactions.Sum(t => t.Amount));
+            lbltotal.Text = "LKR. " + amount.ToString();
+            
         }
 
 

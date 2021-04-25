@@ -55,10 +55,12 @@ namespace PersonalFinancialTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.labelAmount);
             this.Controls.Add(this.labelCategory);
             this.Name = "WeeklyViewValues";
-            this.Size = new System.Drawing.Size(121, 51);
+            this.Size = new System.Drawing.Size(119, 49);
             this.ResumeLayout(false);
             this.PerformLayout();
 

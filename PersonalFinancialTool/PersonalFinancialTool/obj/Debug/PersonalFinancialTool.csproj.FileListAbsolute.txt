@@ -50,19 +50,6 @@ C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancial
 C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.csprojAssemblyReference.cache
 C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\FinanceDB.mdf
 C:\Users\Alfred Edwin\Desktop\New folder\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\FinanceDB_log.ldf
-C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\PersonalFinancialTool.exe.config
-C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\PersonalFinancialTool.exe
-C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\PersonalFinancialTool.pdb
-C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\ClosedXML.dll
-C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\DocumentFormat.OpenXml.dll
-C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\EntityFramework.dll
-C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\ExcelNumberFormat.dll
-C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\System.IO.Packaging.dll
-C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\ClosedXML.pdb
-C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\ClosedXML.xml
-C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\DocumentFormat.OpenXml.xml
-C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\EntityFramework.xml
-C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\ExcelNumberFormat.xml
 C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormCreateCategory.resources
 C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormCreateEvent.resources
 C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormCreateTransaction.resources
@@ -83,6 +70,20 @@ C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialT
 C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.WeeklyViewValues.resources
 C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.csproj.GenerateResource.cache
 C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.csproj.CoreCompileInputs.cache
+C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\PersonalFinancialTool.exe.config
+C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\PersonalFinancialTool.exe
+C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\PersonalFinancialTool.pdb
+C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\ClosedXML.dll
+C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\EntityFramework.dll
+C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\ExcelNumberFormat.dll
+C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\System.IO.Packaging.dll
+C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\ClosedXML.pdb
+C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\ClosedXML.xml
+C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\EntityFramework.xml
+C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\ExcelNumberFormat.xml
 C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.csproj.CopyComplete
 C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.exe
 C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.pdb
+C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.csprojAssemblyReference.cache

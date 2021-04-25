@@ -12,40 +12,40 @@ namespace PersonalFinancialTool
 {
     public partial class FormWeeklyView : Form
     {
+        private TransactionModel helper = new TransactionModel();
+        public DateTime selectedDate = DateTime.Now;
         private GroupBox[] _groupBoxes;
-        //private readonly WeeklyViewController weeklyViewController;
-
-        WeeklyViewController weeklyViewController = new WeeklyViewController();
-        FinancialToolDataSet finance_dataset = new FinancialToolDataSet();
 
         public FormWeeklyView()
         {
             InitializeComponent();
-            //weeklyViewController = controller;
             SetUpViewData();
-
         }
 
         private void dateTimePickerWeeklyView_ValueChanged(object sender, EventArgs e)
         {
-            this.Controls.Clear();
-            this.Controls.Add(groupBoxWeeklyView);
+            //this.Controls.Clear();
+            //this.Controls.Add(groupBoxWeeklyView);
+          
+            selectedDate = dateTimePickerWeeklyView.Value;
             SetUpViewData();
         }
 
+        
+
         private void SetUpViewData()
         {
-            DateTime date = dateTimePickerWeeklyView.Value;
-            int xStartPoint = 4;
+       
+            int xStartPoint = 0;
             int yStartPoint = 100;
             _groupBoxes = new GroupBox[7];
+
             for (int i = 0; i < 7; i++)
             {
-                xStartPoint += 4;
+                xStartPoint += 5;
                 GroupBox groupBox = new GroupBox();
                 groupBox.Size = new Size(138, 304);
                 groupBox.Location = new Point(xStartPoint, yStartPoint);
-                //groupBox.Text = "GroupBox" + (i + 1).ToString();
                 this.Controls.Add(groupBox);
                 xStartPoint += groupBox.Width;
                 _groupBoxes[i] = groupBox;
@@ -53,21 +53,21 @@ namespace PersonalFinancialTool
 
             for (int i = 6; i >= 0; i--)
             {
-                _groupBoxes[i].Text = date.ToString(System.Globalization.CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern);
+                _groupBoxes[i].Text = selectedDate.ToString("d,dddd");
+                WeeklyView item = new WeeklyView(GetExpensesOn(selectedDate));
+                item.RefreshControls();
+                item.Location = new Point(0, 19);
 
-                WeeklyView day = new WeeklyView(weeklyViewController.GetExpenses(date));
-                day.RefreshControls();
-                day.Location = new Point(0, 19);
-
-                date = date.AddDays(-1);
-                _groupBoxes[i].Controls.Add(day);
+                selectedDate = selectedDate.AddDays(-1);
+                _groupBoxes[i].Controls.Add(item);
             }
         }
 
 
-        public List<FinancialToolDataSet.TransactionsRow> GetExpenses(DateTime date)
+        public List<WeeklyViewDetails> GetExpensesOn(DateTime date)
         {
-            return finance_dataset.Transactions.Where(t => t.Date.Year == date.Year && t.Date.Month == date.Month && t.Date.Day == date.Day).ToList();
+            return helper.GetListOfTransactions(date);
         }
+
     }
 }
