@@ -36,6 +36,12 @@ namespace PersonalFinancialTool {
         
         private global::System.Data.DataRelation relationEvents_Transactions;
         
+        private global::System.Data.DataRelation relationUsers_Categories;
+        
+        private global::System.Data.DataRelation relationUsers_Transactions;
+        
+        private global::System.Data.DataRelation relationUsers_Events;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -272,6 +278,9 @@ namespace PersonalFinancialTool {
             }
             this.relationCategories_Transactions = this.Relations["Categories_Transactions"];
             this.relationEvents_Transactions = this.Relations["Events_Transactions"];
+            this.relationUsers_Categories = this.Relations["Users_Categories"];
+            this.relationUsers_Transactions = this.Relations["Users_Transactions"];
+            this.relationUsers_Events = this.Relations["Users_Events"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -298,6 +307,18 @@ namespace PersonalFinancialTool {
                         this.tableEvents.EventIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableTransactions.EventIdColumn}, false);
             this.Relations.Add(this.relationEvents_Transactions);
+            this.relationUsers_Categories = new global::System.Data.DataRelation("Users_Categories", new global::System.Data.DataColumn[] {
+                        this.tableUsers.UserIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCategories.UserIdColumn}, false);
+            this.Relations.Add(this.relationUsers_Categories);
+            this.relationUsers_Transactions = new global::System.Data.DataRelation("Users_Transactions", new global::System.Data.DataColumn[] {
+                        this.tableUsers.UserIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTransactions.UserIdColumn}, false);
+            this.Relations.Add(this.relationUsers_Transactions);
+            this.relationUsers_Events = new global::System.Data.DataRelation("Users_Events", new global::System.Data.DataColumn[] {
+                        this.tableUsers.UserIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEvents.UserIdColumn}, false);
+            this.Relations.Add(this.relationUsers_Events);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -406,6 +427,8 @@ namespace PersonalFinancialTool {
             
             private global::System.Data.DataColumn columnCategoryType;
             
+            private global::System.Data.DataColumn columnUserId;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public CategoriesDataTable() {
@@ -473,6 +496,14 @@ namespace PersonalFinancialTool {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UserIdColumn {
+                get {
+                    return this.columnUserId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -508,13 +539,17 @@ namespace PersonalFinancialTool {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CategoriesRow AddCategoriesRow(string CategoryName, string CategoryDescription, string CategoryType) {
+            public CategoriesRow AddCategoriesRow(string CategoryName, string CategoryDescription, string CategoryType, UsersRow parentUsersRowByUsers_Categories) {
                 CategoriesRow rowCategoriesRow = ((CategoriesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         CategoryName,
                         CategoryDescription,
-                        CategoryType};
+                        CategoryType,
+                        null};
+                if ((parentUsersRowByUsers_Categories != null)) {
+                    columnValuesArray[4] = parentUsersRowByUsers_Categories[4];
+                }
                 rowCategoriesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCategoriesRow);
                 return rowCategoriesRow;
@@ -548,6 +583,7 @@ namespace PersonalFinancialTool {
                 this.columnCategoryName = base.Columns["CategoryName"];
                 this.columnCategoryDescription = base.Columns["CategoryDescription"];
                 this.columnCategoryType = base.Columns["CategoryType"];
+                this.columnUserId = base.Columns["UserId"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -561,6 +597,8 @@ namespace PersonalFinancialTool {
                 base.Columns.Add(this.columnCategoryDescription);
                 this.columnCategoryType = new global::System.Data.DataColumn("CategoryType", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCategoryType);
+                this.columnUserId = new global::System.Data.DataColumn("UserId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUserId);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCategoryId}, true));
                 this.columnCategoryId.AutoIncrement = true;
@@ -708,6 +746,8 @@ namespace PersonalFinancialTool {
             
             private global::System.Data.DataColumn columnEventStatus;
             
+            private global::System.Data.DataColumn columnUserId;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public EventsDataTable() {
@@ -775,6 +815,14 @@ namespace PersonalFinancialTool {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UserIdColumn {
+                get {
+                    return this.columnUserId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -810,13 +858,17 @@ namespace PersonalFinancialTool {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public EventsRow AddEventsRow(string EventName, System.DateTime EventDate, string EventStatus) {
+            public EventsRow AddEventsRow(string EventName, System.DateTime EventDate, string EventStatus, UsersRow parentUsersRowByUsers_Events) {
                 EventsRow rowEventsRow = ((EventsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         EventName,
                         EventDate,
-                        EventStatus};
+                        EventStatus,
+                        null};
+                if ((parentUsersRowByUsers_Events != null)) {
+                    columnValuesArray[4] = parentUsersRowByUsers_Events[4];
+                }
                 rowEventsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEventsRow);
                 return rowEventsRow;
@@ -850,6 +902,7 @@ namespace PersonalFinancialTool {
                 this.columnEventName = base.Columns["EventName"];
                 this.columnEventDate = base.Columns["EventDate"];
                 this.columnEventStatus = base.Columns["EventStatus"];
+                this.columnUserId = base.Columns["UserId"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -863,6 +916,8 @@ namespace PersonalFinancialTool {
                 base.Columns.Add(this.columnEventDate);
                 this.columnEventStatus = new global::System.Data.DataColumn("EventStatus", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEventStatus);
+                this.columnUserId = new global::System.Data.DataColumn("UserId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUserId);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnEventId}, true));
                 this.columnEventId.AutoIncrement = true;
@@ -1342,6 +1397,8 @@ namespace PersonalFinancialTool {
             
             private global::System.Data.DataColumn columnEventId;
             
+            private global::System.Data.DataColumn columnUserId;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public TransactionsDataTable() {
@@ -1457,6 +1514,14 @@ namespace PersonalFinancialTool {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UserIdColumn {
+                get {
+                    return this.columnUserId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1492,7 +1557,7 @@ namespace PersonalFinancialTool {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TransactionsRow AddTransactionsRow(string CategoryType, string Income, string Expense, string TransDescription, System.DateTime Date, decimal Amount, string EventName, CategoriesRow parentCategoriesRowByCategories_Transactions, EventsRow parentEventsRowByEvents_Transactions) {
+            public TransactionsRow AddTransactionsRow(string CategoryType, string Income, string Expense, string TransDescription, System.DateTime Date, decimal Amount, string EventName, CategoriesRow parentCategoriesRowByCategories_Transactions, EventsRow parentEventsRowByEvents_Transactions, UsersRow parentUsersRowByUsers_Transactions) {
                 TransactionsRow rowTransactionsRow = ((TransactionsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1504,12 +1569,16 @@ namespace PersonalFinancialTool {
                         Amount,
                         EventName,
                         null,
+                        null,
                         null};
                 if ((parentCategoriesRowByCategories_Transactions != null)) {
                     columnValuesArray[8] = parentCategoriesRowByCategories_Transactions[0];
                 }
                 if ((parentEventsRowByEvents_Transactions != null)) {
                     columnValuesArray[9] = parentEventsRowByEvents_Transactions[0];
+                }
+                if ((parentUsersRowByUsers_Transactions != null)) {
+                    columnValuesArray[10] = parentUsersRowByUsers_Transactions[4];
                 }
                 rowTransactionsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTransactionsRow);
@@ -1550,6 +1619,7 @@ namespace PersonalFinancialTool {
                 this.columnEventName = base.Columns["EventName"];
                 this.columnCategoryId = base.Columns["CategoryId"];
                 this.columnEventId = base.Columns["EventId"];
+                this.columnUserId = base.Columns["UserId"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1575,6 +1645,8 @@ namespace PersonalFinancialTool {
                 base.Columns.Add(this.columnCategoryId);
                 this.columnEventId = new global::System.Data.DataColumn("EventId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEventId);
+                this.columnUserId = new global::System.Data.DataColumn("UserId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUserId);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnTransactionId}, true));
                 this.columnTransactionId.AutoIncrement = true;
@@ -1782,6 +1854,33 @@ namespace PersonalFinancialTool {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int UserId {
+                get {
+                    try {
+                        return ((int)(this[this.tableCategories.UserIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UserId\' in table \'Categories\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCategories.UserIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public UsersRow UsersRow {
+                get {
+                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["Users_Categories"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Users_Categories"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsCategoryNameNull() {
                 return this.IsNull(this.tableCategories.CategoryNameColumn);
             }
@@ -1814,6 +1913,18 @@ namespace PersonalFinancialTool {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetCategoryTypeNull() {
                 this[this.tableCategories.CategoryTypeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsUserIdNull() {
+                return this.IsNull(this.tableCategories.UserIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetUserIdNull() {
+                this[this.tableCategories.UserIdColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1903,6 +2014,33 @@ namespace PersonalFinancialTool {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int UserId {
+                get {
+                    try {
+                        return ((int)(this[this.tableEvents.UserIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UserId\' in table \'Events\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEvents.UserIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public UsersRow UsersRow {
+                get {
+                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["Users_Events"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Users_Events"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsEventNameNull() {
                 return this.IsNull(this.tableEvents.EventNameColumn);
             }
@@ -1935,6 +2073,18 @@ namespace PersonalFinancialTool {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetEventStatusNull() {
                 this[this.tableEvents.EventStatusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsUserIdNull() {
+                return this.IsNull(this.tableEvents.UserIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetUserIdNull() {
+                this[this.tableEvents.UserIdColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2067,6 +2217,39 @@ namespace PersonalFinancialTool {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetPasswordNull() {
                 this[this.tableUsers.PasswordColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CategoriesRow[] GetCategoriesRows() {
+                if ((this.Table.ChildRelations["Users_Categories"] == null)) {
+                    return new CategoriesRow[0];
+                }
+                else {
+                    return ((CategoriesRow[])(base.GetChildRows(this.Table.ChildRelations["Users_Categories"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public TransactionsRow[] GetTransactionsRows() {
+                if ((this.Table.ChildRelations["Users_Transactions"] == null)) {
+                    return new TransactionsRow[0];
+                }
+                else {
+                    return ((TransactionsRow[])(base.GetChildRows(this.Table.ChildRelations["Users_Transactions"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public EventsRow[] GetEventsRows() {
+                if ((this.Table.ChildRelations["Users_Events"] == null)) {
+                    return new EventsRow[0];
+                }
+                else {
+                    return ((EventsRow[])(base.GetChildRows(this.Table.ChildRelations["Users_Events"])));
+                }
             }
         }
         
@@ -2241,6 +2424,22 @@ namespace PersonalFinancialTool {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int UserId {
+                get {
+                    try {
+                        return ((int)(this[this.tableTransactions.UserIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UserId\' in table \'Transactions\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTransactions.UserIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public CategoriesRow CategoriesRow {
                 get {
                     return ((CategoriesRow)(this.GetParentRow(this.Table.ParentRelations["Categories_Transactions"])));
@@ -2258,6 +2457,17 @@ namespace PersonalFinancialTool {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["Events_Transactions"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public UsersRow UsersRow {
+                get {
+                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["Users_Transactions"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Users_Transactions"]);
                 }
             }
             
@@ -2367,6 +2577,18 @@ namespace PersonalFinancialTool {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetEventIdNull() {
                 this[this.tableTransactions.EventIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsUserIdNull() {
+                return this.IsNull(this.tableTransactions.UserIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetUserIdNull() {
+                this[this.tableTransactions.UserIdColumn] = global::System.Convert.DBNull;
             }
         }
         

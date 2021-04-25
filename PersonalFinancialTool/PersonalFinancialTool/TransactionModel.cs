@@ -112,24 +112,5 @@ namespace PersonalFinancialTool
             }
         }
 
-        //public List<WeeklyViewDetails> GetListOfTransactions(DateTime selectedDate)
-        //{
-        //    List<WeeklyViewDetails> transactionListForWeeklyView = new List<WeeklyViewDetails>();
-
-        //    using (var context = new FinanceToolDBContainer1())
-        //    {
-        //        var x = context.Transactions.Where(t => t.UserId == userId && t.CategoryType == "Expense" && (t.TransactionDate.Year == selectedDate.Year && t.TransactionDate.Month == selectedDate.Month && t.TransactionDate.Day == selectedDate.Day)).ToList();
-
-        //        foreach (var item in x)
-        //        {
-        //            transactionListForWeeklyView.Add(new WeeklyViewDetails(item.CategoryType, item.Income, item.Expense, item.TransactionDescription, item.TransactionDate , item.Amount, item.EventName));
-        //        }
-
-        //        return transactionListForWeeklyView;
-        //    }
-        //}
-
-
-
     }
 }

@@ -64,6 +64,7 @@ namespace PersonalFinancialTool
                     categoryRow.CategoryName = sCategoryName;
                     categoryRow.CategoryDescription = sCategoryDesc;
                     categoryRow.CategoryType = sCategoryType;
+                    categoryRow.UserId = loggedInUser;
 
                     // Apply Changes to DT
                     this.AppDataSet.Categories.AddCategoriesRow(categoryRow);

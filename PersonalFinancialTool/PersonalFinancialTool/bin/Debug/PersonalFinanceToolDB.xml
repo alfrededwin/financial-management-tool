@@ -2,27 +2,47 @@
 <FinancialToolDataSet xmlns="http://tempuri.org/FinancialToolDataSet.xsd">
   <Categories>
     <CategoryId>1</CategoryId>
-    <CategoryName>Sal</CategoryName>
-    <CategoryDescription>df</CategoryDescription>
+    <CategoryName>Salary</CategoryName>
+    <CategoryDescription>Month of April</CategoryDescription>
     <CategoryType>Income</CategoryType>
   </Categories>
   <Categories>
     <CategoryId>2</CategoryId>
-    <CategoryName>Uber eat</CategoryName>
-    <CategoryDescription>wfw</CategoryDescription>
+    <CategoryName>Uber eats</CategoryName>
+    <CategoryDescription>Food</CategoryDescription>
     <CategoryType>Expense</CategoryType>
   </Categories>
   <Categories>
     <CategoryId>3</CategoryId>
     <CategoryName>Loan</CategoryName>
-    <CategoryDescription>gd</CategoryDescription>
+    <CategoryDescription>Macbook Pro</CategoryDescription>
     <CategoryType>Expense</CategoryType>
+  </Categories>
+  <Categories>
+    <CategoryId>4</CategoryId>
+    <CategoryName>American Express</CategoryName>
+    <CategoryDescription>Credit Card Payment</CategoryDescription>
+    <CategoryType>Expense</CategoryType>
+  </Categories>
+  <Categories>
+    <CategoryId>5</CategoryId>
+    <CategoryName>TEST</CategoryName>
+    <CategoryDescription>TERT 123</CategoryDescription>
+    <CategoryType>Income</CategoryType>
+    <UserId>1</UserId>
   </Categories>
   <Events>
     <EventId>1</EventId>
-    <EventName>dchdf</EventName>
-    <EventDate>2021-04-24T08:53:51.4879694-07:00</EventDate>
+    <EventName>Amex Payment</EventName>
+    <EventDate>2021-04-24T08:53:51-07:00</EventDate>
     <EventStatus>Recurring</EventStatus>
+  </Events>
+  <Events>
+    <EventId>2</EventId>
+    <EventName>TEST Event</EventName>
+    <EventDate>2021-04-20T11:41:40-07:00</EventDate>
+    <EventStatus>Recurring</EventStatus>
+    <UserId>1</UserId>
   </Events>
   <Users>
     <FullName>admin</FullName>
@@ -100,5 +120,16 @@
     <Date>2021-04-24T08:40:02-07:00</Date>
     <Amount>15000</Amount>
     <EventName />
+  </Transactions>
+  <Transactions>
+    <TransactionId>8</TransactionId>
+    <CategoryType>Income	</CategoryType>
+    <Income>TEST</Income>
+    <Expense />
+    <TransDescription>ervcv</TransDescription>
+    <Date>2021-04-25T11:43:05-07:00</Date>
+    <Amount>23</Amount>
+    <EventName>TEST Event</EventName>
+    <UserId>1</UserId>
   </Transactions>
 </FinancialToolDataSet>

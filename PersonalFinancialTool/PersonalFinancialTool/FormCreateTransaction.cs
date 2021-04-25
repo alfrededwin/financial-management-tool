@@ -45,6 +45,8 @@ namespace PersonalFinancialTool
 
         private void CreateTransaction(object sender, EventArgs e)
         {
+            int loggedInUser = FormLogin.gblLoggedInUser;
+
             try
             {
                 // Assign Values
@@ -74,6 +76,7 @@ namespace PersonalFinancialTool
                     transactionsRow.Date = this.transactionDetails.transactionDate;
                     transactionsRow.Amount = this.transactionDetails.amount;
                     transactionsRow.EventName = this.transactionDetails.eventName;
+                    transactionsRow.UserId = loggedInUser;
 
                     // Apply Changes to DT
                     this.AppDataSet.Transactions.AddTransactionsRow(transactionsRow);

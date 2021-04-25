@@ -33,6 +33,8 @@ namespace PersonalFinancialTool
 
         private void CreateEvent(object sender, EventArgs e)
         {
+            int loggedInUser = FormLogin.gblLoggedInUser;
+
             try
             {
                 // Assign Values
@@ -52,6 +54,7 @@ namespace PersonalFinancialTool
                     eventsRow.EventName = this.eventDetails.eventName;
                     eventsRow.EventDate = this.eventDetails.eventDate;
                     eventsRow.EventStatus = this.eventDetails.eventStatus;
+                    eventsRow.UserId = loggedInUser;
 
                     // Apply Changes to DT
                     this.AppDataSet.Events.AddEventsRow(eventsRow);

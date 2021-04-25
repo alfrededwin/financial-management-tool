@@ -24,15 +24,13 @@ namespace PersonalFinancialTool
 
         private void dateTimePickerWeeklyView_ValueChanged(object sender, EventArgs e)
         {
-            //this.Controls.Clear();
-            //this.Controls.Add(groupBoxWeeklyView);
-          
+            this.Controls.Clear();
+            this.Controls.Add(groupBoxWeeklyView);
             selectedDate = dateTimePickerWeeklyView.Value;
             SetUpViewData();
         }
 
         
-
         private void SetUpViewData()
         {
        
