@@ -63,6 +63,7 @@ C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialT
 C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\DocumentFormat.OpenXml.xml
 C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\EntityFramework.xml
 C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\bin\Debug\ExcelNumberFormat.xml
+C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.csprojAssemblyReference.cache
 C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormCreateCategory.resources
 C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormCreateEvent.resources
 C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.FormCreateTransaction.resources
@@ -86,4 +87,3 @@ C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialT
 C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.csproj.CopyComplete
 C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.exe
 C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.pdb
-C:\Users\Alfred Edwin\Desktop\EAD_Final\PersonalFinancialTool\PersonalFinancialTool\obj\Debug\PersonalFinancialTool.csprojAssemblyReference.cache

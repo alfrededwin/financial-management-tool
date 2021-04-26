@@ -29,16 +29,11 @@ namespace PersonalFinancialTool
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBoxPrediction = new System.Windows.Forms.GroupBox();
             this.buttonViewPrediction = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.chartPrediction = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBoxPrediction.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartPrediction)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -81,28 +76,11 @@ namespace PersonalFinancialTool
             this.dateTimePicker1.Size = new System.Drawing.Size(116, 23);
             this.dateTimePicker1.TabIndex = 1;
             // 
-            // chartPrediction
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chartPrediction.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartPrediction.Legends.Add(legend1);
-            this.chartPrediction.Location = new System.Drawing.Point(177, 89);
-            this.chartPrediction.Name = "chartPrediction";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Average Category";
-            this.chartPrediction.Series.Add(series1);
-            this.chartPrediction.Size = new System.Drawing.Size(680, 279);
-            this.chartPrediction.TabIndex = 2;
-            this.chartPrediction.Text = "chart1";
-            // 
             // FormPrediction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(996, 380);
-            this.Controls.Add(this.chartPrediction);
             this.Controls.Add(this.groupBoxPrediction);
             this.MaximizeBox = false;
             this.Name = "FormPrediction";
@@ -110,7 +88,6 @@ namespace PersonalFinancialTool
             this.Text = "Prediction";
             this.groupBoxPrediction.ResumeLayout(false);
             this.groupBoxPrediction.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartPrediction)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -121,6 +98,5 @@ namespace PersonalFinancialTool
         private System.Windows.Forms.GroupBox groupBoxPrediction;
         private System.Windows.Forms.Button buttonViewPrediction;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartPrediction;
     }
 }

@@ -51,9 +51,9 @@
   </Categories>
   <Categories>
     <CategoryId>8</CategoryId>
-    <CategoryName>Test</CategoryName>
-    <CategoryDescription>test 123</CategoryDescription>
-    <CategoryType>Income</CategoryType>
+    <CategoryName>Taxi Car</CategoryName>
+    <CategoryDescription>Uber</CategoryDescription>
+    <CategoryType>Expense</CategoryType>
     <UserId>2</UserId>
   </Categories>
   <Categories>
@@ -104,6 +104,13 @@
     <EventDate>2021-04-25T14:22:18-07:00</EventDate>
     <EventStatus>Recurring</EventStatus>
     <UserId>1</UserId>
+  </Events>
+  <Events>
+    <EventId>4</EventId>
+    <EventName>CEB</EventName>
+    <EventDate>2021-04-25T14:40:08.6856091-07:00</EventDate>
+    <EventStatus>Recurring</EventStatus>
+    <UserId>2</UserId>
   </Events>
   <Users>
     <FullName>admin</FullName>
